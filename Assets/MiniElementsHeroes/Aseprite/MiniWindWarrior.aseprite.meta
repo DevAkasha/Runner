@@ -1,0 +1,2043 @@
+fileFormatVersion: 2
+guid: 4fe665840f8fb0c4da8bb4c710ec412c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: MiniWindWarrior_Frame_0
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 222
+      y: 167
+      width: 18
+      height: 14
+    spriteID: 696f37bd6d8ff3c4fbc0f4b0ef3564c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 222, y: 167}
+  - name: MiniWindWarrior_Frame_1
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 107
+      y: 124
+      width: 18
+      height: 13
+    spriteID: 0a92725a75db9ef42b6cd206327edaa4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 107, y: 124}
+  - name: MiniWindWarrior_Frame_2
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 133
+      y: 124
+      width: 18
+      height: 13
+    spriteID: ad5c4cfd01cea70499038813912ae655
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 133, y: 124}
+  - name: MiniWindWarrior_Frame_3
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 145
+      width: 18
+      height: 14
+    spriteID: 8a20eaf7dcacaa64e9670dac665db0a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 145}
+  - name: MiniWindWarrior_Frame_4
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 159
+      y: 124
+      width: 18
+      height: 13
+    spriteID: 73718a36e96651b46b0efb1ad6667d78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 159, y: 124}
+  - name: MiniWindWarrior_Frame_5
+    originalName: 
+    pivot: {x: 1.4375, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 212
+      width: 16
+      height: 14
+    spriteID: 6f8c375226cb1774786900fb079694ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 212}
+  - name: MiniWindWarrior_Frame_6
+    originalName: 
+    pivot: {x: 1.5714287, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 234
+      width: 14
+      height: 15
+    spriteID: 5405dbb7958448d4491c655435179140
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 234}
+  - name: MiniWindWarrior_Frame_7
+    originalName: 
+    pivot: {x: 1.5714287, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 194
+      y: 212
+      width: 14
+      height: 13
+    spriteID: c8bbda4f8ed80c542b5691bf655d1200
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 194, y: 212}
+  - name: MiniWindWarrior_Frame_8
+    originalName: 
+    pivot: {x: 1.4375, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 212
+      width: 16
+      height: 14
+    spriteID: 97f06c44cb779014cab4f4184741d1cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 212}
+  - name: MiniWindWarrior_Frame_9
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 227
+      y: 39
+      width: 18
+      height: 15
+    spriteID: 0f9a97c5821203b468886b7bdd226016
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 227, y: 39}
+  - name: MiniWindWarrior_Frame_10
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 145
+      width: 18
+      height: 14
+    spriteID: a084bd615464e9940b9e304cf5dcbd31
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 145}
+  - name: MiniWindWarrior_Frame_11
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 167
+      width: 18
+      height: 15
+    spriteID: 5ecd532228861c441b0bd2a2fb8ff233
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 167}
+  - name: MiniWindWarrior_Frame_12
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 167
+      width: 18
+      height: 15
+    spriteID: 4bb7aecd1784b00499777a9dfe73b9ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 167}
+  - name: MiniWindWarrior_Frame_13
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 185
+      y: 124
+      width: 18
+      height: 13
+    spriteID: c6b2eb2a9a04f864fa7a5dc77cd544ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 185, y: 124}
+  - name: MiniWindWarrior_Frame_14
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 145
+      width: 18
+      height: 14
+    spriteID: c7c3c9e8189854642addf33896e679c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 145}
+  - name: MiniWindWarrior_Frame_15
+    originalName: 
+    pivot: {x: 1.4117647, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 82
+      y: 190
+      width: 17
+      height: 14
+    spriteID: bf8bc5e7c9b0ccc4e921afc6539f02bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 82, y: 190}
+  - name: MiniWindWarrior_Frame_16
+    originalName: 
+    pivot: {x: 1.4117647, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 107
+      y: 190
+      width: 17
+      height: 14
+    spriteID: 847d8a867913d8c448d2b7660f00b011
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 107, y: 190}
+  - name: MiniWindWarrior_Frame_17
+    originalName: 
+    pivot: {x: 1.1, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 110
+      y: 167
+      width: 20
+      height: 13
+    spriteID: 66a021246f32e5243865516d03aa7b89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 110, y: 167}
+  - name: MiniWindWarrior_Frame_18
+    originalName: 
+    pivot: {x: 1.1, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 138
+      y: 167
+      width: 20
+      height: 13
+    spriteID: 6fb0eada960bc7d47aac3d1d3566e6cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 138, y: 167}
+  - name: MiniWindWarrior_Frame_19
+    originalName: 
+    pivot: {x: 1.1, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 167
+      width: 20
+      height: 13
+    spriteID: b3ba0a7614ff2504ba5626fb38a2bd36
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 167}
+  - name: MiniWindWarrior_Frame_20
+    originalName: 
+    pivot: {x: 1.2777778, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 145
+      width: 18
+      height: 14
+    spriteID: 9ae4f32e83756944082dc88b8af1d506
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 130, y: 145}
+  - name: MiniWindWarrior_Frame_21
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 156
+      y: 145
+      width: 18
+      height: 14
+    spriteID: 5c9e4f9f068f7484bbf51be529724103
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 145}
+  - name: MiniWindWarrior_Frame_22
+    originalName: 
+    pivot: {x: 1.375, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 52
+      y: 212
+      width: 16
+      height: 14
+    spriteID: fa2b2e3de82e8134c9faeece751d27cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 52, y: 212}
+  - name: MiniWindWarrior_Frame_23
+    originalName: 
+    pivot: {x: 1.5000001, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 212
+      width: 14
+      height: 14
+    spriteID: 64d9c575ba8f9194fb07a3ec5c539c5e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 212}
+  - name: MiniWindWarrior_Frame_24
+    originalName: 
+    pivot: {x: 1.25, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 212
+      width: 16
+      height: 14
+    spriteID: e198ffec710e753419b6d2a933ef3601
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 212}
+  - name: MiniWindWarrior_Frame_25
+    originalName: 
+    pivot: {x: 1.25, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 100
+      y: 212
+      width: 16
+      height: 14
+    spriteID: 36201b1bfdad1a643a7fc405f34dc973
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 100, y: 212}
+  - name: MiniWindWarrior_Frame_26
+    originalName: 
+    pivot: {x: 1.25, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 212
+      width: 16
+      height: 14
+    spriteID: 1f9c1b4cfbdefb64fac437124ac422a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 212}
+  - name: MiniWindWarrior_Frame_27
+    originalName: 
+    pivot: {x: 1.25, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 212
+      width: 16
+      height: 14
+    spriteID: 5694542131405db4590aea45b1965bd6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 212}
+  - name: MiniWindWarrior_Frame_28
+    originalName: 
+    pivot: {x: 1.6666667, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 238
+      y: 212
+      width: 12
+      height: 14
+    spriteID: 5009871e81f37d448969f976259248a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 238, y: 212}
+  - name: MiniWindWarrior_Frame_29
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 145
+      width: 18
+      height: 14
+    spriteID: d30a9d9f9ac1dc944996c55b426fede8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 145}
+  - name: MiniWindWarrior_Frame_30
+    originalName: 
+    pivot: {x: 1.4117647, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 132
+      y: 190
+      width: 17
+      height: 14
+    spriteID: 18bf34be3f0f1964d9fc70129622a155
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 132, y: 190}
+  - name: MiniWindWarrior_Frame_31
+    originalName: 
+    pivot: {x: 0.53333336, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 59
+      y: 74
+      width: 45
+      height: 16
+    spriteID: ecb76b3ef016e914c8a82c8751e94510
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 59, y: 74}
+  - name: MiniWindWarrior_Frame_32
+    originalName: 
+    pivot: {x: 0.5106383, y: -0.05263158}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 74
+      width: 47
+      height: 19
+    spriteID: 1d00e48e570d6764bbd7356e51891b86
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 74}
+  - name: MiniWindWarrior_Frame_33
+    originalName: 
+    pivot: {x: 0.5106383, y: -0.041666668}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 172
+      y: 39
+      width: 47
+      height: 24
+    spriteID: 159f27a616d13194aa4c88a7711a8668
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 172, y: 39}
+  - name: MiniWindWarrior_Frame_34
+    originalName: 
+    pivot: {x: 0.5, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 4
+      width: 48
+      height: 27
+    spriteID: 3f0b30986a3b8bf4c91721bb0ddca3e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 118, y: 4}
+  - name: MiniWindWarrior_Frame_35
+    originalName: 
+    pivot: {x: 0.48979592, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 49
+      height: 27
+    spriteID: 422febf9dfcb85549bcae18f0dfa1007
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: MiniWindWarrior_Frame_36
+    originalName: 
+    pivot: {x: 0.48979592, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 61
+      y: 4
+      width: 49
+      height: 27
+    spriteID: fd0df25f1b4a6364ca5b458631c0aa12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 61, y: 4}
+  - name: MiniWindWarrior_Frame_37
+    originalName: 
+    pivot: {x: 0.5, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 174
+      y: 4
+      width: 48
+      height: 27
+    spriteID: 240bef75c7bbe844d86cde96447125d3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 174, y: 4}
+  - name: MiniWindWarrior_Frame_38
+    originalName: 
+    pivot: {x: 0.5106383, y: -0.03846154}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 117
+      y: 39
+      width: 47
+      height: 26
+    spriteID: cc0e8de5c6025d340974ac602ab17b8e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 117, y: 39}
+  - name: MiniWindWarrior_Frame_39
+    originalName: 
+    pivot: {x: 0.5, y: -0.037037037}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 39
+      width: 48
+      height: 27
+    spriteID: 9df554f46d6b9ef46845977b6b2573b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 39}
+  - name: MiniWindWarrior_Frame_40
+    originalName: 
+    pivot: {x: 0.48979592, y: -0.03846154}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 60
+      y: 39
+      width: 49
+      height: 26
+    spriteID: c76c2fcf497d99c498c9ba7824221d4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 60, y: 39}
+  - name: MiniWindWarrior_Frame_41
+    originalName: 
+    pivot: {x: 1.4117647, y: -0.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 230
+      y: 4
+      width: 17
+      height: 16
+    spriteID: 127d3a13f8f54ac4eb4c00c98f17c780
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 230, y: 4}
+  - name: MiniWindWarrior_Frame_42
+    originalName: 
+    pivot: {x: 1.4117647, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 157
+      y: 190
+      width: 17
+      height: 14
+    spriteID: 7b2c8b4da7651614cad95af9a1e74a70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 157, y: 190}
+  - name: MiniWindWarrior_Frame_43
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 208
+      y: 145
+      width: 18
+      height: 14
+    spriteID: 0616d2cc2e726a84786a924c125ab849
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 208, y: 145}
+  - name: MiniWindWarrior_Frame_44
+    originalName: 
+    pivot: {x: 1.4117647, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 182
+      y: 190
+      width: 17
+      height: 14
+    spriteID: 4f62c2dc49ccd35418482a1be94a3a1a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 182, y: 190}
+  - name: MiniWindWarrior_Frame_45
+    originalName: 
+    pivot: {x: 1.4117647, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 207
+      y: 190
+      width: 17
+      height: 14
+    spriteID: 6184d6f5a8feba44b896ee4010b68f78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 207, y: 190}
+  - name: MiniWindWarrior_Frame_46
+    originalName: 
+    pivot: {x: 1.1764706, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 190
+      width: 17
+      height: 14
+    spriteID: f5534bb74d9ef7e468ae3bcab32c3ba3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 190}
+  - name: MiniWindWarrior_Frame_47
+    originalName: 
+    pivot: {x: 0.475, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 145
+      width: 40
+      height: 14
+    spriteID: 27bc47c920704524eb5a157abfb3570d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 145}
+  - name: MiniWindWarrior_Frame_48
+    originalName: 
+    pivot: {x: 0.45238096, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 124
+      width: 42
+      height: 13
+    spriteID: e93167c6dd5f2d24ea89ae4aa8d2619c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 124}
+  - name: MiniWindWarrior_Frame_49
+    originalName: 
+    pivot: {x: 0.44186047, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 166
+      y: 101
+      width: 43
+      height: 14
+    spriteID: 2411fca624aeb8e498890a9f3d62cc32
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 166, y: 101}
+  - name: MiniWindWarrior_Frame_50
+    originalName: 
+    pivot: {x: 0.42222223, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 101
+      width: 45
+      height: 15
+    spriteID: aa18ba907f8124d46babafc5b9f38d01
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 101}
+  - name: MiniWindWarrior_Frame_51
+    originalName: 
+    pivot: {x: 0.4130435, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 57
+      y: 101
+      width: 46
+      height: 14
+    spriteID: 19dcf99a9438e54469d315632191996a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 57, y: 101}
+  - name: MiniWindWarrior_Frame_52
+    originalName: 
+    pivot: {x: 0.4042553, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 111
+      y: 101
+      width: 47
+      height: 13
+    spriteID: e287b9e83c53d9f4486c405a22ae9974
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 111, y: 101}
+  - name: MiniWindWarrior_Frame_53
+    originalName: 
+    pivot: {x: 0.39583334, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 74
+      width: 48
+      height: 15
+    spriteID: a1f2164b27a297140b9622f4843abeda
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 74}
+  - name: MiniWindWarrior_Frame_54
+    originalName: 
+    pivot: {x: 0.4130435, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 168
+      y: 74
+      width: 46
+      height: 15
+    spriteID: 852b7e6f006407848823942ab1154d93
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 168, y: 74}
+  - name: MiniWindWarrior_Frame_55
+    originalName: 
+    pivot: {x: 0.42222223, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 124
+      width: 45
+      height: 13
+    spriteID: 573649cefc03f8c4788d225f3c78efa8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 124}
+  - name: MiniWindWarrior_Frame_56
+    originalName: 
+    pivot: {x: 1.3571429, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 216
+      y: 212
+      width: 14
+      height: 13
+    spriteID: 6713731c33ee5064785d1470b2d8183a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 216, y: 212}
+  - name: MiniWindWarrior_Frame_57
+    originalName: 
+    pivot: {x: 1.2777778, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 234
+      y: 145
+      width: 18
+      height: 14
+    spriteID: c243a352d9ec75149aab10e54c45c0ab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 234, y: 145}
+  - name: MiniWindWarrior_Frame_58
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 190
+      width: 18
+      height: 14
+    spriteID: 112bc90d0d3255d44ad774cb61c09a88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 190}
+  - name: MiniWindWarrior_Frame_59
+    originalName: 
+    pivot: {x: 1.3684211, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 167
+      width: 19
+      height: 14
+    spriteID: 9da1dd57b2f80644b94637eb4d044d03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 167}
+  - name: MiniWindWarrior_Frame_60
+    originalName: 
+    pivot: {x: 1.3157895, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 83
+      y: 167
+      width: 19
+      height: 14
+    spriteID: 01b6b829d473fee40ba84ecd83823395
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 83, y: 167}
+  - name: MiniWindWarrior_Frame_61
+    originalName: 
+    pivot: {x: 1.3333334, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 190
+      width: 18
+      height: 14
+    spriteID: c64d91a77c58376449195f4fab4f14b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 190}
+  - name: MiniWindWarrior_Frame_62
+    originalName: 
+    pivot: {x: 1.2777778, y: -0.071428575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 190
+      width: 18
+      height: 14
+    spriteID: 542a0b9d2261cf548a1c8a301ea33d66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 190}
+  - name: MiniWindWarrior_Frame_63
+    originalName: 
+    pivot: {x: 1.2, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 194
+      y: 167
+      width: 20
+      height: 13
+    spriteID: 48852e42775141c4bb198f1f9856391d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 194, y: 167}
+  - name: MiniWindWarrior_Frame_64
+    originalName: 
+    pivot: {x: 1.04, y: -0.07692308}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 222
+      y: 74
+      width: 25
+      height: 13
+    spriteID: a1c5bc9d22968b142a8803c4590beeb7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 222, y: 74}
+  - name: MiniWindWarrior_Frame_65
+    originalName: 
+    pivot: {x: 1.04, y: -0.09090909}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 217
+      y: 101
+      width: 25
+      height: 11
+    spriteID: 2bd5ef41422c62046aea0541ba322592
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 217, y: 101}
+  - name: MiniWindWarrior_Frame_66
+    originalName: 
+    pivot: {x: 1.04, y: -0.125}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 211
+      y: 124
+      width: 25
+      height: 8
+    spriteID: 5d77c0cc43ba82e4abb89c160df3cf77
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 211, y: 124}
+  - name: MiniWindWarrior_Frame_67
+    originalName: 
+    pivot: {x: 1.04, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 234
+      width: 25
+      height: 7
+    spriteID: fae35f7cd813d7e4ba749c71a9da7a68
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 234}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -168031391
+    name: MiniWindWarrior
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MiniWindWarrior_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: 696f37bd6d8ff3c4fbc0f4b0ef3564c4
+    - name: MiniWindWarrior_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 13
+      spriteId: 0a92725a75db9ef42b6cd206327edaa4
+    - name: MiniWindWarrior_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 13
+      spriteId: ad5c4cfd01cea70499038813912ae655
+    - name: MiniWindWarrior_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: 8a20eaf7dcacaa64e9670dac665db0a2
+    - name: MiniWindWarrior_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 13
+      spriteId: 73718a36e96651b46b0efb1ad6667d78
+    - name: MiniWindWarrior_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 9
+        y: 1
+        width: 16
+        height: 14
+      spriteId: 6f8c375226cb1774786900fb079694ad
+    - name: MiniWindWarrior_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 10
+        y: 1
+        width: 14
+        height: 15
+      spriteId: 5405dbb7958448d4491c655435179140
+    - name: MiniWindWarrior_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 10
+        y: 1
+        width: 14
+        height: 13
+      spriteId: c8bbda4f8ed80c542b5691bf655d1200
+    - name: MiniWindWarrior_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 9
+        y: 1
+        width: 16
+        height: 14
+      spriteId: 97f06c44cb779014cab4f4184741d1cf
+    - name: MiniWindWarrior_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 15
+      spriteId: 0f9a97c5821203b468886b7bdd226016
+    - name: MiniWindWarrior_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: a084bd615464e9940b9e304cf5dcbd31
+    - name: MiniWindWarrior_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 15
+      spriteId: 5ecd532228861c441b0bd2a2fb8ff233
+    - name: MiniWindWarrior_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 15
+      spriteId: 4bb7aecd1784b00499777a9dfe73b9ae
+    - name: MiniWindWarrior_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 13
+      spriteId: c6b2eb2a9a04f864fa7a5dc77cd544ee
+    - name: MiniWindWarrior_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: c7c3c9e8189854642addf33896e679c1
+    - name: MiniWindWarrior_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 8
+        y: 1
+        width: 17
+        height: 14
+      spriteId: bf8bc5e7c9b0ccc4e921afc6539f02bc
+    - name: MiniWindWarrior_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 8
+        y: 1
+        width: 17
+        height: 14
+      spriteId: 847d8a867913d8c448d2b7660f00b011
+    - name: MiniWindWarrior_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 10
+        y: 1
+        width: 20
+        height: 13
+      spriteId: 66a021246f32e5243865516d03aa7b89
+    - name: MiniWindWarrior_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 10
+        y: 1
+        width: 20
+        height: 13
+      spriteId: 6fb0eada960bc7d47aac3d1d3566e6cd
+    - name: MiniWindWarrior_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 10
+        y: 1
+        width: 20
+        height: 13
+      spriteId: b3ba0a7614ff2504ba5626fb38a2bd36
+    - name: MiniWindWarrior_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 9
+        y: 1
+        width: 18
+        height: 14
+      spriteId: 9ae4f32e83756944082dc88b8af1d506
+    - name: MiniWindWarrior_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: 5c9e4f9f068f7484bbf51be529724103
+    - name: MiniWindWarrior_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 10
+        y: 1
+        width: 16
+        height: 14
+      spriteId: fa2b2e3de82e8134c9faeece751d27cd
+    - name: MiniWindWarrior_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 11
+        y: 1
+        width: 14
+        height: 14
+      spriteId: 64d9c575ba8f9194fb07a3ec5c539c5e
+    - name: MiniWindWarrior_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 12
+        y: 1
+        width: 16
+        height: 14
+      spriteId: e198ffec710e753419b6d2a933ef3601
+    - name: MiniWindWarrior_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 12
+        y: 1
+        width: 16
+        height: 14
+      spriteId: 36201b1bfdad1a643a7fc405f34dc973
+    - name: MiniWindWarrior_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 12
+        y: 1
+        width: 16
+        height: 14
+      spriteId: 1f9c1b4cfbdefb64fac437124ac422a5
+    - name: MiniWindWarrior_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 12
+        y: 1
+        width: 16
+        height: 14
+      spriteId: 5694542131405db4590aea45b1965bd6
+    - name: MiniWindWarrior_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 12
+        y: 1
+        width: 12
+        height: 14
+      spriteId: 5009871e81f37d448969f976259248a0
+    - name: MiniWindWarrior_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: d30a9d9f9ac1dc944996c55b426fede8
+    - name: MiniWindWarrior_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 8
+        y: 1
+        width: 17
+        height: 14
+      spriteId: 18bf34be3f0f1964d9fc70129622a155
+    - name: MiniWindWarrior_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 8
+        y: 1
+        width: 45
+        height: 16
+      spriteId: ecb76b3ef016e914c8a82c8751e94510
+    - name: MiniWindWarrior_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 8
+        y: 1
+        width: 47
+        height: 19
+      spriteId: 1d00e48e570d6764bbd7356e51891b86
+    - name: MiniWindWarrior_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 8
+        y: 1
+        width: 47
+        height: 24
+      spriteId: 159f27a616d13194aa4c88a7711a8668
+    - name: MiniWindWarrior_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 8
+        y: 1
+        width: 48
+        height: 27
+      spriteId: 3f0b30986a3b8bf4c91721bb0ddca3e4
+    - name: MiniWindWarrior_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 8
+        y: 1
+        width: 49
+        height: 27
+      spriteId: 422febf9dfcb85549bcae18f0dfa1007
+    - name: MiniWindWarrior_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 8
+        y: 1
+        width: 49
+        height: 27
+      spriteId: fd0df25f1b4a6364ca5b458631c0aa12
+    - name: MiniWindWarrior_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 8
+        y: 1
+        width: 48
+        height: 27
+      spriteId: 240bef75c7bbe844d86cde96447125d3
+    - name: MiniWindWarrior_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 8
+        y: 1
+        width: 47
+        height: 26
+      spriteId: cc0e8de5c6025d340974ac602ab17b8e
+    - name: MiniWindWarrior_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 8
+        y: 1
+        width: 48
+        height: 27
+      spriteId: 9df554f46d6b9ef46845977b6b2573b5
+    - name: MiniWindWarrior_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 8
+        y: 1
+        width: 49
+        height: 26
+      spriteId: c76c2fcf497d99c498c9ba7824221d4e
+    - name: MiniWindWarrior_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 8
+        y: 1
+        width: 17
+        height: 16
+      spriteId: 127d3a13f8f54ac4eb4c00c98f17c780
+    - name: MiniWindWarrior_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 8
+        y: 1
+        width: 17
+        height: 14
+      spriteId: 7b2c8b4da7651614cad95af9a1e74a70
+    - name: MiniWindWarrior_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: 0616d2cc2e726a84786a924c125ab849
+    - name: MiniWindWarrior_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 8
+        y: 1
+        width: 17
+        height: 14
+      spriteId: 4f62c2dc49ccd35418482a1be94a3a1a
+    - name: MiniWindWarrior_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 8
+        y: 1
+        width: 17
+        height: 14
+      spriteId: 6184d6f5a8feba44b896ee4010b68f78
+    - name: MiniWindWarrior_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 12
+        y: 1
+        width: 17
+        height: 14
+      spriteId: f5534bb74d9ef7e468ae3bcab32c3ba3
+    - name: MiniWindWarrior_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 13
+        y: 1
+        width: 40
+        height: 14
+      spriteId: 27bc47c920704524eb5a157abfb3570d
+    - name: MiniWindWarrior_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 13
+        y: 1
+        width: 42
+        height: 13
+      spriteId: e93167c6dd5f2d24ea89ae4aa8d2619c
+    - name: MiniWindWarrior_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 13
+        y: 1
+        width: 43
+        height: 14
+      spriteId: 2411fca624aeb8e498890a9f3d62cc32
+    - name: MiniWindWarrior_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 13
+        y: 1
+        width: 45
+        height: 15
+      spriteId: aa18ba907f8124d46babafc5b9f38d01
+    - name: MiniWindWarrior_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 13
+        y: 1
+        width: 46
+        height: 14
+      spriteId: 19dcf99a9438e54469d315632191996a
+    - name: MiniWindWarrior_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 13
+        y: 1
+        width: 47
+        height: 13
+      spriteId: e287b9e83c53d9f4486c405a22ae9974
+    - name: MiniWindWarrior_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 13
+        y: 1
+        width: 48
+        height: 15
+      spriteId: a1f2164b27a297140b9622f4843abeda
+    - name: MiniWindWarrior_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 13
+        y: 1
+        width: 46
+        height: 15
+      spriteId: 852b7e6f006407848823942ab1154d93
+    - name: MiniWindWarrior_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 13
+        y: 1
+        width: 45
+        height: 13
+      spriteId: 573649cefc03f8c4788d225f3c78efa8
+    - name: MiniWindWarrior_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 13
+        y: 1
+        width: 14
+        height: 13
+      spriteId: 6713731c33ee5064785d1470b2d8183a
+    - name: MiniWindWarrior_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 9
+        y: 1
+        width: 18
+        height: 14
+      spriteId: c243a352d9ec75149aab10e54c45c0ab
+    - name: MiniWindWarrior_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: 112bc90d0d3255d44ad774cb61c09a88
+    - name: MiniWindWarrior_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 6
+        y: 1
+        width: 19
+        height: 14
+      spriteId: 9da1dd57b2f80644b94637eb4d044d03
+    - name: MiniWindWarrior_Frame_60
+      frameIndex: 60
+      cellRect:
+        x: 7
+        y: 1
+        width: 19
+        height: 14
+      spriteId: 01b6b829d473fee40ba84ecd83823395
+    - name: MiniWindWarrior_Frame_61
+      frameIndex: 61
+      cellRect:
+        x: 8
+        y: 1
+        width: 18
+        height: 14
+      spriteId: c64d91a77c58376449195f4fab4f14b3
+    - name: MiniWindWarrior_Frame_62
+      frameIndex: 62
+      cellRect:
+        x: 9
+        y: 1
+        width: 18
+        height: 14
+      spriteId: 542a0b9d2261cf548a1c8a301ea33d66
+    - name: MiniWindWarrior_Frame_63
+      frameIndex: 63
+      cellRect:
+        x: 8
+        y: 1
+        width: 20
+        height: 13
+      spriteId: 48852e42775141c4bb198f1f9856391d
+    - name: MiniWindWarrior_Frame_64
+      frameIndex: 64
+      cellRect:
+        x: 6
+        y: 1
+        width: 25
+        height: 13
+      spriteId: a1c5bc9d22968b142a8803c4590beeb7
+    - name: MiniWindWarrior_Frame_65
+      frameIndex: 65
+      cellRect:
+        x: 6
+        y: 1
+        width: 25
+        height: 11
+      spriteId: 2bd5ef41422c62046aea0541ba322592
+    - name: MiniWindWarrior_Frame_66
+      frameIndex: 66
+      cellRect:
+        x: 6
+        y: 1
+        width: 25
+        height: 8
+      spriteId: 5d77c0cc43ba82e4abb89c160df3cf77
+    - name: MiniWindWarrior_Frame_67
+      frameIndex: 67
+      cellRect:
+        x: 6
+        y: 1
+        width: 25
+        height: 7
+      spriteId: fae35f7cd813d7e4ba749c71a9da7a68
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 32}
