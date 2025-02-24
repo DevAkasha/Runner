@@ -20,8 +20,7 @@ public class CannonBall : Item
         Destroy(gameObject);
     }
 
-    protected override void ApplyEffect(Player player)
+    protected override void ApplyEffect(PlayerAction player)
     {
-
     }
 }

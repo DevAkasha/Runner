@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,12 +15,14 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
+        // 조건 변경 필요
         if(Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("Shoot");
         }
     }
 
+    // Cannon_Shoot 애니메이션에 연결 되어있음
     public void CreateCannonBall()
     {
         if(cannonBall == null)
@@ -28,6 +30,7 @@ public class Cannon : MonoBehaviour
             Debug.Log("CannonBall is Null");
             return;
         }
+        // 대포알 생성
         GameObject newCannonBall = Instantiate(cannonBall, transform.parent.position, Quaternion.identity);
     }
 }
