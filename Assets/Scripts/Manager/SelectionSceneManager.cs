@@ -13,6 +13,9 @@ public class SelectionSceneManager : MonoBehaviour
     public GameObject VictorInfo;
     public GameObject NathanInfo;
     public GameObject ElenaInfo;
+    public GameObject VictorMarker;
+    public GameObject NathanMarker;
+    public GameObject ElenaMarker;
     public GameObject OBJCloseCharactorBtn;
 
     public GameObject HardDifficultyCheck;
@@ -120,12 +123,15 @@ public class SelectionSceneManager : MonoBehaviour
         {
             case "Victor":
                 VictorInfo.SetActive(true);
+                VictorMarker.SetActive(true);
                 break;
             case "Nathan":
                 NathanInfo.SetActive(true);
+                NathanMarker.SetActive(true);
                 break;
             case "Elena":
                 ElenaInfo.SetActive(true);
+                ElenaMarker.SetActive(true);
                 break;
             default:
                 Debug.Log("캐릭터 선택 오류");
@@ -137,6 +143,9 @@ public class SelectionSceneManager : MonoBehaviour
         VictorInfo.SetActive(false);
         NathanInfo.SetActive(false);
         ElenaInfo.SetActive(false);
+        VictorMarker.SetActive(false);
+        NathanMarker.SetActive(false);
+        ElenaMarker.SetActive(false);
         CharactorInfo.SetActive(false);
         OBJCloseCharactorBtn.SetActive(false);
     }
