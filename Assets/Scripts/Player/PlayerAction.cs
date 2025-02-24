@@ -14,15 +14,15 @@ public class PlayerAction : MonoBehaviour
 
     private PlayerStat playerStat;
 
-    [SerializeField] private float jumpHeight;     // 점프 높이
+    private PlayerAttack playerAttack;
 
-    [SerializeField] private float rayLength;     // Ray 길이
+    [SerializeField] private float jumpHeight;      // 점프 높이
+    [SerializeField] private float rayLength;        // Ray 길이
 
-
-    [SerializeField] private bool isGround;       // 땅에 닿아있는지 확인 
-    [SerializeField] private bool isSlide;        // 슬라이드 중인지 확인
-
-    [SerializeField] private int jumpCount;       // 현재 남은 점프 수
+    [SerializeField] private bool isGround;         // 땅에 닿아있는지 확인 
+    [SerializeField] private bool isSlide;          // 슬라이드 중인지 확인
+    [SerializeField] private bool isInvincible;     //무적인지 아닌지
+    [SerializeField] private int jumpCount;         // 현재 남은 점프 수
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
@@ -34,6 +34,7 @@ public class PlayerAction : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         collider = GetComponent<CapsuleCollider2D>();
         playerStat = GetComponent<PlayerStat>();
+        playerAttack = GetComponentInChildren<PlayerAttack>();
 
         colliderOffset = collider.offset;
         colliderSize = collider.size;
@@ -51,6 +52,8 @@ public class PlayerAction : MonoBehaviour
         Jump();
 
         Slide();
+
+        Attack();
 
         animator.SetFloat("VelocityY", rigid.velocity.y);
         animator.SetBool("IsGround", isGround);
@@ -113,9 +116,39 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
+    private void Attack()
+    {
+        if(!isSlide&& Input.GetKey(KeyCode.Z))
+        {
+            animator.SetTrigger("IsAttack");
+            playerAttack.gameObject.SetActive(false);
+        }
+            
+    }
+    public void Heal(int amount)
+    {
+        playerStat.HP += amount;
+    }
+
+    public IEnumerator BecomeInvincible(float duration)
+    {
+        //Todo. 무적효과 구현해야 함.
+        isInvincible = true;
+        yield return new WaitForSeconds(duration);
+        isInvincible = false;
+    }
+    public IEnumerator IncreaseSpeed(float addSpeed, float duration)
+    {
+        playerStat.Speed += addSpeed;
+        yield return new WaitForSeconds(duration);
+        playerStat.Speed -= addSpeed;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, Vector3.down * rayLength);
     }
+
+
 }
