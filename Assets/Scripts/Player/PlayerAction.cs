@@ -12,7 +12,8 @@ public class PlayerAction : MonoBehaviour
 
     private CapsuleCollider2D collider;
 
-    [SerializeField] private float speed;         // 플레이어 스피드
+    private PlayerStat playerStat;
+
     [SerializeField] private float jumpHeight;     // 점프 높이
 
     [SerializeField] private float rayLength;     // Ray 길이
@@ -20,7 +21,8 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] private bool isGround;       // 땅에 닿아있는지 확인 
     [SerializeField] private bool isSlide;        // 슬라이드 중인지 확인
-    [SerializeField] bool checkDoubleJump = false;
+
+    [SerializeField] private int jumpCount;       // 현재 남은 점프 수
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
@@ -31,9 +33,12 @@ public class PlayerAction : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         collider = GetComponent<CapsuleCollider2D>();
+        playerStat = GetComponent<PlayerStat>();
 
         colliderOffset = collider.offset;
         colliderSize = collider.size;
+
+        jumpCount = playerStat.AddJumpCount;
     }
 
     // Update is called once per frame
@@ -54,7 +59,7 @@ public class PlayerAction : MonoBehaviour
     
     private void Move()
     {
-        rigid.velocity = new Vector2(speed, rigid.velocity.y);  // 플레이어 이동
+        rigid.velocity = new Vector2(playerStat.Speed, rigid.velocity.y);  // 플레이어 이동
     }
 
     private void CheckGround()
@@ -64,7 +69,7 @@ public class PlayerAction : MonoBehaviour
 
         isGround = hitData.collider != null;
 
-        if (isGround == true) checkDoubleJump = true;
+        if (isGround == true) jumpCount = playerStat.AddJumpCount;
     }
 
     private void Jump()
@@ -78,11 +83,12 @@ public class PlayerAction : MonoBehaviour
         // 바닥에 닿아있지 않다면 더블 점프 체크 변수를 확인하고 점프
         else if(!isGround && Input.GetKeyDown(KeyCode.Space))
         {
-            if (!checkDoubleJump) return;
+            if (jumpCount <= 0) return;
 
-            checkDoubleJump = false;
+            //checkDoubleJump = false;
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+            jumpCount--;
         }
     }
 

@@ -1343,11 +1343,33 @@ Transform:
   - {fileID: 260471883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1486692543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5488059369775801588, guid: bcc4441cd3d9acb44ae198beffe71ffa, type: 3}
+  m_PrefabInstance: {fileID: 6062211478451118260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3214060979223153506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2858499844374294647, guid: bcc4441cd3d9acb44ae198beffe71ffa, type: 3}
   m_PrefabInstance: {fileID: 6062211478451118260}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3214060979223153510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486692543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9756e0d65097c524c9ddf84efe7a6da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  maxHP: 100
+  dereaseAmount: 0.5
+  speed: 4
+  addJumpCount: 1
 --- !u!1001 &6062211478451118260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1404,6 +1426,10 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4159689014067932424, guid: bcc4441cd3d9acb44ae198beffe71ffa, type: 3}
+      propertyPath: MaxJumpCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5488059369775801588, guid: bcc4441cd3d9acb44ae198beffe71ffa, type: 3}
       propertyPath: m_Name
       value: WindWarrior
@@ -1411,7 +1437,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5488059369775801588, guid: bcc4441cd3d9acb44ae198beffe71ffa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3214060979223153510}
   m_SourcePrefab: {fileID: 100100000, guid: bcc4441cd3d9acb44ae198beffe71ffa, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
