@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_4
+      name: Run0
       rect:
         serializedVersion: 2
         x: 0
@@ -241,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_5
+      name: Run1
       rect:
         serializedVersion: 2
         x: 32
@@ -262,7 +262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_6
+      name: Run2
       rect:
         serializedVersion: 2
         x: 64
@@ -283,7 +283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_7
+      name: Run3
       rect:
         serializedVersion: 2
         x: 96
@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_8
+      name: Run4
       rect:
         serializedVersion: 2
         x: 128
@@ -325,7 +325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_9
+      name: Run5
       rect:
         serializedVersion: 2
         x: 160
@@ -346,7 +346,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_10
+      name: Jump0
       rect:
         serializedVersion: 2
         x: 0
@@ -367,7 +367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_11
+      name: Jump1
       rect:
         serializedVersion: 2
         x: 32
@@ -388,7 +388,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_12
+      name: Jump2
       rect:
         serializedVersion: 2
         x: 64
@@ -997,7 +997,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_41
+      name: Slide
       rect:
         serializedVersion: 2
         x: 128
@@ -1217,11 +1217,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Jump0: -1774285119
+      Jump1: -2117476565
+      Jump2: 980536725
       MiniLightningWarrior-Sheet_0: 1294664175
       MiniLightningWarrior-Sheet_1: -381156653
-      MiniLightningWarrior-Sheet_10: -1774285119
-      MiniLightningWarrior-Sheet_11: -2117476565
-      MiniLightningWarrior-Sheet_12: 980536725
       MiniLightningWarrior-Sheet_13: -865977442
       MiniLightningWarrior-Sheet_14: 450044980
       MiniLightningWarrior-Sheet_15: 438764009
@@ -1251,9 +1251,7 @@ TextureImporter:
       MiniLightningWarrior-Sheet_37: -1879469746
       MiniLightningWarrior-Sheet_38: 2122907466
       MiniLightningWarrior-Sheet_39: 404524177
-      MiniLightningWarrior-Sheet_4: -532158166
       MiniLightningWarrior-Sheet_40: -221179862
-      MiniLightningWarrior-Sheet_41: -1888193934
       MiniLightningWarrior-Sheet_42: -831435142
       MiniLightningWarrior-Sheet_43: -1386161210
       MiniLightningWarrior-Sheet_44: -1903419862
@@ -1262,12 +1260,14 @@ TextureImporter:
       MiniLightningWarrior-Sheet_47: 652635001
       MiniLightningWarrior-Sheet_48: -515846749
       MiniLightningWarrior-Sheet_49: 1326621290
-      MiniLightningWarrior-Sheet_5: -1195254460
       MiniLightningWarrior-Sheet_50: 561417897
-      MiniLightningWarrior-Sheet_6: -1661271836
-      MiniLightningWarrior-Sheet_7: 944345026
-      MiniLightningWarrior-Sheet_8: -1526384134
-      MiniLightningWarrior-Sheet_9: 733008586
+      Run0: -532158166
+      Run1: -1195254460
+      Run2: -1661271836
+      Run3: 944345026
+      Run4: -1526384134
+      Run5: 733008586
+      Slide: -1888193934
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
