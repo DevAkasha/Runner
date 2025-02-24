@@ -6,7 +6,7 @@ public class HealthPotion : Item
 {
     public int healAmount = 2;
 
-    protected override void ApplyEffect(Player player)
+    protected override void ApplyEffect(PlayerAction player)
     {
         player.Heal(healAmount);
     }

@@ -422,7 +422,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_13
+      name: Attack0
       rect:
         serializedVersion: 2
         x: 0
@@ -443,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_14
+      name: Attack1
       rect:
         serializedVersion: 2
         x: 32
@@ -464,7 +464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_15
+      name: Attack2
       rect:
         serializedVersion: 2
         x: 64
@@ -485,7 +485,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_16
+      name: Attack3
       rect:
         serializedVersion: 2
         x: 96
@@ -506,7 +506,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_17
+      name: Attack4
       rect:
         serializedVersion: 2
         x: 128
@@ -527,7 +527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_18
+      name: Attack5
       rect:
         serializedVersion: 2
         x: 160
@@ -1314,17 +1314,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Attack0: -1910732306
+      Attack1: 547030446
+      Attack2: -1037166400
+      Attack3: -1590322678
+      Attack4: 1794539196
+      Attack5: 760136211
       Jump0: -1525127704
       Jump1: -1487560977
       Jump2: -263133313
       MiniWindWarrior-Sheet_0: -162129495
       MiniWindWarrior-Sheet_1: 1409126262
-      MiniWindWarrior-Sheet_13: -1910732306
-      MiniWindWarrior-Sheet_14: 547030446
-      MiniWindWarrior-Sheet_15: -1037166400
-      MiniWindWarrior-Sheet_16: -1590322678
-      MiniWindWarrior-Sheet_17: 1794539196
-      MiniWindWarrior-Sheet_18: 760136211
       MiniWindWarrior-Sheet_19: 649838475
       MiniWindWarrior-Sheet_2: -965729746
       MiniWindWarrior-Sheet_20: -960135383
