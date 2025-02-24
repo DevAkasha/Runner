@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : Item
+public class HealthPotion : Item
 {
-    public int ScoreValue = 500;
+    public int healAmount = 2;
 
     protected override void ApplyEffect(Player player)
     {
-        GameManager.Instance.AddScore(ScoreValue);
+        player.Heal(healAmount);
     }
 }
