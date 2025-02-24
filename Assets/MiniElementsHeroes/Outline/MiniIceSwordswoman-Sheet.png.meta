@@ -422,7 +422,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_13
+      name: Attack0
       rect:
         serializedVersion: 2
         x: 0
@@ -443,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_14
+      name: Attack1
       rect:
         serializedVersion: 2
         x: 32
@@ -464,7 +464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_15
+      name: Attack2
       rect:
         serializedVersion: 2
         x: 64
@@ -485,7 +485,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_16
+      name: Attack3
       rect:
         serializedVersion: 2
         x: 96
@@ -506,7 +506,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_17
+      name: Attack4
       rect:
         serializedVersion: 2
         x: 128
@@ -527,7 +527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_18
+      name: Attack5
       rect:
         serializedVersion: 2
         x: 160
@@ -548,7 +548,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_19
+      name: Attack6
       rect:
         serializedVersion: 2
         x: 192
@@ -1125,18 +1125,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Attack0: -1787702222
+      Attack1: 1338256207
+      Attack2: 163997420
+      Attack3: -1541543029
+      Attack4: 1913396566
+      Attack5: 656455061
+      Attack6: 329805206
       Jump0: -96767021
       Jump1: 1865345365
       Jump2: 1063139520
       MiniIceSwordswoman-Sheet_0: -556362802
       MiniIceSwordswoman-Sheet_1: -1027179065
-      MiniIceSwordswoman-Sheet_13: -1787702222
-      MiniIceSwordswoman-Sheet_14: 1338256207
-      MiniIceSwordswoman-Sheet_15: 163997420
-      MiniIceSwordswoman-Sheet_16: -1541543029
-      MiniIceSwordswoman-Sheet_17: 1913396566
-      MiniIceSwordswoman-Sheet_18: 656455061
-      MiniIceSwordswoman-Sheet_19: 329805206
       MiniIceSwordswoman-Sheet_2: -1255049436
       MiniIceSwordswoman-Sheet_20: -410376142
       MiniIceSwordswoman-Sheet_21: 1823515102
