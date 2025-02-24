@@ -13,6 +13,7 @@ public abstract class Item : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ApplyEffect();
+
             Destroy(gameObject,destroyDelay);
         }
     }
