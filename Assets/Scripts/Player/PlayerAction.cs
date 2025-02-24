@@ -8,6 +8,10 @@ public class PlayerAction : MonoBehaviour
 {
     private Rigidbody2D rigid;
 
+    private Animator animator;
+
+    private CapsuleCollider2D collider;
+
     [SerializeField] private float speed;         // 플레이어 스피드
     [SerializeField] private float jumpHeight;     // 점프 높이
 
@@ -18,12 +22,18 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] private bool isSlide;        // 슬라이드 중인지 확인
     [SerializeField] bool checkDoubleJump = false;
 
-    private Animator animator;
+    // 초기 Collider 설정 값
+    private Vector2 colliderOffset;
+    private Vector2 colliderSize;
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        collider = GetComponent<CapsuleCollider2D>();
+
+        colliderOffset = collider.offset;
+        colliderSize = collider.size;
     }
 
     // Update is called once per frame
@@ -78,13 +88,22 @@ public class PlayerAction : MonoBehaviour
 
     private void Slide()
     {
+        // 땅에 있고 Shitf키를 누르면 슬라이드
         if (isGround && Input.GetKey(KeyCode.LeftShift))
         {
             isSlide = true;
+
+            collider.direction = CapsuleDirection2D.Horizontal;
+            collider.size = new Vector2(colliderSize.y, colliderSize.x);
+            collider.offset = new Vector2(colliderOffset.x, - 0.2f);
         }
         else
         {
             isSlide = false;
+
+            collider.direction = CapsuleDirection2D.Vertical;
+            collider.size = new Vector2(colliderSize.x, colliderSize.y);
+            collider.offset = new Vector2(colliderOffset.x, colliderOffset.y);
         }
     }
 
