@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using static SelectionSceneManager;
 
 public class SelectionSceneManager : MonoBehaviour
 {
@@ -14,9 +15,20 @@ public class SelectionSceneManager : MonoBehaviour
     public GameObject ElenaInfo;
     public GameObject OBJCloseCharactorBtn;
 
+    public GameObject HardDifficultyCheck;
+    public GameObject NormalDifficultyCheck;
+    public GameObject EasyDifficultyCheck;
+
+    public enum Difficulty
+    {
+        Hard = 3,
+        Normal = 2,
+        Easy = 1
+    } 
+
     void Start()
     {
-        
+        //해상도 고정
     }
 
 
@@ -51,16 +63,28 @@ public class SelectionSceneManager : MonoBehaviour
         AlphaInfo.SetActive(false);
     }
 
-    public void LevelSetBtn()
+    //난이도 버튼
+    public void HardBtnOn()
     {
-        //레벨 설정
+        CheckDifficulty("Hard");
     }
-    public void StartBtn() 
+    public void NormalBtnOn()
     {
-        //씬 이동
+        CheckDifficulty("Normal");
+    }
+    public void EasyBtnOn()
+    {
+        CheckDifficulty("Easy");
+    }
+
+    //스타트 버튼
+    public void StartBtnOn() 
+    {
+        CheckDifficulty("None");
     }
 
     //참조 메서드
+    //캐릭터 선택 관련
     public void CheckCharactor(string checkCharactor)
     {
         //전부 닫기
@@ -85,7 +109,6 @@ public class SelectionSceneManager : MonoBehaviour
                 break;
         }
     }
-
     public void CloseCharactorInfo()
     {
         VictorInfo.SetActive(false);
@@ -93,6 +116,45 @@ public class SelectionSceneManager : MonoBehaviour
         ElenaInfo.SetActive(false);
         CharactorInfo.SetActive(false);
         OBJCloseCharactorBtn.SetActive(false);
+    }
+
+    //난이도 체크 관련
+    public void CheckDifficulty(string difficulty)
+    {
+        //전부 닫기
+        CloseCheckDifficulty();
+        //맞는 캐릭터 정보 켜기
+        switch (difficulty)
+        {
+            case "Hard":
+                HardDifficultyCheck.SetActive(true);
+                //씬 이동
+                Debug.Log("하드난이도");
+                break;
+            case "Normal":
+                NormalDifficultyCheck.SetActive(true);
+                //씬 이동
+                Debug.Log("노말난이도");
+                break;
+            case "Easy":
+                EasyDifficultyCheck.SetActive(true);
+                //씬 이동
+                Debug.Log("이지난이도");
+                break;
+            case "None":
+                //씬 이동
+                Debug.Log("기본이지난이도");
+                break;
+            default:
+                Debug.Log("난이도 버튼 선택 오류");
+                break;
+        }
+    }
+    public void CloseCheckDifficulty()
+    {
+        HardDifficultyCheck.SetActive(false);
+        NormalDifficultyCheck.SetActive(false);
+        EasyDifficultyCheck.SetActive(false);
     }
 }
 
