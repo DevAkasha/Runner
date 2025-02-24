@@ -6,7 +6,7 @@ public class InvincibilityPotion : Item
 {
     public float duration = 3f;
 
-    protected override void ApplyEffect(Player player)
+    protected override void ApplyEffect(PlayerAction player)
     {
         player.StartCoroutine(player.BecomeInvincible(duration));
     }

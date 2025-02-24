@@ -5,14 +5,29 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     public float destroyDelay = 0.1f;
+    private bool isdestroyed = false;
 
-    protected abstract void ApplyEffect(Player player);
+    protected abstract void ApplyEffect(PlayerAction player);
+    protected virtual void ApplyEffect(PlayerAttack playerAttack)
+    {
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerAttack"))
         {
-            Player player = collision.GetComponent<Player>();
+            PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
+            if (playerAttack != null)
+            {
+                ApplyEffect(playerAttack);
+                isdestroyed = true;
+                Destroy(gameObject, destroyDelay);
+            }
+        }
+        else if (collision.CompareTag("Player")&&!isdestroyed)
+        {
+            PlayerAction player = collision.GetComponent<PlayerAction>();
             if (player != null)
             {
                 ApplyEffect(player);
