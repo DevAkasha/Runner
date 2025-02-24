@@ -15,11 +15,15 @@ public class PlayerAction : MonoBehaviour
 
 
     [SerializeField] private bool isGround;       // 땅에 닿아있는지 확인 
+    [SerializeField] private bool isSlide;        // 슬라이드 중인지 확인
     [SerializeField] bool checkDoubleJump = false;
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,12 @@ public class PlayerAction : MonoBehaviour
         CheckGround();
 
         Jump();
+
+        Slide();
+
+        animator.SetFloat("VelocityY", rigid.velocity.y);
+        animator.SetBool("IsGround", isGround);
+        animator.SetBool("IsSlide", isSlide);
     }
     
     private void Move()
@@ -63,6 +73,18 @@ public class PlayerAction : MonoBehaviour
             checkDoubleJump = false;
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+        }
+    }
+
+    private void Slide()
+    {
+        if (isGround && Input.GetKey(KeyCode.LeftShift))
+        {
+            isSlide = true;
+        }
+        else
+        {
+            isSlide = false;
         }
     }
 
