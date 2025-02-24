@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Security;
 using UnityEngine;
@@ -8,14 +8,14 @@ public class PlayerAction : MonoBehaviour
 {
     private Rigidbody2D rigid;
 
-    [SerializeField] private float speed;         // ÇÃ·¹ÀÌ¾î ½ºÇÇµå
-    [SerializeField] private float jumpHeight;     // Á¡ÇÁ ³ôÀÌ
+    [SerializeField] private float speed;         // í”Œë ˆì´ì–´ ìŠ¤í”¼ë“œ
+    [SerializeField] private float jumpHeight;     // ì í”„ ë†’ì´
 
-    [SerializeField] private float rayLength;     // Ray ±æÀÌ
+    [SerializeField] private float rayLength;     // Ray ê¸¸ì´
 
 
-    [SerializeField] private bool isGround;       // ¶¥¿¡ ´ê¾ÆÀÖ´ÂÁö È®ÀÎ 
-    [SerializeField] private bool isSlide;        // ½½¶óÀÌµå ÁßÀÎÁö È®ÀÎ
+    [SerializeField] private bool isGround;       // ë•…ì— ë‹¿ì•„ìˆëŠ”ì§€ í™•ì¸ 
+    [SerializeField] private bool isSlide;        // ìŠ¬ë¼ì´ë“œ ì¤‘ì¸ì§€ í™•ì¸
     [SerializeField] bool checkDoubleJump = false;
 
     private Animator animator;
@@ -44,7 +44,7 @@ public class PlayerAction : MonoBehaviour
     
     private void Move()
     {
-        rigid.velocity = new Vector2(speed, rigid.velocity.y);  // ÇÃ·¹ÀÌ¾î ÀÌµ¿
+        rigid.velocity = new Vector2(speed, rigid.velocity.y);  // í”Œë ˆì´ì–´ ì´ë™
     }
 
     private void CheckGround()
@@ -59,13 +59,13 @@ public class PlayerAction : MonoBehaviour
 
     private void Jump()
     {
-        // ¹Ù´Ú¿¡ ´ê¾ÆÀÖ°í ½ºÆäÀÌ½ºÅ°¸¦ ´­·¶À» ¶§ Á¡ÇÁ
+        // ë°”ë‹¥ì— ë‹¿ì•„ìˆê³  ìŠ¤í˜ì´ìŠ¤í‚¤ë¥¼ ëˆŒë €ì„ ë•Œ ì í”„
         if (isGround && Input.GetKeyDown(KeyCode.Space))
         {
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
         }
-        // ¹Ù´Ú¿¡ ´ê¾ÆÀÖÁö ¾Ê´Ù¸é ´õºí Á¡ÇÁ Ã¼Å© º¯¼ö¸¦ È®ÀÎÇÏ°í Á¡ÇÁ
+        // ë°”ë‹¥ì— ë‹¿ì•„ìˆì§€ ì•Šë‹¤ë©´ ë”ë¸” ì í”„ ì²´í¬ ë³€ìˆ˜ë¥¼ í™•ì¸í•˜ê³  ì í”„
         else if(!isGround && Input.GetKeyDown(KeyCode.Space))
         {
             if (!checkDoubleJump) return;
