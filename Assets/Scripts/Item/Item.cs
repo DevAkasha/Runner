@@ -10,12 +10,11 @@ public abstract class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            Player player = collision.GetComponent<Player>();
-            if (player != null)
-            {
-                ApplyEffect(player);
-                Destroy(gameObject, destroyDelay);
-            }
+        Player player = collision.GetComponent<Player>();
+        if (player != null)
+        {
+            ApplyEffect(player);
+            Destroy(gameObject, destroyDelay);
         }
     }
 }
