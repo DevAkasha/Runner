@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 18778831}
   - component: {fileID: 18778830}
   m_Layer: 5
-  m_Name: NathanWarrior
+  m_Name: Nathan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1303,7 +1303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &637463054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4215,6 +4215,14 @@ MonoBehaviour:
   HardDifficultyCheck: {fileID: 404300185}
   NormalDifficultyCheck: {fileID: 1575869521}
   EasyDifficultyCheck: {fileID: 1845012623}
+  Victor: {fileID: 1335546363}
+  Nathan: {fileID: 18778828}
+  Elena: {fileID: 1925089506}
+  AlphaBtn: {fileID: 1917745679}
+  HardBtn: {fileID: 285186962}
+  NormalBtn: {fileID: 909816220}
+  EasyBtn: {fileID: 42535002}
+  StartBtn: {fileID: 637463053}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
