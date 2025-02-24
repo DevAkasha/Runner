@@ -19,6 +19,17 @@ public class SelectionSceneManager : MonoBehaviour
     public GameObject NormalDifficultyCheck;
     public GameObject EasyDifficultyCheck;
 
+    public GameObject Victor;
+    public GameObject Nathan;
+    public GameObject Elena;
+    public GameObject AlphaBtn;
+    public GameObject HardBtn;
+    public GameObject NormalBtn;
+    public GameObject EasyBtn;
+    public GameObject StartBtn;
+
+
+
     public enum Difficulty
     {
         Hard = 3,
@@ -28,9 +39,21 @@ public class SelectionSceneManager : MonoBehaviour
 
     void Start()
     {
-        //해상도 고정
+        //있으면 안되는 것들 지우기
+        CloseCharactorInfo();
+        CloseCheckDifficulty();
+        //있어야 하는 것들 띄우기
+        Victor.SetActive(true);
+        Nathan.SetActive(true);
+        Elena.SetActive(true);
+        AlphaBtn.SetActive(true);
+        HardBtn.SetActive(true);
+        NormalBtn.SetActive(true);
+        EasyBtn.SetActive(true);
+        StartBtn.SetActive(true);
+        //해상도 고정 (전체화면, 창모드는 false)
+        Screen.SetResolution(1920, 1080, true);
     }
-
 
     //캐릭터 버튼 클릭
     public void VictorOn() 
