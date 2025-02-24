@@ -6,16 +6,16 @@ public abstract class Item : MonoBehaviour
 {
     public float destroyDelay = 0.1f;
 
-    protected abstract void ApplyEffect();
+    protected abstract void ApplyEffect(Player player);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            ApplyEffect();
-
-            Destroy(gameObject,destroyDelay);
+            Player player = collision.GetComponent<Player>();
+            if (player != null)
+            {
+                ApplyEffect(player);
+                Destroy(gameObject, destroyDelay);
+            }
         }
     }
-
 }

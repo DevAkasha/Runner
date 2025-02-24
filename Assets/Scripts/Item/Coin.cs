@@ -7,7 +7,7 @@ public class Coin : Item
     public int ScoreValue = 500;
     public GameObject itemEffect;
 
-    protected override void ApplyEffect()
+    protected override void ApplyEffect(Player player)
     {
         GameManager.Instance.AddScore(ScoreValue);
         PlayEffect();
