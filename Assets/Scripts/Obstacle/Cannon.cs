@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    [SerializeField] private GameObject cannonBall;
+    [SerializeField] private GameObject cannonBall;     // 총알 프리펩
+    [SerializeField] private Transform shootPos;        // 총알이 나갈 위치
 
     private Animator animator;
 
@@ -30,7 +31,14 @@ public class Cannon : MonoBehaviour
             Debug.Log("CannonBall is Null");
             return;
         }
+
+        if(shootPos == null)
+        {
+            Debug.Log("ShootPos is Null");
+            shootPos = transform.parent;
+        }
+
         // 대포알 생성
-        GameObject newCannonBall = Instantiate(cannonBall, transform.parent.position, Quaternion.identity);
+        GameObject newCannonBall = Instantiate(cannonBall, shootPos.position, Quaternion.identity, transform.parent);
     }
 }
