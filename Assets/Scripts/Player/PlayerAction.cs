@@ -16,6 +16,9 @@ public class PlayerAction : MonoBehaviour
 
     private PlayerAttack playerAttack;
 
+
+    public bool IsFeverMods = false;                //피버모드인지 아닌지
+    public bool isInvincible = false;               //무적인지 아닌지
     [SerializeField] private float jumpHeight;      // 점프 높이
     [SerializeField] private float rayLength;       // Ray 길이
 
@@ -24,7 +27,6 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] private bool isSlide;          // 슬라이드 중인지 확인
     [SerializeField] private bool isSlideChage;     // isSlide가 체인지됐는지 확인
-    [SerializeField] private bool isInvincible;     //무적인지 아닌지
     [SerializeField] private int extraJumpCount;    // 현재 남은 추가점프 수
 
     [SerializeField] private bool isHit = false;
@@ -179,8 +181,7 @@ public class PlayerAction : MonoBehaviour
     }
 
     public IEnumerator BecomeInvincible(float duration)
-    {
-        //Todo. 무적효과 구현해야 함.
+    { 
         isInvincible = true;
         yield return new WaitForSeconds(duration);
         isInvincible = false;
@@ -190,6 +191,17 @@ public class PlayerAction : MonoBehaviour
         playerStat.Speed += addSpeed;
         yield return new WaitForSeconds(duration);
         playerStat.Speed -= addSpeed;
+    }
+
+    public IEnumerator SetFever(float duration)
+    {
+        GameManager.Instance.feverMultiplier = 2;
+        StartCoroutine(BecomeInvincible(duration));
+        StartCoroutine(IncreaseSpeed(2f, duration));
+        IsFeverMods = true;
+        yield return new WaitForSeconds(duration);
+        GameManager.Instance.feverMultiplier = 1;
+        IsFeverMods = false;
     }
 
     private void OnDrawGizmos()
