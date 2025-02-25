@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 
 public class GameUIManager : MonoBehaviour
 {
@@ -11,7 +13,9 @@ public class GameUIManager : MonoBehaviour
     public GameObject ScoreBoard;
     private TextMeshProUGUI ScoreBoardTxt;
 
+    public Image HPBarImage;
     public GameObject HPBar;
+    public PlayerStat PlayerInfo;
     public float HPRatio;
 
     private void Awake()
@@ -22,7 +26,7 @@ public class GameUIManager : MonoBehaviour
         ScoreBoard.SetActive(false);
 
         //HP바 이미지 컴포넌트 가져오기
-        HPBar = GetComponent<Image>(FillAmount);
+        HPBarImage = GetComponent<Image>();
     }
     void Start()
     {
@@ -41,9 +45,9 @@ public class GameUIManager : MonoBehaviour
     void Update()
     {
         //HP바 업데이트
-        if(/*유니티 내부 FillAmount*/ != null) 
+        if(HPBarImage.fillAmount != null) 
         {
-            /*유니티 내부 FillAmount*/ == HPRatio;
+            HPBarImage.fillAmount = HPRatioSet();
         }
 
         //스코어보드 점수 업데이트
@@ -66,11 +70,8 @@ public class GameUIManager : MonoBehaviour
     }
 
     //체력바 비율 설정
-    public void HPRatioSet(float now, float max) 
+    public float HPRatioSet() 
     {
-        now = PlayerStat.HP;
-        max = PlayerStat.MaxHP;
-        
-        HPRatio = now/max;
+        return PlayerInfo.HP / PlayerInfo.MaxHP;
     }
 }
