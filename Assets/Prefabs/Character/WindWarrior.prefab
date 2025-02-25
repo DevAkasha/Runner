@@ -96,7 +96,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 1}
+  m_Size: {x: 0.6, y: 0.9}
   m_Direction: 0
 --- !u!114 &4159689014067932424
 MonoBehaviour:
@@ -113,9 +113,11 @@ MonoBehaviour:
   jumpHeight: 7
   rayLength: 0.8
   isGround: 0
+  isGroundChage: 0
   isSlide: 0
+  isSlideChage: 0
   isInvincible: 0
-  jumpCount: 0
+  extraJumpCount: 0
 --- !u!114 &9202716390460718564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,9 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHP: 100
-  dereaseAmount: 0.5
+  decreaseAmount: 0
   speed: 4
-  addJumpCount: 1
+  extraJumpCount: 0
 --- !u!1 &7297391225907990408
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 7297391225907990408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -359,5 +361,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkcollider: {fileID: 0}
-  duration: 0.5
+  duration: 1
   isCoolTime: 0
+  hitMultiplier: 2

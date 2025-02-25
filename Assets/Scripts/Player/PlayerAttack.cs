@@ -3,8 +3,9 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D atkcollider;
-    [SerializeField] private float duration = 0.5f;
-    public bool isCoolTime = false; 
+    [SerializeField] private float duration;
+    public bool isCoolTime = false;
+    public int hitMultiplier;
     private float cooltime = 0.0f;
 
     private void Update()
@@ -12,9 +13,12 @@ public class PlayerAttack : MonoBehaviour
         if (isCoolTime)
         {
             cooltime += Time.deltaTime;
-            if (cooltime > duration)
+            if (cooltime > 0.5&& atkcollider.enabled)
             {
                 atkcollider.enabled = false;
+            }
+            if (cooltime > duration)
+            {
                 isCoolTime = false;
                 cooltime = 0.0f;
             }
@@ -24,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         atkcollider = GetComponent<BoxCollider2D>();
+        atkcollider.enabled = true;
     }
 
     public void ActiveAttack()

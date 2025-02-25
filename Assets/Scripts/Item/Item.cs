@@ -8,10 +8,7 @@ public abstract class Item : MonoBehaviour
     private bool isdestroyed = false;
 
     protected abstract void ApplyEffect(PlayerAction player);
-    protected virtual void ApplyEffect(PlayerAttack playerAttack)
-    {
-
-    }
+    protected virtual void ApplyEffect(PlayerAttack playerAttack, int hitMultiplier){ }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,7 +17,7 @@ public abstract class Item : MonoBehaviour
             PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {
-                ApplyEffect(playerAttack);
+                ApplyEffect(playerAttack,playerAttack.hitMultiplier);
                 isdestroyed = true;
                 Destroy(gameObject, destroyDelay);
             }
