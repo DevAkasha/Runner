@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4159689014067932424}
   - component: {fileID: 9202716390460718564}
   m_Layer: 0
-  m_Name: WindWarrior
+  m_Name: Victor
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,11 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9756e0d65097c524c9ddf84efe7a6da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  maxHP: 100
-  decreaseAmount: 0
+  hp: 120
+  maxHP: 120
+  decreaseAmount: 0.5
   speed: 4
-  extraJumpCount: 0
+  extraJumpCount: 1
 --- !u!1 &7297391225907990408
 GameObject:
   m_ObjectHideFlags: 0

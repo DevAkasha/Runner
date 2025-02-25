@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2760664800259200309}
   - component: {fileID: 8066378480722644402}
   m_Layer: 0
-  m_Name: SwordWoman
+  m_Name: Elena
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,6 +333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   maxHP: 100
-  decreaseAmount: 0
+  decreaseAmount: 0.5
   speed: 4
-  extraJumpCount: 0
+  extraJumpCount: 2
