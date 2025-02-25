@@ -4,60 +4,23 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    public Camera mainCamera;
+    [SerializeField] private Vector2 prallaxEffectMultiplier;
 
-    private float overallSize;
-    private float startpos;
-
-    public float parallaxEffect;
-
+    private Transform mainCamera;
+    private Vector3 lastCameraPosition;
 
     void Start()
     {
-        SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        if (spriteRenderers.Length == 0)
-            return;
-
-        Bounds totalBounds = spriteRenderers[0].bounds;
-        for (int i = 1; i < spriteRenderers.Length; i++)
-        {
-            totalBounds.Encapsulate(spriteRenderers[i].bounds);
-        }
-
-        overallSize = totalBounds.size.x;
-
-
-        startpos = transform.position.x;
-
-        if (mainCamera == null)
-            mainCamera = Camera.main;
+        mainCamera = Camera.main.transform;
+        lastCameraPosition = mainCamera.position;
     }
 
 
     void LateUpdate()
     {
+        Vector3 deltamovement = mainCamera.position - lastCameraPosition;
+        transform.position += new Vector3(deltamovement.x * prallaxEffectMultiplier.x, deltamovement.y * prallaxEffectMultiplier.y);
 
-        float dist = mainCamera.transform.position.x * parallaxEffect;
-
-        float offset = (dist % overallSize + overallSize) % overallSize;
-
-        transform.position = new Vector3(startpos + offset, transform.position.y, transform.position.z);
-
-        float camHalfWidth = mainCamera.orthographicSize * mainCamera.aspect;
-        float camLeftEdge = mainCamera.transform.position.x - camHalfWidth;
-        float camRightEdge = mainCamera.transform.position.x + camHalfWidth;
-
-        float spriteRightEdge = transform.position.x + overallSize / 2;
-        float spriteLeftEdge = transform.position.x - overallSize / 2;
-
-        if (spriteRightEdge < camLeftEdge)
-        {
-            startpos += overallSize; 
-        }
-       
-        else if (spriteLeftEdge > camRightEdge)
-        {
-            startpos -= overallSize;
-        }
+        lastCameraPosition = mainCamera.position;
     }
 }

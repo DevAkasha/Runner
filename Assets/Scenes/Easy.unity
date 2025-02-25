@@ -11240,9 +11240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   maxHP: 0
-  dereaseAmount: 0
+  decreaseAmount: 0
   speed: 4
-  addJumpCount: 1
+  extraJumpCount: 0
 --- !u!4 &1053461140 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7227985002330636849, guid: acc057c784dde4a4990e845aaa53385b, type: 3}
@@ -19134,8 +19134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a56fd59eaa07044a17eb5a9a58b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1325996177}
-  parallaxEffect: 0.7
+  prallaxEffectMultiplier: {x: 0.8, y: 0}
 --- !u!4 &7422015946493946105
 Transform:
   m_ObjectHideFlags: 0
@@ -19214,8 +19213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a56fd59eaa07044a17eb5a9a58b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1325996177}
-  parallaxEffect: 1
+  prallaxEffectMultiplier: {x: 1, y: 0}
 --- !u!1 &8709016977288246502
 GameObject:
   m_ObjectHideFlags: 0
@@ -19314,8 +19312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a56fd59eaa07044a17eb5a9a58b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1325996177}
-  parallaxEffect: 0.9
+  prallaxEffectMultiplier: {x: 0.9, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
