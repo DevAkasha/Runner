@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7364640457761769132}
   - component: {fileID: 1567246376165666666}
-  - component: {fileID: 4829342514953654916}
   - component: {fileID: 2976968012112872045}
   m_Layer: 0
   m_Name: AttackCollider
@@ -77,35 +76,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.7}
+  m_Size: {x: 0.3, y: 0.6}
   m_EdgeRadius: 0
---- !u!50 &4829342514953654916
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727491278388108543}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &2976968012112872045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,8 +91,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkcollider: {fileID: 0}
-  duration: 1
+  duration: 2
   isCoolTime: 0
+  hitMultiplier: 3
 --- !u!1 &6426141045138322581
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,9 +213,10 @@ GameObject:
   - component: {fileID: 8959594389946607256}
   - component: {fileID: 2572743916016022520}
   - component: {fileID: 2760664800259200309}
+  - component: {fileID: 8066378480722644402}
   m_Layer: 0
   m_Name: SwordWoman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,6 +314,25 @@ MonoBehaviour:
   jumpHeight: 7
   rayLength: 0.8
   isGround: 0
+  isGroundChage: 0
   isSlide: 0
+  isSlideChage: 0
   isInvincible: 0
-  jumpCount: 0
+  extraJumpCount: 0
+--- !u!114 &8066378480722644402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403468355856469255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9756e0d65097c524c9ddf84efe7a6da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  maxHP: 100
+  decreaseAmount: 0
+  speed: 4
+  extraJumpCount: 0

@@ -8,19 +8,17 @@ public abstract class Item : MonoBehaviour
     private bool isdestroyed = false;
 
     protected abstract void ApplyEffect(PlayerAction player);
-    protected virtual void ApplyEffect(PlayerAttack playerAttack)
-    {
-
-    }
+    protected virtual void ApplyEffect(PlayerAction playerAttack, int hitMultiplier){ }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
         {
+            PlayerAction player = collision.GetComponentInParent<PlayerAction>();
             PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {
-                ApplyEffect(playerAttack);
+                ApplyEffect(player, playerAttack.hitMultiplier);
                 isdestroyed = true;
                 Destroy(gameObject, destroyDelay);
             }
