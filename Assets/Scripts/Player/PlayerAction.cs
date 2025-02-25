@@ -115,7 +115,7 @@ public class PlayerAction : MonoBehaviour
     {
         bool temp = isSlide;
         // 땅에 있고 Shitf키를 누르면 슬라이드
-        if (isGround && Input.GetKeyDown(KeyCode.LeftShift))
+        if (isGround && Input.GetKey(KeyCode.LeftShift))
         {
             isSlide = true;
 
