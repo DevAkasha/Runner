@@ -31,14 +31,8 @@ public class SelectionSceneManager : MonoBehaviour
     public GameObject EasyBtn;
     public GameObject StartBtn;
 
-
-
-    public enum Difficulty
-    {
-        Hard = 3,
-        Normal = 2,
-        Easy = 1
-    } 
+    public int difficulty;
+    [SerializeField] private SceneChangeManager sceneChanger;
 
     void Start()
     {
@@ -56,6 +50,9 @@ public class SelectionSceneManager : MonoBehaviour
         StartBtn.SetActive(true);
         //해상도 고정 (전체화면, 창모드는 false)
         Screen.SetResolution(1920, 1080, true);
+        //SceneChangeManager불러오기
+        sceneChanger = new SceneChangeManager();
+
     }
 
     //캐릭터 버튼 클릭
@@ -92,21 +89,21 @@ public class SelectionSceneManager : MonoBehaviour
     //난이도 버튼
     public void HardBtnOn()
     {
-        CheckDifficulty("Hard");
+        CheckDifficulty(3);
     }
     public void NormalBtnOn()
     {
-        CheckDifficulty("Normal");
+        CheckDifficulty(2);
     }
     public void EasyBtnOn()
     {
-        CheckDifficulty("Easy");
+        CheckDifficulty(1);
     }
 
     //스타트 버튼
     public void StartBtnOn() 
     {
-        CheckDifficulty("None");
+        CheckDifficulty(0);
     }
 
     //참조 메서드
@@ -124,14 +121,17 @@ public class SelectionSceneManager : MonoBehaviour
             case "Victor":
                 VictorInfo.SetActive(true);
                 VictorMarker.SetActive(true);
+                sceneChanger.charactor = 1;
                 break;
             case "Nathan":
                 NathanInfo.SetActive(true);
                 NathanMarker.SetActive(true);
+                sceneChanger.charactor = 2;
                 break;
             case "Elena":
                 ElenaInfo.SetActive(true);
                 ElenaMarker.SetActive(true);
+                sceneChanger.charactor = 3;
                 break;
             default:
                 Debug.Log("캐릭터 선택 오류");
@@ -151,31 +151,36 @@ public class SelectionSceneManager : MonoBehaviour
     }
 
     //난이도 체크 관련
-    public void CheckDifficulty(string difficulty)
+    public void CheckDifficulty(int difficultInput)
     {
         //전부 닫기
         CloseCheckDifficulty();
         //맞는 캐릭터 정보 켜기
-        switch (difficulty)
+        switch (difficultInput)
         {
-            case "Hard":
+            case 3:
                 HardDifficultyCheck.SetActive(true);
+                sceneChanger.level = difficultInput;
+                Debug.Log("하드 난이도");
                 //씬 이동
-                Debug.Log("하드난이도");
                 break;
-            case "Normal":
+            case 2:
                 NormalDifficultyCheck.SetActive(true);
+                sceneChanger.level = difficultInput;
+                Debug.Log("노멀 난이도");
                 //씬 이동
-                Debug.Log("노말난이도");
                 break;
-            case "Easy":
+            case 1:
                 EasyDifficultyCheck.SetActive(true);
+                sceneChanger.level = difficultInput;
+                Debug.Log("이지 난이도");
                 //씬 이동
-                Debug.Log("이지난이도");
                 break;
-            case "None":
+            case 0:
+                EasyDifficultyCheck.SetActive(true);
+                sceneChanger.level = 1;
                 //씬 이동
-                Debug.Log("기본이지난이도");
+                Debug.Log("이지 난이도 시작");
                 break;
             default:
                 Debug.Log("난이도 버튼 선택 오류");

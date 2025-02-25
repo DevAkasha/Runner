@@ -19,6 +19,15 @@ public class GameUIManager : MonoBehaviour
     public float HPRatio;
     public Image HPBarImage;
 
+    public GameObject Jewel;
+    public GameObject NoneDiamond;
+    public GameObject Diamond;
+    public GameObject NoneEmerald;
+    public GameObject Emerald;
+    public GameObject NoneRuby;
+    public GameObject Ruby;
+
+
     private PlayerStat stat;
     void Start()
     {
@@ -26,11 +35,15 @@ public class GameUIManager : MonoBehaviour
         StopBoard.SetActive(false);
         HPBar.SetActive(false);
         ScoreBoard.SetActive(false);
+        Jewel.SetActive(false);
 
         //보이기
         HPBar.SetActive(true);
         StopBtn.SetActive(true);
         ScoreBoard.SetActive(true);
+        NoneDiamond.SetActive(true);
+        NoneEmerald.SetActive(true);
+        NoneRuby.SetActive(true);
 
         //HP바 이미지 컴포넌트 가져오기
         HPBarI = GetComponentInChildren<HPBarImage>();
@@ -76,5 +89,42 @@ public class GameUIManager : MonoBehaviour
     {
         return stat.HP / stat.MaxHP;
 
+    }
+
+    //보석 켜기
+    public void OnJewel(string jewelType) 
+    {
+        switch (jewelType) 
+        {
+            case "Diamond":
+                NoneDiamond.SetActive(false);
+                Diamond.SetActive(true);
+                break;
+            case "Emerald":
+                NoneEmerald.SetActive(false);
+                Emerald.SetActive(true);
+                break;
+            case "Ruby":
+                NoneRuby.SetActive(false);
+                Ruby.SetActive(true);
+                break;
+            default:
+                Debug.Log("보석 아이콘 켜기 오류");
+                break;
+        }
+    }
+
+    //보석 끄기(피버타임 실행시)
+    public void OffJewel() 
+    { 
+        //켜진 보석 없애기
+        Diamond.SetActive(false);
+        Emerald.SetActive(false);
+        Ruby.SetActive(false);
+
+        //빈칸 보석 켜기
+        NoneDiamond.SetActive(true);
+        NoneEmerald.SetActive(true);
+        NoneRuby.SetActive(true);
     }
 }
