@@ -682,6 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211161355485802146}
   - component: {fileID: 2372564781164920803}
+  - component: {fileID: 5799819128037280703}
   m_Layer: 0
   m_Name: Anchor
   m_TagString: Untagged
@@ -761,6 +762,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67, y: 6.36}
   m_EdgeRadius: 0
+--- !u!114 &5799819128037280703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6033467433185880765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fae2df54da28f429e2fabed15fe71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &6260016840521330731
 GameObject:
   m_ObjectHideFlags: 0

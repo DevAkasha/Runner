@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    [SerializeField] float damage;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("플레이어 타격");
+            PlayerAction player = collision.GetComponent<PlayerAction>();
+            if(player != null)
+            {
+                //player.Damage(damage);
+            }
         }
     }
 }
