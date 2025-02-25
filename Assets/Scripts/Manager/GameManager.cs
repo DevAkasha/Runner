@@ -41,5 +41,10 @@ public class GameManager : Manager<GameManager>
             hasGemStone[i] = false;
         }
     }
+    public void GameOver()
+    {
+        //GameOverView SetActive
+        //InitFields
+    }
 
 }

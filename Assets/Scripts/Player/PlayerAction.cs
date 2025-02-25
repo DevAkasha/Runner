@@ -24,12 +24,14 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] private bool isGround;         // 땅에 닿아있는지 확인
     [SerializeField] private bool isGroundChage;    // isGround가 체인지됐는지 확인
+    [SerializeField] private bool isWall = false;
 
     [SerializeField] private bool isSlide;          // 슬라이드 중인지 확인
     [SerializeField] private bool isSlideChage;     // isSlide가 체인지됐는지 확인
     [SerializeField] private int extraJumpCount;    // 현재 남은 추가점프 수
 
     [SerializeField] private bool isHit = false;
+    [SerializeField] private bool isFreeze = false;
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
@@ -53,9 +55,11 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        Move();
-
         CheckGround();
+
+        if (isFreeze) return;
+
+        Move();
 
         Jump();
 
@@ -65,20 +69,13 @@ public class PlayerAction : MonoBehaviour
 
     }
 
-    private void Move()
-    {
-        rigid.velocity = new Vector2(playerStat.Speed, rigid.velocity.y);  // 플레이어 이동
-        if (!isGround && rigid.velocity.y < 0)
-        {
-            animator.SetBool("IsDown", true);
-            animator.SetBool("IsJump", false);
-        }
-    }
 
     private void CheckGround()
     {
         bool temp = isGround;
+        
         RaycastHit2D hitData;
+        
         hitData = Physics2D.Raycast(transform.position, Vector3.down, rayLength, LayerMask.GetMask("Ground"));
 
         isGround = hitData.collider != null;
@@ -89,6 +86,22 @@ public class PlayerAction : MonoBehaviour
             animator.SetBool("IsJump",false);
             animator.SetBool("IsDown", false);
             extraJumpCount = playerStat.ExtraJumpCount;
+        }
+
+        RaycastHit2D wallHit;
+        wallHit = Physics2D.Raycast(transform.position, Vector3.right, 0.4f, LayerMask.GetMask("Wall"));
+        isWall = wallHit.collider != null;
+        if (isWall) rigid.velocity = new Vector2(0f, rigid.velocity.y);
+    }
+
+    private void Move()
+    {
+        if (isWall) return;
+        rigid.velocity = new Vector2(playerStat.Speed, rigid.velocity.y);  // 플레이어 이동
+        if (!isGround && rigid.velocity.y < 0)
+        {
+            animator.SetBool("IsDown", true);
+            animator.SetBool("IsJump", false);
         }
     }
 
@@ -164,18 +177,19 @@ public class PlayerAction : MonoBehaviour
         StartCoroutine(HitCo());
     }
 
+    public void Die()
+    {
+        isFreeze = true;
+        rigid.velocity = new Vector2(0f, rigid.velocity.y);
+        animator.SetBool("IsDie",true);
+    }
+
     private IEnumerator HitCo()
     {
         // hit가 유지되는 시간
         float hitTime = animator.GetCurrentAnimatorStateInfo(0).length;
 
-        // 누적 시간
-        float time = 0f;
-        while (time <= hitTime)
-        {
-            time += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(hitTime);
 
         isHit = false;
     }
@@ -208,6 +222,7 @@ public class PlayerAction : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, Vector3.down * rayLength);
+        Gizmos.DrawRay(transform.position, Vector3.right * 0.4f);
     }
 
 
