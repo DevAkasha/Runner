@@ -149,6 +149,12 @@ public class PlayerAction : MonoBehaviour
         playerStat.HP += amount;
     }
 
+    // 피격 당했을 때
+    public void Damage(int amount)
+    {
+        playerStat.HP -= amount;
+    }
+
     public IEnumerator BecomeInvincible(float duration)
     {
         //Todo. 무적효과 구현해야 함.
