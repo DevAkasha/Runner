@@ -947,7 +947,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_38
+      name: Hit
       rect:
         serializedVersion: 2
         x: 0
@@ -1132,6 +1132,7 @@ TextureImporter:
       Attack4: 1913396566
       Attack5: 656455061
       Attack6: 329805206
+      Hit: -268750086
       Jump0: -96767021
       Jump1: 1865345365
       Jump2: 1063139520
@@ -1157,7 +1158,6 @@ TextureImporter:
       MiniIceSwordswoman-Sheet_35: 799718792
       MiniIceSwordswoman-Sheet_36: -1740153803
       MiniIceSwordswoman-Sheet_37: 1333727108
-      MiniIceSwordswoman-Sheet_38: -268750086
       MiniIceSwordswoman-Sheet_39: 466575843
       MiniIceSwordswoman-Sheet_40: 1251024957
       MiniIceSwordswoman-Sheet_41: -2076019785

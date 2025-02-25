@@ -27,7 +27,7 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] private bool isInvincible;     //무적인지 아닌지
     [SerializeField] private int extraJumpCount;    // 현재 남은 추가점프 수
 
-
+    [SerializeField] private bool isHit = false;
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
@@ -147,6 +147,35 @@ public class PlayerAction : MonoBehaviour
     public void Heal(int amount)
     {
         playerStat.HP += amount;
+    }
+
+    // 피격 당했을 때
+    public void Damage(int amount)
+    {
+        if (isHit)
+            return;
+
+        isHit = true;
+        playerStat.HP -= amount;
+        animator.SetTrigger("IsHit");
+
+        StartCoroutine(HitCo());
+    }
+
+    private IEnumerator HitCo()
+    {
+        // hit가 유지되는 시간
+        float hitTime = animator.GetCurrentAnimatorStateInfo(0).length;
+
+        // 누적 시간
+        float time = 0f;
+        while (time <= hitTime)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        isHit = false;
     }
 
     public IEnumerator BecomeInvincible(float duration)
