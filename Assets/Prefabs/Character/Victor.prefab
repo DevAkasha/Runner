@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2858499844374294647}
+  - component: {fileID: 3562065193054296920}
   - component: {fileID: 5689198975834532402}
   - component: {fileID: 4159689014067932424}
   - component: {fileID: 9202716390460718564}
@@ -35,6 +36,33 @@ Transform:
   - {fileID: 8603653888290182953}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &3562065193054296920
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5488059369775801588}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!70 &5689198975834532402
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -90,6 +118,7 @@ MonoBehaviour:
   isSlideChage: 0
   isInvincible: 0
   extraJumpCount: 0
+  isHit: 0
 --- !u!114 &9202716390460718564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +210,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: -70443352, guid: 7886fe86a839ac34bb38845369622d3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

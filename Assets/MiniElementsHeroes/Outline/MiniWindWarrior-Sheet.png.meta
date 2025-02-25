@@ -1136,7 +1136,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_47
+      name: Hit
       rect:
         serializedVersion: 2
         x: 0
@@ -1320,6 +1320,7 @@ TextureImporter:
       Attack3: -1590322678
       Attack4: 1794539196
       Attack5: 760136211
+      Hit: 544064751
       Jump0: -1525127704
       Jump1: -1487560977
       Jump2: -263133313
@@ -1355,7 +1356,6 @@ TextureImporter:
       MiniWindWarrior-Sheet_44: -1668069525
       MiniWindWarrior-Sheet_45: 106203006
       MiniWindWarrior-Sheet_46: -917195302
-      MiniWindWarrior-Sheet_47: 544064751
       MiniWindWarrior-Sheet_48: 1796669925
       MiniWindWarrior-Sheet_49: 1741866441
       MiniWindWarrior-Sheet_50: 1833142802

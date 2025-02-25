@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] float damage;
+    [SerializeField] int damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +13,7 @@ public class Obstacle : MonoBehaviour
             PlayerAction player = collision.GetComponent<PlayerAction>();
             if(player != null)
             {
-                //player.Damage(damage);
+                player.Damage(damage);
             }
         }
     }
