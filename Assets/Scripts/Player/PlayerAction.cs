@@ -163,6 +163,12 @@ public class PlayerAction : MonoBehaviour
     {
         playerStat.HP += amount;
     }
+    public void Die()
+    {
+        isFreeze = true;
+        rigid.velocity = new Vector2(0f, rigid.velocity.y);
+        animator.SetBool("IsDie", true);
+    }
 
     // 피격 당했을 때
     public void Damage(int amount)
@@ -170,27 +176,20 @@ public class PlayerAction : MonoBehaviour
         if (isHit)
             return;
 
-        isHit = true;
         playerStat.HP -= amount;
-        animator.SetTrigger("IsHit");
 
         StartCoroutine(HitCo());
     }
 
-    public void Die()
-    {
-        isFreeze = true;
-        rigid.velocity = new Vector2(0f, rigid.velocity.y);
-        animator.SetBool("IsDie",true);
-    }
-
     private IEnumerator HitCo()
     {
+        animator.SetTrigger("IsHit");
+        isHit = true;
+
         // hit가 유지되는 시간
         float hitTime = animator.GetCurrentAnimatorStateInfo(0).length;
-
         yield return new WaitForSeconds(hitTime);
-
+        
         isHit = false;
     }
 
