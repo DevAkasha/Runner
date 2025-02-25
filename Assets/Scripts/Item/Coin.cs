@@ -10,8 +10,9 @@ public class Coin : Item
     {
         GameManager.Instance.AddScore(scoreValue);
     }
-    protected override void ApplyEffect(PlayerAttack playerAttack,int hitMultiplier)
+    protected override void ApplyEffect(PlayerAction player,int hitMultiplier)
     {
         GameManager.Instance.AddScore(scoreValue* hitMultiplier);
     }
+    
 }
