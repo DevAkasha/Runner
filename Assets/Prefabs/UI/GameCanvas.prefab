@@ -330,7 +330,10 @@ MonoBehaviour:
   StopBtn: {fileID: 8423149385379384262}
   StopBoard: {fileID: 5999753141746201271}
   ScoreBoard: {fileID: 7226589315183051513}
+  HPBarImage: {fileID: 2854178529894591299}
   HPBar: {fileID: 6726535431021280760}
+  PlayerInfo: {fileID: 0}
+  HPRatio: 0
 --- !u!1 &3036472967807415835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1211,7 @@ GameObject:
   - component: {fileID: 8130795206590785024}
   - component: {fileID: 2854178529894591299}
   m_Layer: 5
-  m_Name: HPBar
+  m_Name: HPBarImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
