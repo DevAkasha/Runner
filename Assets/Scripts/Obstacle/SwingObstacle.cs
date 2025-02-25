@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,7 +6,7 @@ using UnityEngine;
 public class SwingObstacle : MonoBehaviour
 {
     [SerializeField] private float swingTime = 3.0f;
-    [SerializeField] private Transform trigger;     // trigger ¿ªÇÒÀ» ÇÏ´Â ¿ÀºêÁ§Æ®
+    [SerializeField] private Transform trigger;     // trigger ì—­í• ì„ í•˜ëŠ” ì˜¤ë¸Œì íŠ¸
     private Transform player;
 
     Coroutine swingAnchor;
@@ -29,21 +29,21 @@ public class SwingObstacle : MonoBehaviour
         CheckPlayerInTrigger();
     }
 
-    // Æ®¸®°Å ¹üÀ§ ¾È¿¡ ÇÃ·¹ÀÌ¾î°¡ µé¾î¿Ô´ÂÁö Ã¼Å©
+    // íŠ¸ë¦¬ê±° ë²”ìœ„ ì•ˆì— í”Œë ˆì´ì–´ê°€ ë“¤ì–´ì™”ëŠ”ì§€ ì²´í¬
     private void CheckPlayerInTrigger()
     {
-        // triggerÀÇ À§Ä¡¿Í »çÀÌÁî¿¡ ¸Â°Ô overlapBox¸¦ »ı¼ºÇÏ°í ¾È¿¡ collider°¡ ÀÖ´ÂÁö ÆÇ´Ü
+        // triggerì˜ ìœ„ì¹˜ì™€ ì‚¬ì´ì¦ˆì— ë§ê²Œ overlapBoxë¥¼ ìƒì„±í•˜ê³  ì•ˆì— colliderê°€ ìˆëŠ”ì§€ íŒë‹¨
         Vector2 size = trigger.GetComponent<BoxCollider2D>().size;
         Collider2D[] colliders = Physics2D.OverlapBoxAll(trigger.position, size, 0);
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            // ¹Ú½º ¹üÀ§ ¾È¿¡ player collider°¡ ÀÖ´Ù¸é swingAnchor ½ÇÇà
+            // ë°•ìŠ¤ ë²”ìœ„ ì•ˆì— player colliderê°€ ìˆë‹¤ë©´ swingAnchor ì‹¤í–‰
             if (colliders[i].CompareTag("Player"))
             {
                 player = colliders[i].transform;
 
-                // swingAnchor°¡ nullÀÌ¸é ½ÇÇà (ÇÑ¹ø¸¸ ½ÇÇàÇÏ±â À§ÇØ)
+                // swingAnchorê°€ nullì´ë©´ ì‹¤í–‰ (í•œë²ˆë§Œ ì‹¤í–‰í•˜ê¸° ìœ„í•´)
                 if (swingAnchor == null)
                     swingAnchor = StartCoroutine(SwingAnchorCo());
             }
@@ -52,23 +52,23 @@ public class SwingObstacle : MonoBehaviour
 
     private IEnumerator SwingAnchorCo()
     {
-        // trigger¿Í anchor »çÀÌÀÇ x Ãà °Å¸® ÃøÁ¤
+        // triggerì™€ anchor ì‚¬ì´ì˜ x ì¶• ê±°ë¦¬ ì¸¡ì •
         float offsetX = transform.position.x - trigger.position.x;
 
-        // z °¢µµ¸¦ euler °¢À¸·Î ¾ò¾î¿À±â
+        // z ê°ë„ë¥¼ euler ê°ìœ¼ë¡œ ì–»ì–´ì˜¤ê¸°
         Quaternion q = transform.rotation;
         float z = q.eulerAngles.z;
 
-        // lerp ºñÀ²
+        // lerp ë¹„ìœ¨
         float lerpValue = 0;
 
-        // lerpValue°¡ 1º¸´Ù Å¬ ¶§±îÁö ¹İº¹ ½ÇÇà
+        // lerpValueê°€ 1ë³´ë‹¤ í´ ë•Œê¹Œì§€ ë°˜ë³µ ì‹¤í–‰
         while (lerpValue < 1)
         {
-            // ¸Å ÇÁ·¹ÀÓ¸¶´Ù ÇÃ·¹ÀÌ¾î¿Í anchor »çÀÌÀÇ x Ãà °Å¸® ÃøÁ¤
+            // ë§¤ í”„ë ˆì„ë§ˆë‹¤ í”Œë ˆì´ì–´ì™€ anchor ì‚¬ì´ì˜ x ì¶• ê±°ë¦¬ ì¸¡ì •
             float distance = transform.position.x - player.position.x;
 
-            // ºñÀ² ÃøÁ¤
+            // ë¹„ìœ¨ ì¸¡ì •
             lerpValue = -(distance / offsetX); // -1 ~ 1;
             lerpValue = ((lerpValue + 1) / 2); // 0 ~ 1
 
