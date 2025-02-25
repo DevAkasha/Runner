@@ -17,17 +17,23 @@ public class PlayerAction : MonoBehaviour
     private PlayerAttack playerAttack;
 
     [SerializeField] private float jumpHeight;      // 점프 높이
-    [SerializeField] private float rayLength;        // Ray 길이
+    [SerializeField] private float rayLength;       // Ray 길이
 
-    [SerializeField] private bool isGround;         // 땅에 닿아있는지 확인 
+    [SerializeField] private bool isGround;         // 땅에 닿아있는지 확인
+    [SerializeField] private bool isGroundChage;    // isGround가 체인지됐는지 확인
+
     [SerializeField] private bool isSlide;          // 슬라이드 중인지 확인
+    [SerializeField] private bool isSlideChage;     // isSlide가 체인지됐는지 확인
     [SerializeField] private bool isInvincible;     //무적인지 아닌지
-    [SerializeField] private int jumpCount;         // 현재 남은 점프 수
+    [SerializeField] private int extraJumpCount;    // 현재 남은 추가점프 수
+
+
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
     private Vector2 colliderSize;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -39,10 +45,10 @@ public class PlayerAction : MonoBehaviour
         colliderOffset = collider.offset;
         colliderSize = collider.size;
 
-        jumpCount = playerStat.AddJumpCount;
+        extraJumpCount = playerStat.ExtraJumpCount;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Move();
@@ -55,24 +61,33 @@ public class PlayerAction : MonoBehaviour
 
         Attack();
 
-        animator.SetFloat("VelocityY", rigid.velocity.y);
-        animator.SetBool("IsGround", isGround);
-        animator.SetBool("IsSlide", isSlide);
     }
-    
+
     private void Move()
     {
         rigid.velocity = new Vector2(playerStat.Speed, rigid.velocity.y);  // 플레이어 이동
+        if (!isGround && rigid.velocity.y < 0)
+        {
+            animator.SetBool("IsDown", true);
+            animator.SetBool("IsJump", false);
+        }
     }
 
     private void CheckGround()
     {
+        bool temp = isGround;
         RaycastHit2D hitData;
         hitData = Physics2D.Raycast(transform.position, Vector3.down, rayLength, LayerMask.GetMask("Ground"));
 
         isGround = hitData.collider != null;
+        isGroundChage = (temp != isGround) ? temp : false;
 
-        if (isGround == true) jumpCount = playerStat.AddJumpCount;
+        if (isGround == true)
+        {
+            animator.SetBool("IsJump",false);
+            animator.SetBool("IsDown", false);
+            extraJumpCount = playerStat.ExtraJumpCount;
+        }
     }
 
     private void Jump()
@@ -82,23 +97,25 @@ public class PlayerAction : MonoBehaviour
         {
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+            animator.SetBool("IsJump", true);
         }
         // 바닥에 닿아있지 않다면 더블 점프 체크 변수를 확인하고 점프
         else if(!isGround && Input.GetKeyDown(KeyCode.Space))
         {
-            if (jumpCount <= 0) return;
+            if (extraJumpCount <= 0) return;
 
-            //checkDoubleJump = false;
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-            jumpCount--;
+            extraJumpCount--;
+            animator.SetBool("IsJump", true);
         }
     }
 
     private void Slide()
     {
+        bool temp = isSlide;
         // 땅에 있고 Shitf키를 누르면 슬라이드
-        if (isGround && Input.GetKey(KeyCode.LeftShift))
+        if (isGround && Input.GetKeyDown(KeyCode.LeftShift))
         {
             isSlide = true;
 
@@ -114,16 +131,18 @@ public class PlayerAction : MonoBehaviour
             collider.size = new Vector2(colliderSize.x, colliderSize.y);
             collider.offset = new Vector2(colliderOffset.x, colliderOffset.y);
         }
+        isSlideChage = (temp != isGround) ? true : false;
+        if (isSlideChage) animator.SetBool("IsSlide", isSlide);
     }
 
     private void Attack()
     {
-        if(!isSlide&& Input.GetKey(KeyCode.Z))
+        if(!isSlide&& Input.GetKeyDown(KeyCode.Z))
         {
+            if (playerAttack.isCoolTime) return;
             animator.SetTrigger("IsAttack");
-            playerAttack.gameObject.SetActive(false);
-        }
-            
+            playerAttack.ActiveAttack();
+        }     
     }
     public void Heal(int amount)
     {

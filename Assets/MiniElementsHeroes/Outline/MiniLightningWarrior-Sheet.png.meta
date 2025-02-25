@@ -132,6 +132,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -409,7 +422,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_13
+      name: Attack0
       rect:
         serializedVersion: 2
         x: 0
@@ -430,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_14
+      name: noAttack0
       rect:
         serializedVersion: 2
         x: 32
@@ -451,7 +464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_15
+      name: noAttack1
       rect:
         serializedVersion: 2
         x: 64
@@ -472,7 +485,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_16
+      name: Attack1
       rect:
         serializedVersion: 2
         x: 96
@@ -493,7 +506,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_17
+      name: Attack2
       rect:
         serializedVersion: 2
         x: 128
@@ -514,7 +527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_18
+      name: Attack3
       rect:
         serializedVersion: 2
         x: 161
@@ -535,7 +548,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_19
+      name: noAttack2
       rect:
         serializedVersion: 2
         x: 193
@@ -556,7 +569,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_20
+      name: Attack4
       rect:
         serializedVersion: 2
         x: 225
@@ -577,7 +590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_21
+      name: Attack5
       rect:
         serializedVersion: 2
         x: 257
@@ -1217,21 +1230,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Attack0: -865977442
+      Attack1: -49621
+      Attack2: -1847176118
+      Attack3: -742670386
+      Attack4: 1824627715
+      Attack5: -408496850
       Jump0: -1774285119
       Jump1: -2117476565
       Jump2: 980536725
       MiniLightningWarrior-Sheet_0: 1294664175
       MiniLightningWarrior-Sheet_1: -381156653
-      MiniLightningWarrior-Sheet_13: -865977442
-      MiniLightningWarrior-Sheet_14: 450044980
-      MiniLightningWarrior-Sheet_15: 438764009
-      MiniLightningWarrior-Sheet_16: -49621
-      MiniLightningWarrior-Sheet_17: -1847176118
-      MiniLightningWarrior-Sheet_18: -742670386
-      MiniLightningWarrior-Sheet_19: 1332458960
       MiniLightningWarrior-Sheet_2: 407809398
-      MiniLightningWarrior-Sheet_20: 1824627715
-      MiniLightningWarrior-Sheet_21: -408496850
       MiniLightningWarrior-Sheet_22: -76513213
       MiniLightningWarrior-Sheet_23: -146964640
       MiniLightningWarrior-Sheet_24: 372802319
@@ -1268,6 +1278,9 @@ TextureImporter:
       Run4: -1526384134
       Run5: 733008586
       Slide: -1888193934
+      noAttack0: 450044980
+      noAttack1: 438764009
+      noAttack2: 1332458960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
