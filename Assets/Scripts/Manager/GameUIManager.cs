@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEditor.Build;
 
 
 public class GameUIManager : MonoBehaviour
@@ -13,40 +14,41 @@ public class GameUIManager : MonoBehaviour
     public GameObject ScoreBoard;
     private TextMeshProUGUI ScoreBoardTxt;
 
-    public Image HPBarImage;
+    public HPBarImage HPBarI;
     public GameObject HPBar;
-    public PlayerStat PlayerInfo;
     public float HPRatio;
+    public Image HPBarImage;
 
-    private void Awake()
+    private PlayerStat stat;
+    void Start()
     {
         //혹시 모를 이전 오브젝트 지우기
         StopBoard.SetActive(false);
         HPBar.SetActive(false);
         ScoreBoard.SetActive(false);
 
-        //HP바 이미지 컴포넌트 가져오기
-        HPBarImage = GetComponent<Image>();
-    }
-    void Start()
-    {
         //보이기
-        StopBoard.SetActive(true);
         HPBar.SetActive(true);
+        StopBtn.SetActive(true);
         ScoreBoard.SetActive(true);
 
+        //HP바 이미지 컴포넌트 가져오기
+        HPBarI = GetComponentInChildren<HPBarImage>();
+        HPBarImage = HPBarI.gameObject.GetComponent<Image>();
+
         //스코어보드 텍스트 가져오기
-        ScoreBoardTxt = GetComponent<TextMeshProUGUI>();
+        ScoreBoardTxt = GetComponentInChildren<TextMeshProUGUI>();
 
         //플레이어스탯 스크립트 정보 가져오기
-        FindObjectOfType<PlayerStat>();
+        stat = FindObjectOfType<PlayerStat>();
     }
 
     void Update()
     {
         //HP바 업데이트
-        if(HPBarImage.fillAmount != null) 
+        if(HPBarI != null) 
         {
+            Debug.Log("체력확인중");
             HPBarImage.fillAmount = HPRatioSet();
         }
 
@@ -70,8 +72,9 @@ public class GameUIManager : MonoBehaviour
     }
 
     //체력바 비율 설정
-    public float HPRatioSet() 
+    public float HPRatioSet()
     {
-        return PlayerInfo.HP / PlayerInfo.MaxHP;
+        return stat.HP / stat.MaxHP;
+
     }
 }
