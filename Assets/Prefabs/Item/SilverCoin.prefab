@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 0.3
-  scoreValue: 0
+  scoreValue: 3
 --- !u!1 &4428925146146935741
 GameObject:
   m_ObjectHideFlags: 0
