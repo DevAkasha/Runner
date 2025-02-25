@@ -11,4 +11,8 @@ public class SpeedPotion : Item
     {
         player.StartCoroutine(player.IncreaseSpeed(addSpeed, duration));
     }
+    protected override void ApplyEffect(PlayerAction player, int hitMultiplier)
+    {
+        player.StartCoroutine(player.IncreaseSpeed(addSpeed, duration* hitMultiplier));
+    }
 }

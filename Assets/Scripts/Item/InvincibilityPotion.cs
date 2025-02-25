@@ -10,4 +10,8 @@ public class InvincibilityPotion : Item
     {
         player.StartCoroutine(player.BecomeInvincible(duration));
     }
+    protected override void ApplyEffect(PlayerAction player, int hitMultiplier)
+    {
+        player.StartCoroutine(player.BecomeInvincible(duration*hitMultiplier));
+    }
 }
