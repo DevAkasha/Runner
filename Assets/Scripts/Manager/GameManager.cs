@@ -28,14 +28,15 @@ public class GameManager : Manager<GameManager>
     public void SetHasGemStone(int index,PlayerAction player)
     {
         hasGemStone[index] = true;
+        //모든 잼스톤이 true이면 플레이어 피버모드 발동!
         if(Array.TrueForAll(hasGemStone, x => x))
         {
             player.StartCoroutine(player.SetFever(5f));
+            InitGemStone();
         }
     }
-    public void InitFields()
+    public void InitGemStone()
     {
-        score = 0;
         for (int i=0; i < gemTypeCount; i++)
         {
             hasGemStone[i] = false;
