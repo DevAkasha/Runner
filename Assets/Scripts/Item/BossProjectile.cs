@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
 
-public class BossRAProjectile : Item
+public class BossProjectile : Item
 {
     public int power= 20;
     public float startDelay = 0.5f;
@@ -11,10 +11,6 @@ public class BossRAProjectile : Item
     private bool isCreate;
     public float speed = -50f;
 
-    private void Start()
-    {
-        
-    }
     private void Update()
     {
         if(time < startDelay)

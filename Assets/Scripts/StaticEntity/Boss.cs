@@ -9,14 +9,13 @@ public class Boss : MonoBehaviour
     public float currentHealth;
 
     public float meleeDamage = 20f;
-    public float rangedDamage = 15f;
-    public float skillADamage = 40f;
-    public float skillBDamage = 60f;
+    public float fireRate = 0.1f;
 
     public float jumpForce = 5f;
     public Transform rangedAttackPoint;
     public GameObject RAProjectilePrefab;
     public GameObject SkillBProjectilePrefab;
+    public GameObject SkillAProjectilePrefab;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -35,44 +34,68 @@ public class Boss : MonoBehaviour
     }
 
     // 2. 기본 공격 - 근접
-    public void MeleeAttack()
+    public IEnumerator MeleeAttack()
     {
-        if (isDead) return;
-        // todo. 액션 타이밍 불값 적용해야함
+        if (isDead) yield break;     
         Debug.Log("Boss가 근거리 공격을 함!");
 
         animator.SetTrigger("IsTeleportStart");
-        StartCoroutine(WaitForAnimation("TeleportStart"));
+        yield return null;
+        yield return new WaitForSeconds(CalculateAnimationLength("TeleportStart"));
 
         prePosition = transform.position;
-        transform.position = playerTransform.position + new Vector3(3f, 1.6f, 0f);
+        transform.position = playerTransform.position + new Vector3(2f, 1.6f, 0f);
 
         animator.SetTrigger("IsTeleportEnd");
-        StartCoroutine(WaitForAnimation("TeleportEnd"));
+        yield return null;
+        yield return new WaitForSeconds(CalculateAnimationLength("TeleportEnd"));
 
         animator.SetTrigger("IsAttack");
         // 여기에 근접 공격 판정 로직 추가
-        StartCoroutine(WaitForAnimation("IsAttack"));
+        yield return null;
+        yield return new WaitForSeconds(CalculateAnimationLength("Attack"));
 
-        StartCoroutine(WaitForAnimation("TeleportStart"));
+        animator.SetTrigger("IsTeleportStart");
+        yield return null;
+        yield return new WaitForSeconds(CalculateAnimationLength("TeleportStartB"));
 
         transform.position = prePosition;
 
         animator.SetTrigger("IsTeleportEnd");
-        StartCoroutine(WaitForAnimation("TeleportEnd"));
+        yield return null;
+        yield return new WaitForSeconds(CalculateAnimationLength("TeleportEndB"));
+
         animator.SetTrigger("IsAttackEnd");
-        
+        bossAI.StartBossBehavior();
+
+        float CalculateAnimationLength(string animationName)
+        {
+            AnimatorStateInfo animState = animator.GetCurrentAnimatorStateInfo(0);
+            if (animState.IsName(animationName))
+                return animState.length;
+            else return 1f;
+        }
+
     }
 
+
     // 3. 기본 공격 - 원거리
-    public void RangedAttack()
+    public void RangedAttack(int count)
     {
         if (isDead) return;
         animator.SetTrigger("IsRangeAttack");
-        GameObject projectile = Instantiate(RAProjectilePrefab, rangedAttackPoint.position, Quaternion.identity);
+        StartCoroutine(ShootRoutine(count));
         Debug.Log("Boss가 원거리 공격을 함!");
     }
 
+    IEnumerator ShootRoutine(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Instantiate(RAProjectilePrefab, rangedAttackPoint.position, Quaternion.identity);
+            yield return new WaitForSeconds(fireRate);
+        }
+    }
 
     // 5. 스킬 B
     public void SkillB()
@@ -80,7 +103,7 @@ public class Boss : MonoBehaviour
         if (isDead) return;
         animator.SetTrigger("IsSkillB");
         Debug.Log("Boss가 스킬 B를 사용함!");
-        GameObject projectile = Instantiate(SkillBProjectilePrefab, rangedAttackPoint.position, Quaternion.identity);
+        Instantiate(SkillBProjectilePrefab, rangedAttackPoint.position, Quaternion.identity);
     }
 
     // 6. 피격 처리
@@ -102,6 +125,7 @@ public class Boss : MonoBehaviour
         if (isDead) return;
         animator.SetTrigger("IsJump");
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        Instantiate(SkillAProjectilePrefab, rangedAttackPoint.position, Quaternion.identity);
         Debug.Log("Boss가 점프함!");
     }
 
@@ -114,16 +138,6 @@ public class Boss : MonoBehaviour
         // 이후 게임 오브젝트 삭제 또는 사망 연출
         Destroy(gameObject, 3f);
     }
-    IEnumerator WaitForAnimation(string animationName)
-    {
-        yield return null;
-        AnimatorStateInfo animState = animator.GetCurrentAnimatorStateInfo(0);
-        while (!animState.IsName(animationName))
-        {
-            yield return null;
-            animState = animator.GetCurrentAnimatorStateInfo(0);
-        }
-        yield return new WaitForSeconds(animState.length);
-    }
+
 }
 
