@@ -989,7 +989,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_40
+      name: Die0
       rect:
         serializedVersion: 2
         x: 0
@@ -1010,7 +1010,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_41
+      name: Die1
       rect:
         serializedVersion: 2
         x: 32
@@ -1031,7 +1031,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_42
+      name: Die
       rect:
         serializedVersion: 2
         x: 64
@@ -1052,7 +1052,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_43
+      name: Die3
       rect:
         serializedVersion: 2
         x: 96
@@ -1073,7 +1073,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide
+      name: Die4
       rect:
         serializedVersion: 2
         x: 128
@@ -1094,7 +1094,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniIceSwordswoman-Sheet_45
+      name: Die5
       rect:
         serializedVersion: 2
         x: 160
@@ -1132,6 +1132,12 @@ TextureImporter:
       Attack4: 1913396566
       Attack5: 656455061
       Attack6: 329805206
+      Die: -1297702675
+      Die0: 1251024957
+      Die1: -2076019785
+      Die3: -992122325
+      Die4: -1373197555
+      Die5: 1960413862
       Hit: -268750086
       Jump0: -96767021
       Jump1: 1865345365
@@ -1159,18 +1165,12 @@ TextureImporter:
       MiniIceSwordswoman-Sheet_36: -1740153803
       MiniIceSwordswoman-Sheet_37: 1333727108
       MiniIceSwordswoman-Sheet_39: 466575843
-      MiniIceSwordswoman-Sheet_40: 1251024957
-      MiniIceSwordswoman-Sheet_41: -2076019785
-      MiniIceSwordswoman-Sheet_42: -1297702675
-      MiniIceSwordswoman-Sheet_43: -992122325
-      MiniIceSwordswoman-Sheet_45: 1960413862
       Run0: -1355481966
       Run1: 592745133
       Run2: -542976402
       Run3: 1606454135
       Run4: -250965125
       Run5: -1270217643
-      Slide: -1373197555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
