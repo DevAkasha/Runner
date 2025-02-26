@@ -18,14 +18,6 @@ public class Obstacle : MonoBehaviour
             flyPower = 10f;
     }
 
-    private void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            FlyObatacle();
-        }
-    }
-
     // 장애물이 날아가는 함수
     public void FlyObatacle()
     {
