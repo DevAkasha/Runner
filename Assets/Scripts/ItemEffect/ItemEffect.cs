@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ItemEffect : MonoBehaviour
 {
-    public GameObject itemEffectPrefab; // ¿ŒΩ∫≈œΩ∫∑Œ πŸ≤„¡‡æﬂ «ÿ!!
+    public GameObject itemEffectPrefab;
     public GameObject attackItemEffectPrefab;
     public float destroyDelay = 0.1f;
-    private bool isdestroyed = false;
+    private bool isDestroyed;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,7 +18,7 @@ public class ItemEffect : MonoBehaviour
             if (playerAttack != null)
             {
                 GameObject effectInstance = PlayAttackEffect();
-
+                isDestroyed = true;
                 if (effectInstance != null)
                 {
                     Destroy(effectInstance, destroyDelay);
@@ -26,7 +26,7 @@ public class ItemEffect : MonoBehaviour
             }
         }
 
-        else if (collision.CompareTag("Player") && !isdestroyed)
+        else if (collision.CompareTag("Player")&& !isDestroyed)
         {
             PlayerAction player = collision.GetComponent<PlayerAction>();
 
@@ -59,8 +59,6 @@ public class ItemEffect : MonoBehaviour
             GameObject attackEffectIstance = Instantiate(attackItemEffectPrefab, transform.position, Quaternion.identity);
             return attackEffectIstance;
         }
-
         return null;
-
     }
 }
