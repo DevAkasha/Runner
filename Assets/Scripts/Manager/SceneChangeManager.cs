@@ -39,7 +39,7 @@ public class SceneChangeManager : Manager<SceneChangeManager>
 
     //입력받은 씬에 이동
     //1=Easy 2=Normal 3=Hard 0=Selection -1=Tutorial
-    private void SceneChanger(int level) 
+    public void SceneChanger(int level) 
     {
         switch (level)
         {

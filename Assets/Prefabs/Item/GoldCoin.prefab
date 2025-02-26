@@ -187,6 +187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67911c4df72e86d45aa86bb03af395b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyDelay: 0.15
+  destroyDelay: 0.8
   scoreValue: 0
   itemEffect: {fileID: 1030369346704364488, guid: 91b58e2c7a314f74ab5a67e889e626c8, type: 3}
