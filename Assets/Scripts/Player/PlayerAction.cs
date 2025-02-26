@@ -16,19 +16,22 @@ public class PlayerAction : MonoBehaviour
 
     private PlayerAttack playerAttack;
 
+
+    public bool IsFeverMods = false;                //피버모드인지 아닌지
+    public bool isInvincible = false;               //무적인지 아닌지
     [SerializeField] private float jumpHeight;      // 점프 높이
     [SerializeField] private float rayLength;       // Ray 길이
 
     [SerializeField] private bool isGround;         // 땅에 닿아있는지 확인
     [SerializeField] private bool isGroundChage;    // isGround가 체인지됐는지 확인
+    [SerializeField] private bool isWall = false;
 
     [SerializeField] private bool isSlide;          // 슬라이드 중인지 확인
     [SerializeField] private bool isSlideChage;     // isSlide가 체인지됐는지 확인
-    [SerializeField] private bool isInvincible;     //무적인지 아닌지
-    public bool IsInvicible { get => isInvincible; }
     [SerializeField] private int extraJumpCount;    // 현재 남은 추가점프 수
 
     [SerializeField] private bool isHit = false;
+    [SerializeField] private bool isFreeze = false;
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
@@ -52,9 +55,11 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        Move();
-
         CheckGround();
+
+        if (isFreeze) return;
+
+        Move();
 
         Jump();
 
@@ -64,20 +69,13 @@ public class PlayerAction : MonoBehaviour
 
     }
 
-    private void Move()
-    {
-        rigid.velocity = new Vector2(playerStat.Speed, rigid.velocity.y);  // 플레이어 이동
-        if (!isGround && rigid.velocity.y < 0)
-        {
-            animator.SetBool("IsDown", true);
-            animator.SetBool("IsJump", false);
-        }
-    }
 
     private void CheckGround()
     {
         bool temp = isGround;
+        
         RaycastHit2D hitData;
+        
         hitData = Physics2D.Raycast(transform.position, Vector3.down, rayLength, LayerMask.GetMask("Ground"));
 
         isGround = hitData.collider != null;
@@ -88,6 +86,22 @@ public class PlayerAction : MonoBehaviour
             animator.SetBool("IsJump",false);
             animator.SetBool("IsDown", false);
             extraJumpCount = playerStat.ExtraJumpCount;
+        }
+
+        RaycastHit2D wallHit;
+        wallHit = Physics2D.Raycast(transform.position, Vector3.right, 0.4f, LayerMask.GetMask("Wall"));
+        isWall = wallHit.collider != null;
+        if (isWall) rigid.velocity = new Vector2(0f, rigid.velocity.y);
+    }
+
+    private void Move()
+    {
+        if (isWall) return;
+        rigid.velocity = new Vector2(playerStat.Speed, rigid.velocity.y);  // 플레이어 이동
+        if (!isGround && rigid.velocity.y < 0)
+        {
+            animator.SetBool("IsDown", true);
+            animator.SetBool("IsJump", false);
         }
     }
 
@@ -149,6 +163,12 @@ public class PlayerAction : MonoBehaviour
     {
         playerStat.HP += amount;
     }
+    public void Die()
+    {
+        isFreeze = true;
+        rigid.velocity = new Vector2(0f, rigid.velocity.y);
+        animator.SetBool("IsDie", true);
+    }
 
     // 피격 당했을 때
     public void Damage(int amount)
@@ -156,32 +176,25 @@ public class PlayerAction : MonoBehaviour
         if (isHit)
             return;
 
-        isHit = true;
         playerStat.HP -= amount;
-        animator.SetTrigger("IsHit");
 
         StartCoroutine(HitCo());
     }
 
     private IEnumerator HitCo()
     {
+        animator.SetTrigger("IsHit");
+        isHit = true;
+
         // hit가 유지되는 시간
         float hitTime = animator.GetCurrentAnimatorStateInfo(0).length;
-
-        // 누적 시간
-        float time = 0f;
-        while (time <= hitTime)
-        {
-            time += Time.deltaTime;
-            yield return null;
-        }
-
+        yield return new WaitForSeconds(hitTime);
+        
         isHit = false;
     }
 
     public IEnumerator BecomeInvincible(float duration)
-    {
-        //Todo. 무적효과 구현해야 함.
+    { 
         isInvincible = true;
         yield return new WaitForSeconds(duration);
         isInvincible = false;
@@ -193,10 +206,22 @@ public class PlayerAction : MonoBehaviour
         playerStat.Speed -= addSpeed;
     }
 
+    public IEnumerator SetFever(float duration)
+    {
+        GameManager.Instance.feverMultiplier = 2;
+        StartCoroutine(BecomeInvincible(duration));
+        StartCoroutine(IncreaseSpeed(2f, duration));
+        IsFeverMods = true;
+        yield return new WaitForSeconds(duration);
+        GameManager.Instance.feverMultiplier = 1;
+        IsFeverMods = false;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, Vector3.down * rayLength);
+        Gizmos.DrawRay(transform.position, Vector3.right * 0.4f);
     }
 
 

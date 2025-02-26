@@ -29,6 +29,7 @@ public abstract class Item : MonoBehaviour
             if (player != null)
             {
                 ApplyEffect(player);
+                if (this is GemStone) return;
                 Destroy(gameObject, destroyDelay);
             }
         }

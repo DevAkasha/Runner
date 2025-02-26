@@ -204,14 +204,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac23369cc047c14699bfc8a11d95e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsFeverMods: 0
+  isInvincible: 0
   jumpHeight: 7
   rayLength: 0.8
   isGround: 0
   isGroundChage: 0
+  isWall: 0
   isSlide: 0
   isSlideChage: 0
-  isInvincible: 0
   extraJumpCount: 0
+  isHit: 0
+  isFreeze: 0
 --- !u!114 &4145743359413202823
 MonoBehaviour:
   m_ObjectHideFlags: 0

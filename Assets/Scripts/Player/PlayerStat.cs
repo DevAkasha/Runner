@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.LowLevel;
 
 public class PlayerStat : MonoBehaviour
 {
     [SerializeField] private float hp;              // 체력
-    public float HP { get { return hp; } set { hp = value; if (hp <= 0) hp = 0; if (hp >= maxHP) hp = maxHP; } }
+    public float HP { get { return hp; } set { hp = value; if (hp <= 0) { hp = 0; Die(); } if (hp >= maxHP) hp = maxHP; } }
     public float MaxHP { get { return maxHP; } set { } }
     [SerializeField] private float maxHP;           // 최대 체력
     [SerializeField] private float decreaseAmount;   // 체력 감소량
@@ -19,6 +20,13 @@ public class PlayerStat : MonoBehaviour
     {
         HP = maxHP;
         Speed = speed;
+    }
+
+    private void Die()
+    {
+        PlayerAction player = GetComponent<PlayerAction>();
+        if (player != null) player.Die();
+        GameManager.Instance.GameOver();
     }
 }
 
