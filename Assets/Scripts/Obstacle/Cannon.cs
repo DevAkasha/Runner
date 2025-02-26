@@ -7,6 +7,7 @@ public class Cannon : TriggerObstacle
 {
     [SerializeField] private GameObject cannonBall;     // 총알 프리펩
     [SerializeField] private Transform shootPos;        // 총알이 나갈 위치
+    private bool isShoot = false;                       // 총알을 한번 쐈는지 확인
 
     private Animator animator;
 
@@ -26,6 +27,10 @@ public class Cannon : TriggerObstacle
     {
         base.Action(playerCollider);
 
+        if (isShoot) return;
+
+        isShoot = true;
+
         animator.SetTrigger("Shoot");
     }
 
@@ -40,7 +45,6 @@ public class Cannon : TriggerObstacle
 
         if(shootPos == null)
         {
-            Debug.Log("ShootPos is Null");
             shootPos = transform.parent;
         }
 
