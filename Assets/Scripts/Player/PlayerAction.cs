@@ -25,6 +25,7 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] private bool isSlide;          // 슬라이드 중인지 확인
     [SerializeField] private bool isSlideChage;     // isSlide가 체인지됐는지 확인
     [SerializeField] private bool isInvincible;     //무적인지 아닌지
+    public bool IsInvicible { get => isInvincible; }
     [SerializeField] private int extraJumpCount;    // 현재 남은 추가점프 수
 
     [SerializeField] private bool isHit = false;
