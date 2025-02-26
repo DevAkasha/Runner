@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Cannon : MonoBehaviour
+public class Cannon : TriggerObstacle
 {
     [SerializeField] private GameObject cannonBall;     // 총알 프리펩
     [SerializeField] private Transform shootPos;        // 총알이 나갈 위치
@@ -16,11 +17,16 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
-        // 조건 변경 필요
-        if(Input.GetMouseButtonDown(0))
-        {
-            animator.SetTrigger("Shoot");
-        }
+        CheckTrigger();
+
+        CheckPlayerInTrigger();
+    }
+
+    protected override void Action(Collider2D playerCollider)
+    {
+        base.Action(playerCollider);
+
+        animator.SetTrigger("Shoot");
     }
 
     // Cannon_Shoot 애니메이션에 연결 되어있음
