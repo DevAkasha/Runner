@@ -7,9 +7,12 @@ public class GameManager : Manager<GameManager>
     //DontDestroyOnLoad setting
     protected override bool isPersistent => true;
 
+    public int score;
     public int feverMultiplier = 1;
-    int score;
     public int Score { get; private set; }
+
+    public int bestScore;
+    public int BestScore { get { return bestScore; } private set { bestScore = value; } }
 
     int gemTypeCount;
     public bool[] hasGemStone;
@@ -23,6 +26,14 @@ public class GameManager : Manager<GameManager>
     public void AddScore(int score)
     {
         Score += score* feverMultiplier;
+    }
+
+    public void UpdateBestScore()
+    {
+        if (BestScore < Score) 
+        { 
+            BestScore = Score;
+        }
     }
 
     public void SetHasGemStone(int index,PlayerAction player)

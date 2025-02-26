@@ -13,7 +13,6 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     //1=Victor 2=Nathon 3=Elena
     public int charactor;
 
-    //Selection Scene 스타트버튼 사용
     //이전 선택한 값과 입력받은 값 동일할 경우 해당 씬에 이동
     public void FirstSceneChange(int selectlevel) 
     {
@@ -43,22 +42,26 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     {
         switch (level)
         {
+            case 4:
+                Debug.Log("아직 보스전이 없습니다.");
+                //씬 이동
+                break;
             case 3:
-                Debug.Log("아직 하드 난이도가 없습니다.");
+                SceneManager.LoadScene("Hard");
                 //씬 이동
                 break;
             case 2:
-                Debug.Log("아직 노멀 난이도가 없습니다.");
+                SceneManager.LoadScene("Normal");
                 //씬 이동
                 break;
             case 1:
                 SceneManager.LoadScene("Easy");
                 break;
-            case 0:
-                SceneManager.LoadScene("SelectionScene");
-                break;
             case -1:
                 SceneManager.LoadScene("TutorialScene");
+                break;
+            case 0:
+                SceneManager.LoadScene("SelectionScene");
                 break;
             default:
                 Debug.Log("씬 이동 오류");

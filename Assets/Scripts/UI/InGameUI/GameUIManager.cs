@@ -12,7 +12,7 @@ public class GameUIManager : MonoBehaviour
     private TextMeshProUGUI ScoreBoardTxt;
 
     private PlayerStat stat;
-    void Start()
+    void Awake()
     {
         ScoreBoard.SetActive(false);
         ScoreBoard.SetActive(true);
