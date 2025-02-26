@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdc0c626ff295bb4a9c8e9366d7f6507
+guid: 5512275405131c646b43ee80bf1bdb04
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Collected_0
+      name: Attack_Collected_Blue_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 792bc631fa226dd42b9d47ffd0ea48d3
-      internalID: 1796001347
+      spriteID: 4e3a4b08c2535c042891dce03daa8193
+      internalID: 930365377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collected_1
+      name: Attack_Collected_Blue_1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f12c1a6239b7a6478fdbd156a4c95af
-      internalID: -736797754
+      spriteID: 194fc14f4ac3d424f9e8ae205d21dc0e
+      internalID: -368869337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collected_2
+      name: Attack_Collected_Blue_2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d071162b15bc5f4498b23bde6d99fa7e
-      internalID: 1986529291
+      spriteID: f123443bb28320544a4b8629fa75bc60
+      internalID: -1003920413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collected_3
+      name: Attack_Collected_Blue_3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eb6c630621ca03499fdbfc692cbdce1
-      internalID: -640620275
+      spriteID: 8d1a799db5a84fc4b99ce6b83d4a0714
+      internalID: -599057793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collected_4
+      name: Attack_Collected_Blue_4
       rect:
         serializedVersion: 2
         x: 128
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d366238b09707e3429951defbcab6d22
-      internalID: -594044304
+      spriteID: ff1cc983a6fc6474b8c91ac06acb6d7a
+      internalID: -1161208496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Collected_5
+      name: Attack_Collected_Blue_5
       rect:
         serializedVersion: 2
         x: 160
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f55762ffdfc30684e911d5ce5c80fedc
-      internalID: 1618467693
+      spriteID: 6391ef511a0f1de4faf10bc8907eb2c8
+      internalID: -360334971
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Collected_0: 1796001347
-      Collected_1: -736797754
-      Collected_2: 1986529291
-      Collected_3: -640620275
-      Collected_4: -594044304
-      Collected_5: 1618467693
+      Attack_Collected_Blue_0: 930365377
+      Attack_Collected_Blue_1: -368869337
+      Attack_Collected_Blue_2: -1003920413
+      Attack_Collected_Blue_3: -599057793
+      Attack_Collected_Blue_4: -1161208496
+      Attack_Collected_Blue_5: -360334971
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
