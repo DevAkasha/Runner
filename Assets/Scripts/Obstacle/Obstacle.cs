@@ -48,7 +48,7 @@ public class Obstacle : MonoBehaviour
             PlayerAction player = collision.GetComponent<PlayerAction>();
             if(player != null)
             {
-                if (!player.IsInvicible)
+                if (!player.isInvincible)
                     player.Damage(damage);
                 else
                     FlyObatacle();
