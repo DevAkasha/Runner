@@ -18,12 +18,14 @@ public class StopBtnController : MonoBehaviour
     //버튼 누르면 일시정지 보드 켜기
     public void StopBtnOn()
     {
+        Time.timeScale = 0f;
         StopBoard.SetActive(true);
     }
 
     //일시정지 보드 끄기
     public void StopBoardCloseBtn()
     {
+        Time.timeScale = 1f;
         StopBoard.SetActive(false);
     }
     
