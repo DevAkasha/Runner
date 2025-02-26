@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     public float destroyDelay = 0.1f;
-    private bool isdestroyed = false;
+    public bool isdestroyed = false;
 
     protected abstract void ApplyEffect(PlayerAction player);
     protected virtual void ApplyEffect(PlayerAction playerAttack, int hitMultiplier){ }
