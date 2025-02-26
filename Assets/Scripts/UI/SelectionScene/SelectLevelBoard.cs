@@ -12,6 +12,7 @@ public class SelectLevelBoard : MonoBehaviour
     public GameObject NormalBtn;
     public GameObject EasyBtn;
 
+    //기본 설정
     void Awake()
     {
         CloseCheckDifficulty();
@@ -20,6 +21,7 @@ public class SelectLevelBoard : MonoBehaviour
         EasyBtn.SetActive(true);
     }
 
+    //버튼 클릭 시 동작
     public void HardBtnOn()
     {
         CheckDifficulty(3);
@@ -28,41 +30,38 @@ public class SelectLevelBoard : MonoBehaviour
     {
         CheckDifficulty(2);
     }
+    
     public void EasyBtnOn()
     {
         CheckDifficulty(1);
     }
 
+    //참조
+    //난이도 설정
     public void CheckDifficulty(int levelInput)
     {
         //전부 닫기
         CloseCheckDifficulty();
-        //맞는 캐릭터 정보 켜기
         switch (levelInput)
         {
             case 3:
                 HardDifficultyCheck.SetActive(true);
                 SceneChangeManager.Instance.startLevel = levelInput;
-                Debug.Log("하드 난이도");
-                //씬 이동
                 break;
             case 2:
                 NormalDifficultyCheck.SetActive(true);
                 SceneChangeManager.Instance.startLevel = levelInput;
-                Debug.Log("노멀 난이도");
-                //씬 이동
                 break;
             case 1:
                 EasyDifficultyCheck.SetActive(true);
                 SceneChangeManager.Instance.startLevel = levelInput;
-                Debug.Log("이지 난이도");
-                //씬 이동
                 break;
             default:
                 Debug.Log("난이도 버튼 선택 오류");
                 break;
         }
     }
+    //겹칠 가능성 있는 오브젝트 삭제
     public void CloseCheckDifficulty()
     {
         HardDifficultyCheck.SetActive(false);
