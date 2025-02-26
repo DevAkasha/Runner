@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SwingObstacle : MonoBehaviour
+public class SwingObstacle : TriggerObstacle
 {
     [SerializeField] private float swingTime = 3.0f;
-    [SerializeField] private Transform trigger;     // trigger 역할을 하는 오브젝트
     private Transform player;
 
     Coroutine swingAnchor;
@@ -20,34 +19,20 @@ public class SwingObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (trigger == null)
-        {
-            Debug.Log("Trigger is Null");
-            return; 
-        }
+        CheckTrigger();
 
         CheckPlayerInTrigger();
     }
 
-    // 트리거 범위 안에 플레이어가 들어왔는지 체크
-    private void CheckPlayerInTrigger()
+    protected override void Action(Collider2D playerCollider)
     {
-        // trigger의 위치와 사이즈에 맞게 overlapBox를 생성하고 안에 collider가 있는지 판단
-        Vector2 size = trigger.GetComponent<BoxCollider2D>().size;
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(trigger.position, size, 0);
+        base.Action(playerCollider);
 
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            // 박스 범위 안에 player collider가 있다면 swingAnchor 실행
-            if (colliders[i].CompareTag("Player"))
-            {
-                player = colliders[i].transform;
+        player = playerCollider.transform;
 
-                // swingAnchor가 null이면 실행 (한번만 실행하기 위해)
-                if (swingAnchor == null)
-                    swingAnchor = StartCoroutine(SwingAnchorCo());
-            }
-        }
+        // swingAnchor가 null이면 실행 (한번만 실행하기 위해)
+        if (swingAnchor == null)
+            swingAnchor = StartCoroutine(SwingAnchorCo());
     }
 
     private IEnumerator SwingAnchorCo()

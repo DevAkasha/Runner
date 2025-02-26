@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6044590585578595615
+--- !u!1 &7892108656411304890
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1466440406892878344}
-  - component: {fileID: 1665532944860830530}
-  - component: {fileID: -7524967677070673654}
-  - component: {fileID: 6742114931273282453}
+  - component: {fileID: 8381002466381635863}
+  - component: {fileID: 7546201918603518903}
+  - component: {fileID: 6273549650724807367}
+  - component: {fileID: 1104822127371346393}
   m_Layer: 0
-  m_Name: Pearl
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1466440406892878344
+--- !u!4 &8381002466381635863
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6044590585578595615}
+  m_GameObject: {fileID: 7892108656411304890}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.95, y: -1.66, z: 0}
+  m_LocalPosition: {x: 7.04, y: -1.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1665532944860830530
+--- !u!212 &7546201918603518903
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6044590585578595615}
+  m_GameObject: {fileID: 7892108656411304890}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,39 +74,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
-  m_Sprite: {fileID: 21300000, guid: adef0d71d44d2de44a8d701263a547bb, type: 3}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: c88aa7fcb4081294c80d82010bf51035, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.28, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7524967677070673654
-MonoBehaviour:
+--- !u!61 &6273549650724807367
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6044590585578595615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d097aaef56cad50428bbd0ac744c270d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyDelay: 0.1
-  speed: 3
---- !u!58 &6742114931273282453
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6044590585578595615}
+  m_GameObject: {fileID: 7892108656411304890}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -129,9 +115,33 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: 0.01}
+  m_Offset: {x: 0, y: -0.17}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.28, y: 0.22}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.11
+  m_Size: {x: 0.71, y: 0.67}
+  m_EdgeRadius: 0
+--- !u!114 &1104822127371346393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892108656411304890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fae2df54da28f429e2fabed15fe71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  flyPower: 0
