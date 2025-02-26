@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class SelectionSceneManager : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class SelectionSceneManager : MonoBehaviour
     public GameObject AlphaInfo;
     public GameObject AlphaBtn;
     public GameObject StartBtn;
+    public GameObject AlphaInfoExitBtn;
+
+    public TextMeshProUGUI BestScore;
+    public TextMeshProUGUI LastScore;
 
     void Start()
     {
@@ -16,6 +21,10 @@ public class SelectionSceneManager : MonoBehaviour
 
         //해상도 고정 (전체화면, 창모드는 false)
         Screen.SetResolution(1920, 1080, true);
+
+        //점수 적용
+        BestScore.text = GameManager.Instance.BestScore.ToString();
+        LastScore.text = GameManager.Instance.Score.ToString();
     }
 
     //...버튼 켜고 끄기
@@ -24,9 +33,15 @@ public class SelectionSceneManager : MonoBehaviour
         AlphaInfo.SetActive(true);
     }
 
-    public void CloseBtnOn()
+    public void AlphaInfoCloseBtnOn()
     {
         AlphaInfo.SetActive(false);
+    }
+
+    public void AlphaInfoExitBtnOn() 
+    {
+        GameManager.Instance.GameOver();
+        Debug.Log("게임 종료");
     }
 
     //스타트 버튼
@@ -38,7 +53,10 @@ public class SelectionSceneManager : MonoBehaviour
             SceneChangeManager.Instance.FirstSceneChange(SceneChangeManager.Instance.startLevel);
         }
         //바로 시작할 경우 EASY 난이도로 이동
-        else { SceneChangeManager.Instance.FirstSceneChange(0); }
+        else 
+        {
+            SceneChangeManager.Instance.SceneChanger(1); 
+        }
     }
 }
 
