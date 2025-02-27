@@ -63,19 +63,16 @@ public class CharactorBoard : MonoBehaviour
                 VictorInfo.SetActive(true);
                 VictorMarker.SetActive(true);
                 SceneChangeManager.Instance.charactor = 1;
-                Debug.Log(SceneChangeManager.Instance.charactor + checkCharactor);
                 break;
             case "Nathan":
                 NathanInfo.SetActive(true);
                 NathanMarker.SetActive(true);
                 SceneChangeManager.Instance.charactor = 2;
-                Debug.Log(SceneChangeManager.Instance.charactor + checkCharactor);
                 break;
             case "Elena":
                 ElenaInfo.SetActive(true);
                 ElenaMarker.SetActive(true);
                 SceneChangeManager.Instance.charactor = 3;
-                Debug.Log(SceneChangeManager.Instance.charactor + checkCharactor);
                 break;
             default:
                 Debug.Log("캐릭터 선택 오류");

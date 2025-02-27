@@ -152,7 +152,7 @@ public class PlayerAction : MonoBehaviour
 
     private void Attack()
     {
-        if(!isSlide&& Input.GetKeyDown(KeyCode.Z))
+        if(!isSlide&&!isHit&&Input.GetKeyDown(KeyCode.Z))
         {
             if (playerAttack.isCoolTime) return;
             animator.SetTrigger("IsAttack");
