@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8744810820558900666}
+  - component: {fileID: 4671009476208053306}
   m_Layer: 0
   m_Name: RollObject
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 4593342898060252503}
   m_Father: {fileID: 2787269916622289721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4671009476208053306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297619029392622103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2facb1047c872a439c00ddcbc187f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 2102423101362792646}
+  moveSpeed: 0
+  rollSpeed: 720
+  damage: 0
 --- !u!1 &3319853549232562293
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +202,7 @@ GameObject:
   - component: {fileID: 4593342898060252503}
   - component: {fileID: 8616419171623112169}
   - component: {fileID: 8154296046366116114}
-  - component: {fileID: 8008390955939054700}
+  - component: {fileID: 2000858674256473478}
   m_Layer: 0
   m_Name: SpriteRenderer
   m_TagString: Untagged
@@ -295,7 +312,7 @@ CircleCollider2D:
   m_Offset: {x: -0.01, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.3
---- !u!114 &8008390955939054700
+--- !u!114 &2000858674256473478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -304,9 +321,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8475508494613275148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2facb1047c872a439c00ddcbc187f91, type: 3}
+  m_Script: {fileID: 11500000, guid: 06fae2df54da28f429e2fabed15fe71c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trigger: {fileID: 2102423101362792646}
-  moveSpeed: 0
-  rollSpeed: 720
+  damage: 0
+  flyPower: 0
+  isShootObstacle: 1
