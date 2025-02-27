@@ -18,9 +18,12 @@ public class PlayerAction : MonoBehaviour
 
     private SpriteRenderer playerSprite;
 
+    private PlayerAfterImage playerAfterImage;
+
 
     public bool IsFeverMods = false;                //피버모드인지 아닌지
     public bool isInvincible = false;               //무적인지 아닌지
+    public bool makeGhost = false;
     [SerializeField] private float jumpHeight;      // 점프 높이
     [SerializeField] private float rayLength;       // Ray 길이
 
@@ -42,6 +45,8 @@ public class PlayerAction : MonoBehaviour
     public InvincibilityEffect invincibilityEffect;
 
 
+
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -50,6 +55,7 @@ public class PlayerAction : MonoBehaviour
         playerStat = GetComponent<PlayerStat>();
         playerAttack = GetComponentInChildren<PlayerAttack>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
+        playerAfterImage = GetComponent<PlayerAfterImage>();
 
         colliderOffset = collider.offset;
         colliderSize = collider.size;
@@ -206,14 +212,17 @@ public class PlayerAction : MonoBehaviour
     {
         isInvincible = true;
         invincibilityEffect.gameObject.SetActive(true);
+        playerAfterImage.makeGhost = true;
         playerSprite.color = new Color32(199, 255, 216, 255);
 
         yield return new WaitForSeconds(duration);
 
         playerSprite.color = Color.white;
+        playerAfterImage.makeGhost = false;
         invincibilityEffect.gameObject.SetActive(false);
         isInvincible = false;
     }
+
     public IEnumerator IncreaseSpeed(float addSpeed, float duration)
     {
         playerStat.Speed += addSpeed;
