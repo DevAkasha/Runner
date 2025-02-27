@@ -16,6 +16,8 @@ public class PlayerAction : MonoBehaviour
 
     private PlayerAttack playerAttack;
 
+    private SpriteRenderer playerSprite;
+
 
     public bool IsFeverMods = false;                //피버모드인지 아닌지
     public bool isInvincible = false;               //무적인지 아닌지
@@ -37,6 +39,8 @@ public class PlayerAction : MonoBehaviour
     private Vector2 colliderOffset;
     private Vector2 colliderSize;
 
+    public InvincibilityEffect invincibilityEffect;
+
 
     void Start()
     {
@@ -45,6 +49,7 @@ public class PlayerAction : MonoBehaviour
         collider = GetComponent<CapsuleCollider2D>();
         playerStat = GetComponent<PlayerStat>();
         playerAttack = GetComponentInChildren<PlayerAttack>();
+        playerSprite = GetComponentInChildren<SpriteRenderer>();
 
         colliderOffset = collider.offset;
         colliderSize = collider.size;
@@ -73,9 +78,9 @@ public class PlayerAction : MonoBehaviour
     private void CheckGround()
     {
         bool temp = isGround;
-        
+
         RaycastHit2D hitData;
-        
+
         hitData = Physics2D.Raycast(transform.position, Vector3.down, rayLength, LayerMask.GetMask("Ground"));
 
         isGround = hitData.collider != null;
@@ -83,7 +88,7 @@ public class PlayerAction : MonoBehaviour
 
         if (isGround == true)
         {
-            animator.SetBool("IsJump",false);
+            animator.SetBool("IsJump", false);
             animator.SetBool("IsDown", false);
             extraJumpCount = playerStat.ExtraJumpCount;
         }
@@ -116,7 +121,7 @@ public class PlayerAction : MonoBehaviour
             SoundManager.Instance.PlaySFX(1);
         }
         // 바닥에 닿아있지 않다면 더블 점프 체크 변수를 확인하고 점프
-        else if(!isGround && Input.GetKeyDown(KeyCode.Space))
+        else if (!isGround && Input.GetKeyDown(KeyCode.Space))
         {
             if (extraJumpCount <= 0) return;
 
@@ -137,7 +142,7 @@ public class PlayerAction : MonoBehaviour
 
             collider.direction = CapsuleDirection2D.Horizontal;
             collider.size = new Vector2(colliderSize.y, colliderSize.x);
-            collider.offset = new Vector2(colliderOffset.x, - 0.2f);
+            collider.offset = new Vector2(colliderOffset.x, -0.2f);
         }
         else
         {
@@ -153,13 +158,13 @@ public class PlayerAction : MonoBehaviour
 
     private void Attack()
     {
-        if(!isSlide&&!isHit&&Input.GetKeyDown(KeyCode.Z))
+        if (!isSlide && !isHit && Input.GetKeyDown(KeyCode.Z))
         {
             SoundManager.Instance.PlaySFX(10);
             if (playerAttack.isCoolTime) return;
             animator.SetTrigger("IsAttack");
             playerAttack.ActiveAttack();
-        }     
+        }
     }
     public void Heal(int amount)
     {
@@ -193,14 +198,20 @@ public class PlayerAction : MonoBehaviour
         // hit가 유지되는 시간
         float hitTime = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(hitTime);
-        
+
         isHit = false;
     }
 
     public IEnumerator BecomeInvincible(float duration)
-    { 
+    {
         isInvincible = true;
+        invincibilityEffect.gameObject.SetActive(true);
+        playerSprite.color = new Color32(199, 255, 216, 255);
+
         yield return new WaitForSeconds(duration);
+
+        playerSprite.color = Color.white;
+        invincibilityEffect.gameObject.SetActive(false);
         isInvincible = false;
     }
     public IEnumerator IncreaseSpeed(float addSpeed, float duration)
@@ -228,6 +239,4 @@ public class PlayerAction : MonoBehaviour
         Gizmos.DrawRay(transform.position, Vector3.down * rayLength);
         Gizmos.DrawRay(transform.position, Vector3.right * 0.4f);
     }
-
-
 }

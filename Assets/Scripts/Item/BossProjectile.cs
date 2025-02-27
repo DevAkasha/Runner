@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
 
-public class BossRAProjectile : Item
+public class BossProjectile : Item
 {
     public int power= 20;
     public float startDelay = 0.5f;
@@ -11,10 +11,6 @@ public class BossRAProjectile : Item
     private bool isCreate;
     public float speed = -50f;
 
-    private void Start()
-    {
-        
-    }
     private void Update()
     {
         if(time < startDelay)
@@ -37,9 +33,18 @@ public class BossRAProjectile : Item
     {
         player.Damage(power);
     }
-    protected override void ApplyEffect(PlayerAction playerAttack, int hitMultiplier)
+    protected override void ApplyEffect(PlayerAction player, int hitMultiplier)
     {
-        base.ApplyEffect(playerAttack, hitMultiplier);
+        //player 가 null일 경우 보스피격
+        if (player == null)
+        {
+            FindAnyObjectByType<Boss>().GetComponent<Boss>().TakeDamage(power);
+        }
+        //속도가 -0.25f보다 큰 것(느린 것)만 반사가능
+        else if (speed>-0.25f) speed = -speed;
     }
-
+    protected override void ApplyEffectBoss(Boss boss)
+    {
+        boss.TakeDamage(power);
+    }
 }
