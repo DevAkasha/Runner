@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CannonBall : Item
 {
-    [SerializeField] private float speed = 1.0f;
+    [SerializeField] private float speed = 2.0f;
 
     private void Start()
     {
