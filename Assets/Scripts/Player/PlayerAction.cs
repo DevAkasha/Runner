@@ -206,7 +206,7 @@ public class PlayerAction : MonoBehaviour
     // 피격 당했을 때
     public void Damage(int amount)
     {
-        if (isHit)
+        if (isHit || isDie)
             return;
 
         SoundManager.Instance.PlaySFX(11);
