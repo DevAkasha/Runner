@@ -34,11 +34,13 @@ public class SceneEndObjectController : MonoBehaviour
     //다음 스테이지 버튼 눌렀을 때 다음 씬으로 이동
     public void NextStageBtnOn() 
     {
+        Time.timeScale = 1f;
         PassScene();
     }
     //캐릭터 선택 화면으로 이동
     public void ChooseStageBtnOn() 
     {
+        Time.timeScale = 1f;
         SceneChangeManager.Instance.SceneChanger(0);
     }
     //레벨 하나 높이고 씬 불러오기
