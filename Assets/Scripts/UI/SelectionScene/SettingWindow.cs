@@ -122,8 +122,6 @@ public class SettingWindow : MonoBehaviour
 
     private void CloseSettings()
     {
-        GameManager.Instance.
         gameObject.SetActive(false);
-
     }
 }
