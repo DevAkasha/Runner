@@ -16,15 +16,22 @@ public class PlayerStat : MonoBehaviour
     [SerializeField] private int extraJumpCount;      // 추가 점프 가능 수
     public int ExtraJumpCount { get => extraJumpCount; }
 
+    GameOverUI gameOverUI;
+
     private void Start()
     {
         HP = maxHP;
         Speed = speed;
+
+        gameOverUI = FindObjectOfType<GameOverUI>(true);
     }
 
     private void Die()
     {
         PlayerAction player = GetComponent<PlayerAction>();
+
+        if(gameOverUI != null)
+            gameOverUI.SetActive(true);
         if (player != null) player.Die();
         GameManager.Instance.GameOver();
     }
