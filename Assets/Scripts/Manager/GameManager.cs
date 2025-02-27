@@ -3,9 +3,8 @@ using UnityEngine.UIElements;
 using System;
 using UnityEngine.SceneManagement;
 
-public enum Character { Victor=1, Nathan, Elena }
-
 public enum Character { Victor , Nathan , Elena }
+
 public class GameManager : Manager<GameManager>
 {
     //DontDestroyOnLoad setting
@@ -73,7 +72,7 @@ public class GameManager : Manager<GameManager>
         if(Array.TrueForAll(hasGemStone, x => x))
         {
             player.StartCoroutine(player.SetFever(feverTime));
-            Invoke("InitGemStone", feverTime);
+            Invoke(nameof(InitGemStone), feverTime);
         }
     }
     public void InitGemStone()
@@ -86,7 +85,7 @@ public class GameManager : Manager<GameManager>
 
     public void createCharacter()
     {
-        Instantiate<GameObject>(chracterPrefabArray[characterIndex]);
+        Instantiate<GameObject>(chracterPrefabArray[characterIndex],new Vector3(-5.1f,-1.5f,0f), Quaternion.identity);
     }
 
     public void GameOver()
