@@ -194,6 +194,7 @@ public class PlayerAction : MonoBehaviour
         isFreeze = true;
         rigid.velocity = new Vector2(0f, rigid.velocity.y);
         animator.SetBool("IsDie", true);
+        GameManager.Instance.GameOver();
     }
 
     // 피격 당했을 때

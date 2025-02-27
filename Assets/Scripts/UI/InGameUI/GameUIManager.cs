@@ -3,22 +3,28 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class GameUIManager : MonoBehaviour
+public class GameUIManager : Manager<GameUIManager>
 {
+    protected override bool isPersistent => false;
+
     //난이도 세팅
     public int levelSet;
 
     public GameObject ScoreBoard;
+    public GameObject StopBoard;
     private TextMeshProUGUI ScoreBoardTxt;
-
-    private PlayerStat stat;
-    void Awake()
+    
+    protected override void Awake()
     {
+        base.Awake();
+
         ScoreBoard.SetActive(false);
         ScoreBoard.SetActive(true);
+
         //스코어보드 텍스트 가져오기
         ScoreBoardTxt = GetComponentInChildren<TextMeshProUGUI>();
     }
+
     void Update()
     {
         //스코어보드 점수 업데이트
@@ -26,5 +32,10 @@ public class GameUIManager : MonoBehaviour
         {
             ScoreBoardTxt.text = GameManager.Instance.Score.ToString();
         }
+    }
+
+    public void OpenGameOverBoard()
+    {
+        StopBoard.SetActive(true);
     }
 }

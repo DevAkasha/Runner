@@ -21,8 +21,11 @@ public class HPBarController : MonoBehaviour
         HPBarI = GetComponentInChildren<HPBarImage>();
         HPBarImage = HPBarImage.gameObject.GetComponent<Image>();
 
-        stat = FindObjectOfType<PlayerStat>();
+    }
 
+    private void Start()
+    {
+        stat = FindObjectOfType<PlayerStat>();
     }
 
     void Update()
