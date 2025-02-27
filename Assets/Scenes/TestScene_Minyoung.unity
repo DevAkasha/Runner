@@ -1522,8 +1522,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432057114}
-  m_BodyType: 0
-  m_Simulated: 0
+  m_BodyType: 1
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -1661,10 +1661,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4911675554592507385, guid: cb37a98322d2d2d4ab3c9d44d55f761c, type: 3}
-      propertyPath: SkillAProjectilePrefab
-      value: 
-      objectReference: {fileID: 8426856725609476732, guid: 107a74832f2356945bf271943f9241fa, type: 3}
     - target: {fileID: 7434018537820185759, guid: cb37a98322d2d2d4ab3c9d44d55f761c, type: 3}
       propertyPath: m_Name
       value: Boss

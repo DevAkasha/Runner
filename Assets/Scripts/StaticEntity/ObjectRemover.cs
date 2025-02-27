@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class ObjectRemover : MonoBehaviour
 {
+    private void Start()
+    {
+        Debug.Log("start");
+    }
     //트리거 충돌 감지 (isTrigger 체크된 경우)
     private void OnTriggerEnter2D(Collider2D other)
     {

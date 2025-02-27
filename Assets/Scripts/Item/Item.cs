@@ -8,8 +8,8 @@ public abstract class Item : MonoBehaviour
     public bool isdestroyed = false;
 
     protected abstract void ApplyEffect(PlayerAction player);
-    protected virtual void ApplyEffect(PlayerAction playerAttack, int hitMultiplier){ }
-
+    protected virtual void ApplyEffect(PlayerAction player, int hitMultiplier){ }
+    protected virtual void ApplyEffectBoss(Boss boss) { }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerAttack"))
@@ -21,6 +21,11 @@ public abstract class Item : MonoBehaviour
                 ApplyEffect(player, playerAttack.hitMultiplier);
                 isdestroyed = true;
                 Destroy(gameObject, destroyDelay);
+            }
+            else
+            {
+                Boss boss = collision.GetComponent<Boss>();
+                ApplyEffectBoss(boss);
             }
         }
         else if (collision.CompareTag("Player")&&!isdestroyed)

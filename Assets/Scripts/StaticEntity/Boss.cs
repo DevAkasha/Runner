@@ -5,10 +5,10 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     [Header("Boss Settings")]
-    public float maxHealth = 1000f;
-    public float currentHealth;
+    public int maxHealth = 1000;
+    public int currentHealth;
 
-    public float meleeDamage = 20f;
+    public int meleeDamage = 20;
     public float fireRate = 0.1f;
 
     public float jumpForce = 5f;
@@ -16,6 +16,7 @@ public class Boss : MonoBehaviour
     public GameObject RAProjectilePrefab;
     public GameObject SkillBProjectilePrefab;
     public GameObject SkillAProjectilePrefab;
+    public BoxCollider2D attackCollider;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -33,7 +34,7 @@ public class Boss : MonoBehaviour
         bossAI = GetComponent<BossAI>();
     }
 
-    // 2. 기본 공격 - 근접
+    // 근접 공격 행동
     public IEnumerator MeleeAttack()
     {
         if (isDead) yield break;     
@@ -51,9 +52,11 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(CalculateAnimationLength("TeleportEnd"));
 
         animator.SetTrigger("IsAttack");
-        // 여기에 근접 공격 판정 로직 추가
-        yield return null;
-        yield return new WaitForSeconds(CalculateAnimationLength("Attack"));
+        yield return new WaitForSeconds(0.2f);
+        attackCollider.enabled = true;
+        yield return new WaitForSeconds(CalculateAnimationLength("Attack") - 0.4f);
+        attackCollider.enabled = false;
+        yield return new WaitForSeconds(0.2f);
 
         animator.SetTrigger("IsTeleportStart");
         yield return null;
@@ -75,11 +78,18 @@ public class Boss : MonoBehaviour
                 return animState.length;
             else return 1f;
         }
-
+    }
+    // 근접 공격 적용
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerAction>().Damage(meleeDamage);
+        }
     }
 
 
-    // 3. 기본 공격 - 원거리
+    // 기본 공격 - 원거리
     public void RangedAttack(int count)
     {
         if (isDead) return;
@@ -107,12 +117,12 @@ public class Boss : MonoBehaviour
     }
 
     // 6. 피격 처리
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         if (isDead) return;
-        currentHealth -= damage;
         animator.SetTrigger("IsHit");
-
+        currentHealth -= damage;
+       
         Debug.Log($"Boss가 {damage} 만큼 피해를 입음. 남은 체력: {currentHealth}");
 
         if (currentHealth <= 0)
