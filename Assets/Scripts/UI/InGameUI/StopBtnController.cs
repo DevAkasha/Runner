@@ -32,12 +32,14 @@ public class StopBtnController : MonoBehaviour
     //해당 씬 재시작
     public void RetryBtnOn() 
     {
+        Time.timeScale = 1f;
         SceneChangeManager.Instance.SceneChanger(level.levelSet);
     }
 
     //캐릭터 선택창으로 이동
-    public void GiveUpBtn() 
+    public void GiveUpBtn()
     {
+        Time.timeScale = 1f;
         SceneChangeManager.Instance.SceneChanger(0);
     }
 }
