@@ -7,27 +7,33 @@ public class BossAI : MonoBehaviour
 
     private bool skillAReady = true;
     private bool skillBReady = true;
-    public bool ActionEnd =true;
+    public bool actionEnd =true;
 
     void Start()
     {
         boss = GetComponent<Boss>();
+        StartBossBehavior();
+    }
+    public void StartBossBehavior()
+    {
         StartCoroutine(BossBehavior());
     }
 
     IEnumerator BossBehavior()
     {
-        while (ActionEnd)
+        while (true)
         {
+            int count = 1;
             float ActionDelay = 2f;
-            if (boss.currentHealth <= boss.maxHealth * 0.5f) ActionDelay = 1.5f;
+            if (boss.currentHealth <= boss.maxHealth * 0.5f) ActionDelay = 1.5f; 
             if (boss.currentHealth <= boss.maxHealth * 0.2f) ActionDelay = 1f;
+
             yield return new WaitForSeconds(ActionDelay); // 행동 간격
 
             // 행동 확률 설정
             float action = Random.Range(0f, 100f);
 
-            if (skillBReady && action < 30f)
+            if (skillBReady && action < 25f)
             {
                 StartCoroutine(UseSkillB(ActionDelay * 4));
             }
@@ -37,14 +43,16 @@ public class BossAI : MonoBehaviour
                 StartCoroutine(UseSkillA(ActionDelay*6));
             }
 
-            else if (action > 30f && action < 60f&&ActionDelay < 1.4f)
+            else if (action > 40f && action < 60f&&ActionDelay < 1.4f)
             {
-                boss.MeleeAttack();
+                StartCoroutine(boss.MeleeAttack());
+                yield break;
             }
 
             else
             {
-                boss.RangedAttack();
+                count = (action > 50f) ? 4 : 2;
+                boss.RangedAttack(count);
             }
         }
     }
