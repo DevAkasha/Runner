@@ -9,6 +9,8 @@ public class GameManager : Manager<GameManager>
 
     public int score;
     public int feverMultiplier = 1;
+
+    public float feverTime = 5f;
     public int Score { get; private set; }
 
     public int bestScore;
@@ -43,8 +45,8 @@ public class GameManager : Manager<GameManager>
         //모든 잼스톤이 true이면 플레이어 피버모드 발동!
         if(Array.TrueForAll(hasGemStone, x => x))
         {
-            player.StartCoroutine(player.SetFever(5f));
-            InitGemStone();
+            player.StartCoroutine(player.SetFever(feverTime));
+            Invoke("InitGemStone", feverTime);
         }
     }
     public void InitGemStone()
