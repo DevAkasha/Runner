@@ -1136,7 +1136,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_47
+      name: Hit
       rect:
         serializedVersion: 2
         x: 0
@@ -1178,7 +1178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_49
+      name: Die0
       rect:
         serializedVersion: 2
         x: 0
@@ -1199,7 +1199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_50
+      name: Die1
       rect:
         serializedVersion: 2
         x: 32
@@ -1220,7 +1220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_51
+      name: Die2
       rect:
         serializedVersion: 2
         x: 64
@@ -1241,7 +1241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_52
+      name: Die3
       rect:
         serializedVersion: 2
         x: 96
@@ -1262,7 +1262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide
+      name: Die4
       rect:
         serializedVersion: 2
         x: 128
@@ -1283,7 +1283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniWindWarrior-Sheet_54
+      name: Die5
       rect:
         serializedVersion: 2
         x: 160
@@ -1320,6 +1320,13 @@ TextureImporter:
       Attack3: -1590322678
       Attack4: 1794539196
       Attack5: 760136211
+      Die0: 1741866441
+      Die1: 1833142802
+      Die2: 382232330
+      Die3: -191507034
+      Die4: 548563790
+      Die5: -1894931273
+      Hit: 544064751
       Jump0: -1525127704
       Jump1: -1487560977
       Jump2: -263133313
@@ -1355,20 +1362,13 @@ TextureImporter:
       MiniWindWarrior-Sheet_44: -1668069525
       MiniWindWarrior-Sheet_45: 106203006
       MiniWindWarrior-Sheet_46: -917195302
-      MiniWindWarrior-Sheet_47: 544064751
       MiniWindWarrior-Sheet_48: 1796669925
-      MiniWindWarrior-Sheet_49: 1741866441
-      MiniWindWarrior-Sheet_50: 1833142802
-      MiniWindWarrior-Sheet_51: 382232330
-      MiniWindWarrior-Sheet_52: -191507034
-      MiniWindWarrior-Sheet_54: -1894931273
       Run0: -70443352
       Run1: 124005280
       Run2: -1444860218
       Run3: -867217783
       Run4: -387837486
       Run5: 925581613
-      Slide: 548563790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

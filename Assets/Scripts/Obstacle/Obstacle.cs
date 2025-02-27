@@ -1,10 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] float damage;
+    [SerializeField] private int damage;
+    [SerializeField] private float flyPower; // 날아가는 힘
+    [SerializeField] private bool isShootObstacle = false;    // 발사되는 장애물인가?
+    private bool isFly = false;              // 날아간 적이 있는지 확인
+
+    protected void Start()
+    {
+        if(damage <= 0)
+            damage = 10;
+
+        if(flyPower <= 0)
+            flyPower = 10f;
+    }
+
+    // 장애물이 날아가는 함수
+    public void FlyObatacle()
+    {
+        if (isFly) return;
+
+        isFly = true;
+        Rigidbody2D rigid = transform.AddComponent<Rigidbody2D>();
+
+        Collider2D collider = transform.GetComponent<Collider2D>();
+        if (collider != null)
+            collider.enabled = false;
+
+        // 날아갈 방향
+        Vector2 direction = new Vector2(1, Random.Range(-0.5f, 0.5f));
+
+        rigid.AddForce(direction * flyPower, ForceMode2D.Impulse);
+        rigid.AddTorque(flyPower, ForceMode2D.Impulse);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +46,13 @@ public class Obstacle : MonoBehaviour
             PlayerAction player = collision.GetComponent<PlayerAction>();
             if(player != null)
             {
-                //player.Damage(damage);
+                if (!player.isInvincible)
+                    player.Damage(damage);
+                else
+                {
+                    if(!isShootObstacle)
+                        FlyObatacle();
+                }
             }
         }
     }

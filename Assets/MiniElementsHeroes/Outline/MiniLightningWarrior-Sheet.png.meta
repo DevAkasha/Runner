@@ -884,7 +884,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_35
+      name: Hit
       rect:
         serializedVersion: 2
         x: 0
@@ -926,7 +926,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_37
+      name: Die0
       rect:
         serializedVersion: 2
         x: 0
@@ -947,7 +947,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_38
+      name: Die1
       rect:
         serializedVersion: 2
         x: 32
@@ -968,7 +968,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_39
+      name: Die2
       rect:
         serializedVersion: 2
         x: 64
@@ -989,7 +989,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_40
+      name: Die3
       rect:
         serializedVersion: 2
         x: 96
@@ -1010,7 +1010,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slide
+      name: Die4
       rect:
         serializedVersion: 2
         x: 128
@@ -1031,7 +1031,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniLightningWarrior-Sheet_42
+      name: Die5
       rect:
         serializedVersion: 2
         x: 160
@@ -1236,6 +1236,13 @@ TextureImporter:
       Attack3: -742670386
       Attack4: 1824627715
       Attack5: -408496850
+      Die0: -1879469746
+      Die1: 2122907466
+      Die2: 404524177
+      Die3: -221179862
+      Die4: -1888193934
+      Die5: -831435142
+      Hit: -337797049
       Jump0: -1774285119
       Jump1: -2117476565
       Jump2: 980536725
@@ -1256,13 +1263,7 @@ TextureImporter:
       MiniLightningWarrior-Sheet_32: 257029925
       MiniLightningWarrior-Sheet_33: -1930573858
       MiniLightningWarrior-Sheet_34: -1634147401
-      MiniLightningWarrior-Sheet_35: -337797049
       MiniLightningWarrior-Sheet_36: -1455355434
-      MiniLightningWarrior-Sheet_37: -1879469746
-      MiniLightningWarrior-Sheet_38: 2122907466
-      MiniLightningWarrior-Sheet_39: 404524177
-      MiniLightningWarrior-Sheet_40: -221179862
-      MiniLightningWarrior-Sheet_42: -831435142
       MiniLightningWarrior-Sheet_43: -1386161210
       MiniLightningWarrior-Sheet_44: -1903419862
       MiniLightningWarrior-Sheet_45: 139650353
@@ -1277,7 +1278,6 @@ TextureImporter:
       Run3: 944345026
       Run4: -1526384134
       Run5: 733008586
-      Slide: -1888193934
       noAttack0: 450044980
       noAttack1: 438764009
       noAttack2: 1332458960
