@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 2572743916016022520}
   - component: {fileID: 2760664800259200309}
   - component: {fileID: 8066378480722644402}
+  - component: {fileID: 5408089706666337090}
   m_Layer: 0
   m_Name: Elena
   m_TagString: Player
@@ -341,8 +342,36 @@ MonoBehaviour:
   hp: 100
   maxHP: 100
   decreaseAmount: 0.5
-  speed: 4
+  speed: 8
   extraJumpCount: 2
+--- !u!114 &5408089706666337090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403468355856469255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7015b6107ef54458c600e7d8a6ea92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsFeverMods: 0
+  isInvincible: 0
+  makeGhost: 0
+  jumpHeight: 0
+  rayLength: 0
+  isGround: 0
+  isGroundChage: 0
+  isWall: 0
+  isSlide: 0
+  isSlideChage: 0
+  extraJumpCount: 0
+  isHit: 0
+  isFreeze: 0
+  invincibilityEffect: {fileID: 7466185017206753461}
+  ghostDelay: 0.03
+  ghost: {fileID: 55445694774670597, guid: e30525c29d8f21642ae97f9af3a650d4, type: 3}
 --- !u!1001 &7706909349784713268
 PrefabInstance:
   m_ObjectHideFlags: 0
