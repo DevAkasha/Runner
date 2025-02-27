@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Security;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -37,6 +38,7 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] private bool isHit = false;
     [SerializeField] private bool isFreeze = false;
+    [SerializeField] private bool isDie = false;    // 플레이어가 죽었는지 확인
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
@@ -64,6 +66,8 @@ public class PlayerAction : MonoBehaviour
         colliderSize = collider.size;
 
         extraJumpCount = playerStat.ExtraJumpCount;
+
+        isDie = false;
 
         InitKey();
     }
@@ -190,6 +194,9 @@ public class PlayerAction : MonoBehaviour
     }
     public void Die()
     {
+        if (isDie) return;
+
+        isDie = true;
         SoundManager.Instance.PlaySFX(9);
         isFreeze = true;
         rigid.velocity = new Vector2(0f, rigid.velocity.y);
@@ -199,9 +206,10 @@ public class PlayerAction : MonoBehaviour
     // 피격 당했을 때
     public void Damage(int amount)
     {
-        SoundManager.Instance.PlaySFX(11);
         if (isHit)
             return;
+
+        SoundManager.Instance.PlaySFX(11);
 
         playerStat.HP -= amount;
 
