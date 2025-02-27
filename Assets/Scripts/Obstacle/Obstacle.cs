@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,9 +8,10 @@ public class Obstacle : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private float flyPower; // 날아가는 힘
+    [SerializeField] private bool isShootObstacle = false;    // 발사되는 장애물인가?
     private bool isFly = false;              // 날아간 적이 있는지 확인
 
-    private void Start()
+    protected void Start()
     {
         if(damage <= 0)
             damage = 10;
@@ -25,6 +27,10 @@ public class Obstacle : MonoBehaviour
 
         isFly = true;
         Rigidbody2D rigid = transform.AddComponent<Rigidbody2D>();
+
+        Collider2D collider = transform.GetComponent<Collider2D>();
+        if (collider != null)
+            collider.enabled = false;
 
         // 날아갈 방향
         Vector2 direction = new Vector2(1, Random.Range(-0.5f, 0.5f));
@@ -43,7 +49,10 @@ public class Obstacle : MonoBehaviour
                 if (!player.isInvincible)
                     player.Damage(damage);
                 else
-                    FlyObatacle();
+                {
+                    if(!isShootObstacle)
+                        FlyObatacle();
+                }
             }
         }
     }

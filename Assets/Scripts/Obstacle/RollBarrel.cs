@@ -7,6 +7,7 @@ public class RollBarrel : TriggerObstacle
 {
     [SerializeField] private float moveSpeed;   // 이동 속도
     [SerializeField] private float rollSpeed;   // 회전 속도
+    [SerializeField] private int damage;
     private bool isRoll = false;            // 구르기가 가능한지 확인
 
     private void Start()
@@ -39,7 +40,7 @@ public class RollBarrel : TriggerObstacle
     {
         if (!isRoll) return;
 
-        transform.parent.parent.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        transform.parent.Rotate(new Vector3(0, 0, rollSpeed * Time.deltaTime));
+        transform.parent.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, rollSpeed * Time.deltaTime));
     }
 }
