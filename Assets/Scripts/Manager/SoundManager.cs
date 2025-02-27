@@ -23,6 +23,9 @@ public class SoundManager : Manager<SoundManager>
     private AudioSource bgmAudioSource;
     private AudioSource sfxAudioSource;
 
+    private float bgmVolumeRatio;
+    private float sfxVolumeRatio;
+
     protected override void Awake()
     {
         base.Awake();
@@ -38,6 +41,9 @@ public class SoundManager : Manager<SoundManager>
             bgms = clipInfos.bgms;
             sfxs = clipInfos.sfxs;
         }
+
+        bgmVolumeRatio = 1f;
+        sfxVolumeRatio = 1f;
     }
 
     private void CreateAudioSourceObject(string name, out AudioSource audioSource)
@@ -52,7 +58,7 @@ public class SoundManager : Manager<SoundManager>
         if (sfxAudioSource == null)
             return;
 
-        sfxAudioSource.volume = sfxs[index].volume;
+        sfxAudioSource.volume = sfxs[index].volume * sfxVolumeRatio;
         sfxAudioSource.PlayOneShot(sfxs[index].audioClip);
     }
 
@@ -61,9 +67,22 @@ public class SoundManager : Manager<SoundManager>
         if (bgmAudioSource == null)
             return;
 
-        bgmAudioSource.volume = bgms[index].volume;
+        bgmAudioSource.volume = bgms[index].volume * bgmVolumeRatio;
         bgmAudioSource.clip = bgms[index].audioClip;
         bgmAudioSource.loop = true;
         bgmAudioSource.Play();
+    }
+
+    public void SetBgmVolume(float ratio)
+    {
+        bgmVolumeRatio = ratio;
+
+        float volume = bgmAudioSource.volume;
+        bgmAudioSource.volume = volume * bgmVolumeRatio;
+    }
+
+    public void SetSfxVolume(float ratio)
+    {
+        sfxVolumeRatio = ratio;
     }
 }
