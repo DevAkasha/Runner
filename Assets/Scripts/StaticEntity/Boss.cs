@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
     public int currentHealth;
 
     public int meleeDamage = 20;
-    public float fireRate = 0.1f;
+    public float fireRate = 0.07f;
 
     public float jumpForce = 5f;
     public Transform rangedAttackPoint;
@@ -29,7 +29,7 @@ public class Boss : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        //currentHealth = maxHealth;
+        currentHealth = maxHealth;
         playerTransform = FindAnyObjectByType<PlayerAction>().transform;
         bossAI = GetComponent<BossAI>();
     }
@@ -79,6 +79,7 @@ public class Boss : MonoBehaviour
             else return 1f;
         }
     }
+
     // 근접 공격 적용
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -102,7 +103,7 @@ public class Boss : MonoBehaviour
     {
         for (int i = 0; i < count; i++)
         {
-            Instantiate(RAProjectilePrefab, rangedAttackPoint.position, Quaternion.identity);
+            Instantiate(RAProjectilePrefab, rangedAttackPoint.position + new Vector3(0,i*0.3f,0), Quaternion.identity);
             yield return new WaitForSeconds(fireRate);
         }
     }
