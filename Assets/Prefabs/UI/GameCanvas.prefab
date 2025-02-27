@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 752247836739263369}
   - component: {fileID: 1673292045930616308}
   - component: {fileID: 2160576738444235581}
-  - component: {fileID: 9099688358776995217}
+  - component: {fileID: 4442303930661126274}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -316,9 +316,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3692286222756569122}
   - {fileID: 5573916045666074451}
-  - {fileID: 4246822021539097037}
   - {fileID: 1419036094198915073}
+  - {fileID: 4246822021539097037}
   - {fileID: 9091695889418883366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -390,7 +391,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9099688358776995217
+--- !u!114 &4442303930661126274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -402,20 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b681c728d7d6624c8b36e53bfe68381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StopBtn: {fileID: 8423149385379384262}
-  StopBoard: {fileID: 5999753141746201271}
+  levelSet: 1
   ScoreBoard: {fileID: 7226589315183051513}
-  HPBarI: {fileID: 0}
-  HPBar: {fileID: 6726535431021280760}
-  HPRatio: 0
-  HPBarImage: {fileID: 2854178529894591299}
-  Jewel: {fileID: 4291717895255468410}
-  NoneDiamond: {fileID: 3590496005286758660}
-  Diamond: {fileID: 7504790512052756855}
-  NoneEmerald: {fileID: 109503823290935929}
-  Emerald: {fileID: 2359185906864434049}
-  NoneRuby: {fileID: 3641711058948991709}
-  Ruby: {fileID: 8520728337084091055}
 --- !u!1 &2359185906864434049
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,8 +600,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9099688358776995217}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
+      - m_Target: {fileID: 107081349005078986}
+        m_TargetAssemblyTypeName: StopBtnController, Assembly-CSharp
         m_MethodName: StopBoardCloseBtn
         m_Mode: 1
         m_Arguments:
@@ -657,8 +646,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25, y: -5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -32, y: -5}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6649432015982539445
 CanvasRenderer:
@@ -688,7 +677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 00000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2596a34b2e0860d40add88ba5b3abcf0, type: 2}
   m_sharedMaterial: {fileID: -3419081394089072865, guid: 2596a34b2e0860d40add88ba5b3abcf0, type: 2}
@@ -1027,7 +1016,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5464342558230754197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 107081349005078986}
+        m_TargetAssemblyTypeName: StopBtnController, Assembly-CSharp
+        m_MethodName: RetryBtnOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4291717895255468410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,8 +1038,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3692286222756569122}
+  - component: {fileID: 1938085687891343525}
   m_Layer: 5
-  m_Name: Jewel
+  m_Name: Gem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1062,13 +1064,32 @@ RectTransform:
   - {fileID: 695000924589428186}
   - {fileID: 8823324359806057325}
   - {fileID: 5625624611823528722}
-  m_Father: {fileID: 5573916045666074451}
+  m_Father: {fileID: 473541098873786172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -103}
+  m_AnchoredPosition: {x: -16, y: 327.00003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1938085687891343525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291717895255468410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9aec4b7cf10b041a48fee41835ab80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gem: {fileID: 4291717895255468410}
+  NoneDiamond: {fileID: 3590496005286758660}
+  Diamond: {fileID: 7504790512052756855}
+  NoneEmerald: {fileID: 109503823290935929}
+  Emerald: {fileID: 2359185906864434049}
+  NoneRuby: {fileID: 3641711058948991709}
+  Ruby: {fileID: 8520728337084091055}
 --- !u!1 &5495085753902223410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5573916045666074451}
+  - component: {fileID: 2551196468195764350}
   m_Layer: 5
   m_Name: HPBar
   m_TagString: Untagged
@@ -1254,14 +1276,29 @@ RectTransform:
   - {fileID: 3414261304467411787}
   - {fileID: 4972529985621290103}
   - {fileID: 1179149663116394238}
-  - {fileID: 3692286222756569122}
   m_Father: {fileID: 473541098873786172}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.5, y: 430}
-  m_SizeDelta: {x: 1325, y: 200}
+  m_AnchoredPosition: {x: -77, y: 430}
+  m_SizeDelta: {x: 1225, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2551196468195764350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726535431021280760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6816eb235b3aae245ab37ab3b55c4723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPBarI: {fileID: 0}
+  HPBar: {fileID: 6726535431021280760}
+  HPRatio: 0
+  HPBarImage: {fileID: 2854178529894591299}
 --- !u!1 &6913929626340433164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -3}
+  m_AnchoredPosition: {x: 99, y: -3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &471903520890687072
@@ -1508,7 +1545,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 780, y: 430}
-  m_SizeDelta: {x: 250, y: 150}
+  m_SizeDelta: {x: 350, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1933419719583642132
 CanvasRenderer:
@@ -1582,8 +1619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.5, y: 10}
-  m_SizeDelta: {x: 1125, y: 20}
+  m_AnchoredPosition: {x: 93, y: 10}
+  m_SizeDelta: {x: 1075, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8130795206590785024
 CanvasRenderer:
@@ -1710,6 +1747,7 @@ GameObject:
   - component: {fileID: 2184440279687348331}
   - component: {fileID: 1155289919049405250}
   - component: {fileID: 7983223518382869588}
+  - component: {fileID: 107081349005078986}
   m_Layer: 5
   m_Name: StopBtn
   m_TagString: Untagged
@@ -1733,7 +1771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -800, y: 430}
+  m_AnchoredPosition: {x: -805, y: 430}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2184440279687348331
@@ -1795,9 +1833,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1818,9 +1856,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9099688358776995217}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: StopButtonOn
+      - m_Target: {fileID: 107081349005078986}
+        m_TargetAssemblyTypeName: StopBtnController, Assembly-CSharp
+        m_MethodName: StopBtnOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1830,6 +1868,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &107081349005078986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8423149385379384262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db6311cdaefb0b4d8f9e2d4dcc89190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StopBtn: {fileID: 8423149385379384262}
+  StopBoard: {fileID: 5999753141746201271}
 --- !u!1 &8520728337084091055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,4 +2211,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4536811746002801045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 107081349005078986}
+        m_TargetAssemblyTypeName: StopBtnController, Assembly-CSharp
+        m_MethodName: GiveUpBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
