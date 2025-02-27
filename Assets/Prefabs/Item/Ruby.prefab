@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 8220504551054492819}
   - component: {fileID: 6372793419123218245}
   - component: {fileID: 9208784919597895470}
+  - component: {fileID: 788255809307228599}
   m_Layer: 0
   m_Name: Ruby
   m_TagString: Untagged
@@ -192,3 +193,17 @@ MonoBehaviour:
   OnlyPlayer: 0
   OnlyPlayerAttack: 1
   type: 2
+--- !u!114 &788255809307228599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5285877779142628671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c6d07a7ef1911449110e06aa399f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemStoneEffectPrefab: {fileID: 2241864961982121487, guid: d8a5015cc2530984da1848207c46feb4, type: 3}
+  destroyDelay: 0.1
