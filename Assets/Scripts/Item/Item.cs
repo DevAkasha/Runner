@@ -6,13 +6,15 @@ public abstract class Item : MonoBehaviour
 {
     public float destroyDelay = 0.1f;
     public bool isdestroyed = false;
+    [SerializeField] bool OnlyPlayer;
+    [SerializeField] bool OnlyPlayerAttack;
 
     protected abstract void ApplyEffect(PlayerAction player);
     protected virtual void ApplyEffect(PlayerAction player, int hitMultiplier){ }
     protected virtual void ApplyEffectBoss(Boss boss) { }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerAttack"))
+        if (collision.CompareTag("PlayerAttack")&& !OnlyPlayer)
         {
             PlayerAction player = collision.GetComponentInParent<PlayerAction>();
             PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
@@ -28,7 +30,7 @@ public abstract class Item : MonoBehaviour
                 ApplyEffectBoss(boss);
             }
         }
-        else if (collision.CompareTag("Player")&&!isdestroyed)
+        else if (collision.CompareTag("Player")&&!isdestroyed&&!OnlyPlayerAttack)
         {
             PlayerAction player = collision.GetComponent<PlayerAction>();
             if (player != null)

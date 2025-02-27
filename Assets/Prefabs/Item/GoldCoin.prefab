@@ -190,7 +190,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyDelay: 0.2
   isdestroyed: 0
-  scoreValue: 0
+  OnlyPlayer: 0
+  OnlyPlayerAttack: 0
+  scoreValue: 30
 --- !u!114 &4430275782577595458
 MonoBehaviour:
   m_ObjectHideFlags: 0

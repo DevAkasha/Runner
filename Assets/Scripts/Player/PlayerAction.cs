@@ -158,7 +158,7 @@ public class PlayerAction : MonoBehaviour
 
     private void Attack()
     {
-        if (!isSlide && !isHit && Input.GetKeyDown(KeyCode.Z))
+        if (!isSlide && !isHit && Input.GetKeyDown(KeyCode.C))
         {
             SoundManager.Instance.PlaySFX(10);
             if (playerAttack.isCoolTime) return;
