@@ -9,6 +9,7 @@ public class FollowCamera : MonoBehaviour
 
     void Start()
     {
+        target = FindAnyObjectByType<PlayerAction>().transform;
         if (target == null) return;
 
         offsetX = transform.position.x - target.position.x;

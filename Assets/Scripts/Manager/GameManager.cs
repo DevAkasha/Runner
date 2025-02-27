@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public enum Character { Victor=1, Nathan, Elena }
 
+public enum Character { Victor , Nathan , Elena }
 public class GameManager : Manager<GameManager>
 {
     //DontDestroyOnLoad setting
@@ -21,6 +22,9 @@ public class GameManager : Manager<GameManager>
 
     int gemTypeCount;
     public bool[] hasGemStone;
+    public int characterIndex = 1;
+
+    [SerializeField] private GameObject[] chracterPrefabArray;
 
     protected override void Awake()
     {
@@ -79,6 +83,12 @@ public class GameManager : Manager<GameManager>
             hasGemStone[i] = false;
         }
     }
+
+    public void createCharacter()
+    {
+        Instantiate<GameObject>(chracterPrefabArray[characterIndex]);
+    }
+
     public void GameOver()
     {
         //GameOverView SetActive

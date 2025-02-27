@@ -63,25 +63,29 @@ public class CharactorBoard : MonoBehaviour
         CharactorInfo.SetActive(true);
         OBJCloseCharactorBtn.SetActive(true);
         //맞는 캐릭터 정보 켜기
-        switch ((int)character)
+
+        switch (character)
         {
-            case 1:
+            case Character.Victor:
                 animator.SetTrigger("IsVictor");
                 VictorInfo.SetActive(true);
                 VictorMarker.SetActive(true);
-                SceneChangeManager.Instance.charactor = 1;
+                GameManager.Instance.characterIndex = (int)Character.Victor;
                 break;
-            case 2:
-                animator.SetTrigger("IsNathan");
+
+
+            case Character.Nathan:
+animator.SetTrigger("IsNathan");
                 NathanInfo.SetActive(true);
                 NathanMarker.SetActive(true);
-                SceneChangeManager.Instance.charactor = 2;
+                GameManager.Instance.characterIndex = (int)Character.Nathan;
                 break;
-            case 3:
+
+            case Character.Elena:
                 animator.SetTrigger("IsElena");
                 ElenaInfo.SetActive(true);
                 ElenaMarker.SetActive(true);
-                SceneChangeManager.Instance.charactor = 3;
+                GameManager.Instance.characterIndex = (int)Character.Elena;
                 break;
             default:
                 Debug.Log("캐릭터 선택 오류");
