@@ -17,32 +17,34 @@ public class CharactorBoard : MonoBehaviour
     public GameObject Nathan;
     public GameObject Elena;
 
+    private Animator animator;
+    
     void Awake()
     {
         CloseCharactorInfo();
         Victor.SetActive(true);
         Nathan.SetActive(true);
         Elena.SetActive(true);
-
+        animator = GetComponent<Animator>();
     }
 
     //캐릭터 버튼 누를 때
     public void VictorOn()
     {
         SoundManager.Instance.PlaySFX(2);
-        CheckCharactor("Victor");
+        CheckCharactor(Character.Victor);
     }
 
     public void NathanOn()
     {
         SoundManager.Instance.PlaySFX(2);
-        CheckCharactor("Nathan");
+        CheckCharactor(Character.Nathan);
     }
 
     public void ElenaOn()
     {
         SoundManager.Instance.PlaySFX(2);
-        CheckCharactor("Elena");
+        CheckCharactor(Character.Elena);
     }
 
     public void CloseCharactorBtnOn()
@@ -53,7 +55,7 @@ public class CharactorBoard : MonoBehaviour
 
     //참조
     //핵심기능
-    public void CheckCharactor(string checkCharactor)
+    public void CheckCharactor(Character character)
     {
         //전부 닫기
         CloseCharactorInfo();
@@ -61,22 +63,29 @@ public class CharactorBoard : MonoBehaviour
         CharactorInfo.SetActive(true);
         OBJCloseCharactorBtn.SetActive(true);
         //맞는 캐릭터 정보 켜기
-        switch (checkCharactor)
+
+        switch (character)
         {
-            case "Victor":
+            case Character.Victor:
+                animator.SetTrigger("IsVictor");
                 VictorInfo.SetActive(true);
                 VictorMarker.SetActive(true);
-                SceneChangeManager.Instance.charactor = 1;
+                GameManager.Instance.characterIndex = (int)Character.Victor;
                 break;
-            case "Nathan":
+
+
+            case Character.Nathan:
+animator.SetTrigger("IsNathan");
                 NathanInfo.SetActive(true);
                 NathanMarker.SetActive(true);
-                SceneChangeManager.Instance.charactor = 2;
+                GameManager.Instance.characterIndex = (int)Character.Nathan;
                 break;
-            case "Elena":
+
+            case Character.Elena:
+                animator.SetTrigger("IsElena");
                 ElenaInfo.SetActive(true);
                 ElenaMarker.SetActive(true);
-                SceneChangeManager.Instance.charactor = 3;
+                GameManager.Instance.characterIndex = (int)Character.Elena;
                 break;
             default:
                 Debug.Log("캐릭터 선택 오류");

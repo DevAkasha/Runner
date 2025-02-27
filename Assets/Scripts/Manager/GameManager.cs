@@ -3,11 +3,13 @@ using UnityEngine.UIElements;
 using System;
 using UnityEngine.SceneManagement;
 
+public enum Character { Victor , Nathan , Elena }
+
 public class GameManager : Manager<GameManager>
 {
     //DontDestroyOnLoad setting
     protected override bool isPersistent => true;
-
+    public int charactrIndex = 0; // 1,
     public int score;
     public int feverMultiplier = 1;
 
@@ -19,6 +21,9 @@ public class GameManager : Manager<GameManager>
 
     int gemTypeCount;
     public bool[] hasGemStone;
+    public int characterIndex = 1;
+
+    [SerializeField] private GameObject[] chracterPrefabArray;
 
     protected override void Awake()
     {
@@ -67,7 +72,7 @@ public class GameManager : Manager<GameManager>
         if(Array.TrueForAll(hasGemStone, x => x))
         {
             player.StartCoroutine(player.SetFever(feverTime));
-            Invoke("InitGemStone", feverTime);
+            Invoke(nameof(InitGemStone), feverTime);
         }
     }
     public void InitGemStone()
@@ -77,6 +82,12 @@ public class GameManager : Manager<GameManager>
             hasGemStone[i] = false;
         }
     }
+
+    public void createCharacter()
+    {
+        Instantiate<GameObject>(chracterPrefabArray[characterIndex],new Vector3(-5.1f,-1.5f,0f), Quaternion.identity);
+    }
+
     public void GameOver()
     {
         //GameOverView SetActive
