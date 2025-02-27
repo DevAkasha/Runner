@@ -3,11 +3,13 @@ using UnityEngine.UIElements;
 using System;
 using UnityEngine.SceneManagement;
 
+public enum Character { Victor=1, Nathan, Elena }
+
 public class GameManager : Manager<GameManager>
 {
     //DontDestroyOnLoad setting
     protected override bool isPersistent => true;
-
+    public int charactrIndex = 0; // 1,
     public int score;
     public int feverMultiplier = 1;
 
