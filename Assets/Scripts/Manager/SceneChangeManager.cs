@@ -9,7 +9,7 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     //SelectScene에서 입력받은 레벨
     //1=Easy 2=Normal 3=Hard
     public int startLevel;
-
+    public int level;
 
     //이전 선택한 값과 입력받은 값 동일할 경우 해당 씬에 이동
     public void FirstSceneChange(int selectlevel) 
@@ -38,6 +38,11 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     //1=Easy 2=Normal 3=Hard 0=Selection -1=Tutorial
     public void SceneChanger(int level) 
     {
+        // 씬 변경 시 마다 GemStone 초기화
+        GameManager.Instance.InitGemStone();
+        GameManager.Instance.InitScore();
+        this.level = level;
+
         switch (level)
         {
             case 4:

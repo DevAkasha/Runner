@@ -93,6 +93,11 @@ public class GameManager : Manager<GameManager>
         Instantiate<GameObject>(chracterPrefabArray[characterIndex],new Vector3(-5.1f,-1.5f,0f), Quaternion.identity);
     }
 
+    public void InitScore()
+    {
+        Score = 0;
+    }
+
     public void GameOver()
     {
         //GameOverView SetActive
