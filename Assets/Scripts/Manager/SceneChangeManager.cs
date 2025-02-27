@@ -10,8 +10,6 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     //1=Easy 2=Normal 3=Hard
     public int startLevel;
 
-    //1=Victor 2=Nathon 3=Elena
-    public int charactor;
 
     //이전 선택한 값과 입력받은 값 동일할 경우 해당 씬에 이동
     public void FirstSceneChange(int selectlevel) 
