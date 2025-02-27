@@ -9,10 +9,12 @@ public class SelectionSceneManager : MonoBehaviour
     public GameObject AlphaBtn;
     public GameObject StartBtn;
     public GameObject AlphaInfoExitBtn;
+    public GameObject SettingWindow;
 
     public TextMeshProUGUI BestScore;
     public TextMeshProUGUI LastScore;
 
+    
     void Start()
     {
         //남기기
@@ -45,6 +47,11 @@ public class SelectionSceneManager : MonoBehaviour
         GameManager.Instance.GameOver();
         Debug.Log("게임 종료");
         SoundManager.Instance.PlaySFX(2);
+    }
+
+    public void SettingBtnOn()
+    {
+        SettingWindow.SetActive(true);
     }
 
     //스타트 버튼

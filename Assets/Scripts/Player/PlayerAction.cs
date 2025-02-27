@@ -18,9 +18,12 @@ public class PlayerAction : MonoBehaviour
 
     private SpriteRenderer playerSprite;
 
+    private PlayerAfterImage playerAfterImage;
 
-    public bool IsFeverMods = false;                //피버모드인지 아닌지
+
+    public bool isFeverMods = false;                //피버모드인지 아닌지
     public bool isInvincible = false;               //무적인지 아닌지
+    public bool makeGhost = false;
     [SerializeField] private float jumpHeight;      // 점프 높이
     [SerializeField] private float rayLength;       // Ray 길이
 
@@ -41,6 +44,11 @@ public class PlayerAction : MonoBehaviour
 
     public InvincibilityEffect invincibilityEffect;
 
+    public KeyCode jumpKey;
+    public KeyCode slideKey;
+    public KeyCode attackKey;
+
+
 
     void Start()
     {
@@ -50,13 +58,22 @@ public class PlayerAction : MonoBehaviour
         playerStat = GetComponent<PlayerStat>();
         playerAttack = GetComponentInChildren<PlayerAttack>();
         playerSprite = GetComponentInChildren<SpriteRenderer>();
+        playerAfterImage = GetComponent<PlayerAfterImage>();
 
         colliderOffset = collider.offset;
         colliderSize = collider.size;
 
         extraJumpCount = playerStat.ExtraJumpCount;
+
+        InitKey();
     }
 
+    void InitKey()
+    {        
+        jumpKey = GameManager.Instance.jumpKey;
+        slideKey = GameManager.Instance.slideKey;
+        attackKey = GameManager.Instance.attackKey;
+    }
 
     void Update()
     {
@@ -113,7 +130,7 @@ public class PlayerAction : MonoBehaviour
     private void Jump()
     {
         // 바닥에 닿아있고 스페이스키를 눌렀을 때 점프
-        if (isGround && Input.GetKeyDown(KeyCode.Space))
+        if (isGround && Input.GetKeyDown(jumpKey))
         {
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
@@ -121,7 +138,7 @@ public class PlayerAction : MonoBehaviour
             SoundManager.Instance.PlaySFX(1);
         }
         // 바닥에 닿아있지 않다면 더블 점프 체크 변수를 확인하고 점프
-        else if (!isGround && Input.GetKeyDown(KeyCode.Space))
+        else if (!isGround && Input.GetKeyDown(jumpKey))
         {
             if (extraJumpCount <= 0) return;
 
@@ -136,7 +153,7 @@ public class PlayerAction : MonoBehaviour
     {
         bool temp = isSlide;
         // 땅에 있고 Shitf키를 누르면 슬라이드
-        if (isGround && Input.GetKey(KeyCode.LeftShift))
+        if (isGround && Input.GetKey(slideKey))
         {
             isSlide = true;
 
@@ -158,10 +175,11 @@ public class PlayerAction : MonoBehaviour
 
     private void Attack()
     {
-        if (!isSlide && !isHit && Input.GetKeyDown(KeyCode.C))
+        if (!isSlide && !isHit && Input.GetKeyDown(attackKey))
         {
             SoundManager.Instance.PlaySFX(10);
             if (playerAttack.isCoolTime) return;
+            //클래스명.인스턴스.메서드(playerAttack.cooltime);
             animator.SetTrigger("IsAttack");
             playerAttack.ActiveAttack();
         }
@@ -206,14 +224,17 @@ public class PlayerAction : MonoBehaviour
     {
         isInvincible = true;
         invincibilityEffect.gameObject.SetActive(true);
+        playerAfterImage.makeGhost = true;
         playerSprite.color = new Color32(199, 255, 216, 255);
 
         yield return new WaitForSeconds(duration);
 
         playerSprite.color = Color.white;
+        playerAfterImage.makeGhost = false;
         invincibilityEffect.gameObject.SetActive(false);
         isInvincible = false;
     }
+
     public IEnumerator IncreaseSpeed(float addSpeed, float duration)
     {
         playerStat.Speed += addSpeed;
@@ -227,10 +248,10 @@ public class PlayerAction : MonoBehaviour
         GameManager.Instance.feverMultiplier = 2;
         StartCoroutine(BecomeInvincible(duration));
         StartCoroutine(IncreaseSpeed(2f, duration));
-        IsFeverMods = true;
+        isFeverMods = true;
         yield return new WaitForSeconds(duration);
         GameManager.Instance.feverMultiplier = 1;
-        IsFeverMods = false;
+        isFeverMods = false;
     }
 
     private void OnDrawGizmos()

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public enum Character { Victor , Nathan , Elena }
 
@@ -22,6 +23,10 @@ public class GameManager : Manager<GameManager>
     int gemTypeCount;
     public bool[] hasGemStone;
     public int characterIndex = 1;
+
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode slideKey = KeyCode.LeftShift;
+    public KeyCode attackKey = KeyCode.C;
 
     [SerializeField] private GameObject[] chracterPrefabArray;
 
