@@ -31,22 +31,26 @@ public class SelectionSceneManager : MonoBehaviour
     public void AlphaBtnOn()
     {
         AlphaInfo.SetActive(true);
+        SoundManager.Instance.PlaySFX(2);
     }
 
     public void AlphaInfoCloseBtnOn()
     {
         AlphaInfo.SetActive(false);
+        SoundManager.Instance.PlaySFX(7);
     }
 
     public void AlphaInfoExitBtnOn() 
     {
         GameManager.Instance.GameOver();
         Debug.Log("게임 종료");
+        SoundManager.Instance.PlaySFX(2);
     }
 
     //스타트 버튼
     public void StartBtnOn()
     {
+        SoundManager.Instance.PlaySFX(2);
         //이전에 난이도 버튼을 눌렀을 경우 해당 난이도로 이동
         if (SceneChangeManager.Instance.startLevel > 0 && SceneChangeManager.Instance.startLevel < 4)
         {

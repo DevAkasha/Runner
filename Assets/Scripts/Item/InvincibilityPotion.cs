@@ -9,9 +9,11 @@ public class InvincibilityPotion : Item
     protected override void ApplyEffect(PlayerAction player)
     {
         player.StartCoroutine(player.BecomeInvincible(duration));
+        SoundManager.Instance.PlaySFX(6);
     }
     protected override void ApplyEffect(PlayerAction player, int hitMultiplier)
     {
         player.StartCoroutine(player.BecomeInvincible(duration*hitMultiplier));
+        SoundManager.Instance.PlaySFX(6);
     }
 }

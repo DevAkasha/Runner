@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Manager<GameManager>
 {
@@ -24,6 +25,26 @@ public class GameManager : Manager<GameManager>
         base.Awake();
         gemTypeCount = System.Enum.GetValues(typeof(GemType)).Length;
         hasGemStone = new bool[gemTypeCount];
+    }
+    private void Start()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        switch (currentScene.name)
+        {
+            case "Easy":
+            case "Normal":
+            case "Hard":
+                SoundManager.Instance.PlayBgm(1);
+                break;
+            case "Tutorial":
+                SoundManager.Instance.PlayBgm(2);
+                break;
+            case "Hidden":
+                break;
+            default:
+                SoundManager.Instance.PlayBgm(0);
+                break;
+        }
     }
 
     public void AddScore(int score)
@@ -61,5 +82,4 @@ public class GameManager : Manager<GameManager>
         //GameOverView SetActive
         //InitFields
     }
-
 }

@@ -20,6 +20,7 @@ public class SceneEndObjectController : MonoBehaviour
     //충돌했을 때 일시정지&보드켜기
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundManager.Instance.PlaySFX(8);
         //최고 점수 갱신하기
         GameManager.Instance.UpdateBestScore();
         ClearBestScorenumTxt.text = GameManager.Instance.BestScore.ToString();
@@ -36,12 +37,14 @@ public class SceneEndObjectController : MonoBehaviour
     {
         Time.timeScale = 1f;
         PassScene();
+        SoundManager.Instance.PlaySFX(2);
     }
     //캐릭터 선택 화면으로 이동
     public void ChooseStageBtnOn() 
     {
         Time.timeScale = 1f;
         SceneChangeManager.Instance.SceneChanger(0);
+        SoundManager.Instance.PlaySFX(2);
     }
     //레벨 하나 높이고 씬 불러오기
     public void PassScene() 

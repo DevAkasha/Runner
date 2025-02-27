@@ -29,21 +29,25 @@ public class CharactorBoard : MonoBehaviour
     //캐릭터 버튼 누를 때
     public void VictorOn()
     {
+        SoundManager.Instance.PlaySFX(2);
         CheckCharactor("Victor");
     }
 
     public void NathanOn()
     {
+        SoundManager.Instance.PlaySFX(2);
         CheckCharactor("Nathan");
     }
 
     public void ElenaOn()
     {
+        SoundManager.Instance.PlaySFX(2);
         CheckCharactor("Elena");
     }
 
     public void CloseCharactorBtnOn()
     {
+        SoundManager.Instance.PlaySFX(7);
         CloseCharactorInfo();
     }
 

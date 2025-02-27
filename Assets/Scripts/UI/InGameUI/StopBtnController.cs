@@ -18,6 +18,8 @@ public class StopBtnController : MonoBehaviour
     //버튼 누르면 일시정지 보드 켜기
     public void StopBtnOn()
     {
+        // 클릭 효과음
+        SoundManager.Instance.PlaySFX(2);
         Time.timeScale = 0f;
         StopBoard.SetActive(true);
     }
@@ -25,13 +27,17 @@ public class StopBtnController : MonoBehaviour
     //일시정지 보드 끄기
     public void StopBoardCloseBtn()
     {
+        // 클로즈 효과음
+        SoundManager.Instance.PlaySFX(7);
         Time.timeScale = 1f;
         StopBoard.SetActive(false);
     }
     
     //해당 씬 재시작
-    public void RetryBtnOn() 
+    public void RetryBtnOn()
     {
+        // 클릭 효과음
+        SoundManager.Instance.PlaySFX(2);
         Time.timeScale = 1f;
         SceneChangeManager.Instance.SceneChanger(level.levelSet);
     }
@@ -39,6 +45,8 @@ public class StopBtnController : MonoBehaviour
     //캐릭터 선택창으로 이동
     public void GiveUpBtn()
     {
+        // 클릭 효과음
+        SoundManager.Instance.PlaySFX(2);
         Time.timeScale = 1f;
         SceneChangeManager.Instance.SceneChanger(0);
     }

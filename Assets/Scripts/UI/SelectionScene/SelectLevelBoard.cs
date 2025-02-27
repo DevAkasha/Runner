@@ -27,20 +27,24 @@ public class SelectLevelBoard : MonoBehaviour
     public void HardBtnOn()
     {
         CheckDifficulty(3);
+        SoundManager.Instance.PlaySFX(2);
     }
     public void NormalBtnOn()
     {
         CheckDifficulty(2);
+        SoundManager.Instance.PlaySFX(2);
     }
     
     public void EasyBtnOn()
     {
         CheckDifficulty(1);
+        SoundManager.Instance.PlaySFX(2);
     }
 
     public void TutorialBtnOn()
     {
         SceneChangeManager.Instance.SceneChanger(-1);
+        SoundManager.Instance.PlaySFX(2);
     }
 
     //ÂüÁ¶

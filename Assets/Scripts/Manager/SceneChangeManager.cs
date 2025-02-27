@@ -47,18 +47,22 @@ public class SceneChangeManager : Manager<SceneChangeManager>
                 break;
             case 3:
                 SceneManager.LoadScene("Hard");
+                SoundManager.Instance.PlayBgm(1);
                 break;
             case 2:
                 SceneManager.LoadScene("Normal");
+                SoundManager.Instance.PlayBgm(1);
                 break;
             case 1:
                 SceneManager.LoadScene("Easy");
+                SoundManager.Instance.PlayBgm(1);
                 break;
             case -1:
                 SceneManager.LoadScene("TutorialScene");
                 break;
             case 0:
                 SceneManager.LoadScene("SelectionScene");
+                SoundManager.Instance.PlayBgm(0);
                 break;
             default:
                 Debug.Log("¾À ÀÌµ¿ ¿À·ù");

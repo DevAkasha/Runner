@@ -10,9 +10,11 @@ public class SpeedPotion : Item
     protected override void ApplyEffect(PlayerAction player)
     {
         player.StartCoroutine(player.IncreaseSpeed(addSpeed, duration));
+        SoundManager.Instance.PlaySFX(5);
     }
     protected override void ApplyEffect(PlayerAction player, int hitMultiplier)
     {
         player.StartCoroutine(player.IncreaseSpeed(addSpeed, duration* hitMultiplier));
+        SoundManager.Instance.PlaySFX(5);
     }
 }

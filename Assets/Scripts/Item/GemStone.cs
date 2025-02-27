@@ -27,6 +27,7 @@ public class GemStone : Item
                 gameManager.AddScore(100);
                 break;
         }
+        SoundManager.Instance.PlaySFX(3);
     }
     protected override void ApplyEffect(PlayerAction player) { }
 }

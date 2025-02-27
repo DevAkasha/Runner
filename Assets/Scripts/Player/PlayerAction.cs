@@ -113,6 +113,7 @@ public class PlayerAction : MonoBehaviour
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             animator.SetBool("IsJump", true);
+            SoundManager.Instance.PlaySFX(1);
         }
         // 바닥에 닿아있지 않다면 더블 점프 체크 변수를 확인하고 점프
         else if(!isGround && Input.GetKeyDown(KeyCode.Space))
@@ -154,6 +155,7 @@ public class PlayerAction : MonoBehaviour
     {
         if(!isSlide&&!isHit&&Input.GetKeyDown(KeyCode.Z))
         {
+            SoundManager.Instance.PlaySFX(10);
             if (playerAttack.isCoolTime) return;
             animator.SetTrigger("IsAttack");
             playerAttack.ActiveAttack();
@@ -165,6 +167,7 @@ public class PlayerAction : MonoBehaviour
     }
     public void Die()
     {
+        SoundManager.Instance.PlaySFX(9);
         isFreeze = true;
         rigid.velocity = new Vector2(0f, rigid.velocity.y);
         animator.SetBool("IsDie", true);
@@ -173,6 +176,7 @@ public class PlayerAction : MonoBehaviour
     // 피격 당했을 때
     public void Damage(int amount)
     {
+        SoundManager.Instance.PlaySFX(11);
         if (isHit)
             return;
 
@@ -208,6 +212,7 @@ public class PlayerAction : MonoBehaviour
 
     public IEnumerator SetFever(float duration)
     {
+        SoundManager.Instance.PlaySFX(7);
         GameManager.Instance.feverMultiplier = 2;
         StartCoroutine(BecomeInvincible(duration));
         StartCoroutine(IncreaseSpeed(2f, duration));
