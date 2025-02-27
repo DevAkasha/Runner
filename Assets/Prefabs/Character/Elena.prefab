@@ -234,8 +234,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6332635813175373849}
   - {fileID: 1783910737531511053}
+  - {fileID: 6332635813175373849}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8959594389946607256
@@ -314,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsFeverMods: 0
   isInvincible: 0
+  makeGhost: 0
   jumpHeight: 7.5
   rayLength: 0.8
   isGround: 0
