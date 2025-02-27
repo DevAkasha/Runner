@@ -35,7 +35,7 @@ public class BossProjectile : Item
     }
     protected override void ApplyEffect(PlayerAction playerAttack, int hitMultiplier)
     {
-        base.ApplyEffect(playerAttack, hitMultiplier);
+        speed = -speed;
     }
 
 }

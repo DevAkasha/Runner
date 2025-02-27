@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8672187357629295352}
   - component: {fileID: 5630882226081792987}
   - component: {fileID: 7245330536943362923}
+  - component: {fileID: 1559941688532216643}
   m_Layer: 0
   m_Name: SpriteRenderer
   m_TagString: Untagged
@@ -106,6 +107,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &1559941688532216643
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380709067956564269}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1, y: 0.3}
+  m_Size: {x: 1, y: 0.5}
+  m_Direction: 1
 --- !u!1 &5067779766677082545
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 0.1
+  isdestroyed: 0
   power: 20
   startDelay: 0.5
   speed: -0.2
