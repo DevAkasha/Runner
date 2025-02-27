@@ -14,6 +14,7 @@ public class ItemEffect : MonoBehaviour
     {
         if (collision.CompareTag("PlayerAttack"))
         {
+            PlayerAction player = collision.GetComponentInParent<PlayerAction>();
             PlayerAttack playerAttack = collision.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {

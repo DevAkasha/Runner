@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         atkcollider = GetComponent<BoxCollider2D>();
-        atkcollider.enabled = true;
+        atkcollider.enabled = false;
     }
 
     public void ActiveAttack()
