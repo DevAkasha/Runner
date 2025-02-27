@@ -17,8 +17,9 @@ public class GameManager : Manager<GameManager>
     int gemTypeCount;
     public bool[] hasGemStone;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         gemTypeCount = System.Enum.GetValues(typeof(GemType)).Length;
         hasGemStone = new bool[gemTypeCount];
     }

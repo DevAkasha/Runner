@@ -44,15 +44,12 @@ public class SceneChangeManager : Manager<SceneChangeManager>
         {
             case 4:
                 Debug.Log("아직 보스전이 없습니다.");
-                //씬 이동
                 break;
             case 3:
                 SceneManager.LoadScene("Hard");
-                //씬 이동
                 break;
             case 2:
                 SceneManager.LoadScene("Normal");
-                //씬 이동
                 break;
             case 1:
                 SceneManager.LoadScene("Easy");

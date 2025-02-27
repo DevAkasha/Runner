@@ -11,11 +11,13 @@ public class SelectLevelBoard : MonoBehaviour
     public GameObject HardBtn;
     public GameObject NormalBtn;
     public GameObject EasyBtn;
+    public GameObject TutorialBtn;
 
     //기본 설정
     void Awake()
     {
         CloseCheckDifficulty();
+        TutorialBtn.SetActive(true);
         HardBtn.SetActive(true);
         NormalBtn.SetActive(true);
         EasyBtn.SetActive(true);
@@ -34,6 +36,11 @@ public class SelectLevelBoard : MonoBehaviour
     public void EasyBtnOn()
     {
         CheckDifficulty(1);
+    }
+
+    public void TutorialBtnOn()
+    {
+        SceneChangeManager.Instance.SceneChanger(-1);
     }
 
     //참조
