@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct ClipInfo
@@ -23,8 +19,10 @@ public class SoundManager : Manager<SoundManager>
     private AudioSource bgmAudioSource;
     private AudioSource sfxAudioSource;
 
-    private float bgmVolumeRatio;
-    private float sfxVolumeRatio;
+    [SerializeField]private float bgmVolumeRatio =1f;
+    [SerializeField]private float sfxVolumeRatio =1f;
+    private float originalBgmVolume = 1f;
+    private float originalSfxVolume = 1f;
 
     protected override void Awake()
     {
@@ -41,9 +39,11 @@ public class SoundManager : Manager<SoundManager>
             bgms = clipInfos.bgms;
             sfxs = clipInfos.sfxs;
         }
+    }
 
-        bgmVolumeRatio = 1f;
-        sfxVolumeRatio = 1f;
+    private void Update()
+    {
+        UpdateBGMVolume();
     }
 
     private void CreateAudioSourceObject(string name, out AudioSource audioSource)
@@ -55,34 +55,49 @@ public class SoundManager : Manager<SoundManager>
 
     public void PlaySFX(int index)
     {
-        if (sfxAudioSource == null)
+        if (sfxAudioSource == null || sfxs == null || index < 0 || index >= sfxs.Length)
+        {
+            Debug.LogWarning("SFX 인덱스가 잘못되었습니다.");
             return;
+        }
 
+        originalSfxVolume = sfxs[index].volume;
         sfxAudioSource.volume = sfxs[index].volume * sfxVolumeRatio;
         sfxAudioSource.PlayOneShot(sfxs[index].audioClip);
     }
 
     public void PlayBgm(int index)
     {
-        if (bgmAudioSource == null)
+        if (bgmAudioSource == null || bgms == null || index < 0 || index >= bgms.Length)
+        {
+            Debug.LogWarning("BGM 인덱스가 잘못되었습니다.");
             return;
+        }
 
-        bgmAudioSource.volume = bgms[index].volume * bgmVolumeRatio;
         bgmAudioSource.clip = bgms[index].audioClip;
         bgmAudioSource.loop = true;
         bgmAudioSource.Play();
+
+        originalBgmVolume = bgms[index].volume;
+        UpdateBGMVolume();
     }
 
-    public void SetBgmVolume(float ratio)
+    public void SetBGMVolume(float Ratio)
     {
-        bgmVolumeRatio = ratio;
-
-        float volume = bgmAudioSource.volume;
-        bgmAudioSource.volume = volume * bgmVolumeRatio;
+        bgmVolumeRatio = Ratio;
+        UpdateBGMVolume();
     }
 
-    public void SetSfxVolume(float ratio)
+    public void SetSFXVolume(float Ratio)
     {
-        sfxVolumeRatio = ratio;
+        sfxVolumeRatio = Ratio;
+    }
+
+    private void UpdateBGMVolume()
+    {
+        if (bgmAudioSource.isPlaying)
+        {
+            bgmAudioSource.volume = originalBgmVolume * bgmVolumeRatio;
+        }
     }
 }

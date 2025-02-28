@@ -10,7 +10,7 @@ public class GameManager : Manager<GameManager>
 {
     //DontDestroyOnLoad setting
     protected override bool isPersistent => true;
-    public int charactrIndex = 0; // 1,
+  
     public int score;
     public int feverMultiplier = 1;
 
@@ -100,7 +100,6 @@ public class GameManager : Manager<GameManager>
 
     public void GameOver()
     {
-        //GameOverView SetActive
-        //InitFields
+       GameUIManager.Instance.OpenGameOverBoard();
     }
 }

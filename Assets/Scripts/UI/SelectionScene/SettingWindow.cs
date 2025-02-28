@@ -10,6 +10,7 @@ public class SettingWindow : MonoBehaviour
     public Button jumpKeyButton;
     public Button slideKeyButton;
     public Button attackKeyButton;
+    
 
     public TextMeshProUGUI jumpKeyText;
     public TextMeshProUGUI slideKeyText;
@@ -21,10 +22,11 @@ public class SettingWindow : MonoBehaviour
     [Header("Volume Sliders")]
     public Slider bgmVolumeSlider;
     public Slider effectVolumeSlider;
+    public Button effectVolumeTestButton;
 
     public Button closeButton;
 
-    void Start()
+    private void Start()
     {
         LoadSettings();
 
@@ -38,7 +40,7 @@ public class SettingWindow : MonoBehaviour
         closeButton.onClick.AddListener(CloseSettings);
     }
 
-    void Update()
+    private void Update()
     {
         if (waitingForKey != KeyCode.None && Input.anyKeyDown) // 키 입력을 기다리는 상태일 때
         {
@@ -53,7 +55,7 @@ public class SettingWindow : MonoBehaviour
         }
     }
 
-    void StartKeyRebinding(string keySetting)
+    private void StartKeyRebinding(string keySetting)
     {
         currentKeySetting = keySetting;
         waitingForKey = KeyCode.Escape; // 입력 대기 상태 활성화
@@ -72,7 +74,7 @@ public class SettingWindow : MonoBehaviour
         }
     }
 
-    void SetKey(string keySetting, KeyCode newKey)
+    private void SetKey(string keySetting, KeyCode newKey)
     {
         PlayerPrefs.SetString(keySetting, newKey.ToString());
         waitingForKey = KeyCode.None; // 입력 대기 해제
@@ -96,7 +98,7 @@ public class SettingWindow : MonoBehaviour
         Debug.Log($"{keySetting} 변경됨: {newKey}");
     }
 
-    void LoadSettings()
+    private void LoadSettings()
     {
         jumpKeyText.text = PlayerPrefs.GetString("JumpKey", "Space");
         slideKeyText.text = PlayerPrefs.GetString("SlideKey", "LeftShift");
@@ -110,14 +112,19 @@ public class SettingWindow : MonoBehaviour
     {
         PlayerPrefs.SetFloat("BGMVolume", value);
         Debug.Log("BGM 볼륨: " + value);
-        //SoundManager.Instance.SetBGMVolume(value);
+        SoundManager.Instance.SetBGMVolume(value);
     }
 
     private void ChangeEffectVolume(float value)
     {
         PlayerPrefs.SetFloat("EffectVolume", value);
         Debug.Log("Effect 볼륨: " + value);
-        //SoundManager.Instance.SetEffectVolume(value);
+        SoundManager.Instance.SetSFXVolume(value);
+    }
+
+    public void OnTestBtnClick()
+    {
+        SoundManager.Instance.PlaySFX(2);
     }
 
     private void CloseSettings()

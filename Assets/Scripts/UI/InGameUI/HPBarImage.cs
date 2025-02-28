@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class HPBarImage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //위치 찾기용 클래스
 }
