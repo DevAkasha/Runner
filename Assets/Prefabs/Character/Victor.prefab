@@ -177,7 +177,7 @@ MonoBehaviour:
   jumpKey: 0
   slideKey: 0
   attackKey: 0
-  ghostDelay: 0.03
+  ghostDelay: 0.05
   ghost: {fileID: 445720203669810739, guid: aa10b1370363f7d4ba0e7790ab98ee4f, type: 3}
 --- !u!1 &7297391225907990408
 GameObject:
