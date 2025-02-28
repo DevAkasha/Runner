@@ -181,8 +181,8 @@ public class PlayerAction : MonoBehaviour
     {
         if (!isSlide && !isHit && Input.GetKeyDown(attackKey))
         {
-            SoundManager.Instance.PlaySFX(10);
             if (playerAttack.isCoolTime) return;
+            SoundManager.Instance.PlaySFX(10);
             //클래스명.인스턴스.메서드(playerAttack.cooltime);
             animator.SetTrigger("IsAttack");
             playerAttack.ActiveAttack();
