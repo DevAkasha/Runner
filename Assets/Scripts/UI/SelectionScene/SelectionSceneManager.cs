@@ -26,7 +26,7 @@ public class SelectionSceneManager : MonoBehaviour
 
         //점수 적용
         BestScore.text = GameManager.Instance.BestScore.ToString();
-        LastScore.text = GameManager.Instance.Score.ToString();
+        LastScore.text = GameManager.Instance.lastScore.ToString();
     }
 
     //...버튼 켜고 끄기
