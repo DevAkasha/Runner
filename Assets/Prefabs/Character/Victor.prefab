@@ -115,7 +115,7 @@ MonoBehaviour:
   isFeverMods: 0
   isInvincible: 0
   makeGhost: 0
-  jumpHeight: 7
+  jumpHeight: 7.5
   rayLength: 0.8
   isGround: 0
   isGroundChage: 0

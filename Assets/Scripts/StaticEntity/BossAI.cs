@@ -25,8 +25,8 @@ public class BossAI : MonoBehaviour
         {
             int count = 1;
             float ActionDelay = 2f;
-            if (boss.currentHealth <= boss.maxHealth * 0.5f) ActionDelay = 1.5f; 
-            if (boss.currentHealth <= boss.maxHealth * 0.2f) ActionDelay = 1f;
+            if (boss.currentHealth <= boss.maxHealth * 0.7f) ActionDelay = 1.5f; 
+            if (boss.currentHealth <= boss.maxHealth * 0.4f) ActionDelay = 1f;
 
             yield return new WaitForSeconds(ActionDelay); // 행동 간격
 
@@ -43,7 +43,7 @@ public class BossAI : MonoBehaviour
                 StartCoroutine(UseSkillA(ActionDelay*6));
             }
 
-            else if (action > 40f && action < 60f&&ActionDelay < 1.4f)
+            else if (action > 35f && action < 65f&&ActionDelay < 1.4f)
             {
                 StartCoroutine(boss.MeleeAttack());
                 yield break;

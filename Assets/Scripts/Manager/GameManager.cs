@@ -17,6 +17,7 @@ public class GameManager : Manager<GameManager>
     public float feverTime = 5f;
     public int Score { get; private set; }
 
+    public int lastScore;
     public int bestScore;
     public int BestScore { get { return bestScore; } private set { bestScore = value; } }
 
@@ -120,6 +121,7 @@ public class GameManager : Manager<GameManager>
 
     public void InitScore()
     {
+        lastScore = Score;
         Score = 0;
     }
 
