@@ -29,6 +29,11 @@ public class GameManager : Manager<GameManager>
     public KeyCode attackKey = KeyCode.C;
 
     [SerializeField] private GameObject[] chracterPrefabArray;
+    [SerializeField] PlayerStat playerStat;
+
+    private const float EasySpeed = 4f;
+    private const float NormalSpeed = 8f;
+    private const float HardSpeed = 12f;
 
     protected override void Awake()
     {
@@ -90,7 +95,27 @@ public class GameManager : Manager<GameManager>
 
     public void createCharacter()
     {
-        Instantiate<GameObject>(chracterPrefabArray[characterIndex],new Vector3(-5.1f,-1.5f,0f), Quaternion.identity);
+        GameObject player = Instantiate<GameObject>(chracterPrefabArray[characterIndex],new Vector3(-5.1f,-1.5f,0f), Quaternion.identity);
+        playerStat = player.GetComponent<PlayerStat>();
+
+        string sceneName = SceneManager.GetActiveScene().name;
+        SetCharacterSpeed(sceneName);
+    }
+
+    public void SetCharacterSpeed(string sceneName)
+    {
+        switch (sceneName)
+        {
+            case "Easy":
+                playerStat.Speed = EasySpeed;
+                break;
+            case "Normal":
+                playerStat.Speed = NormalSpeed;
+                break;
+            case "Hard":
+                playerStat.Speed = HardSpeed;
+                break;
+        }
     }
 
     public void InitScore()

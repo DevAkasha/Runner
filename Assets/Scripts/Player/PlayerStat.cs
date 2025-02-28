@@ -21,7 +21,7 @@ public class PlayerStat : MonoBehaviour
     private void Start()
     {
         HP = maxHP;
-        Speed = speed;
+        //Speed = speed;
 
         gameOverUI = FindObjectOfType<GameOverUI>(true);
     }
