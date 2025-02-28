@@ -173,7 +173,7 @@ public class PlayerAction : MonoBehaviour
             collider.size = new Vector2(colliderSize.x, colliderSize.y);
             collider.offset = new Vector2(colliderOffset.x, colliderOffset.y);
         }
-        isSlideChage = (temp != isGround) ? true : false;
+        isSlideChage = (temp != isSlide) ? true : false;
         if (isSlideChage) animator.SetBool("IsSlide", isSlide);
     }
 
