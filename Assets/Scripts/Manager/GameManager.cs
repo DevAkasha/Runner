@@ -116,6 +116,8 @@ public class GameManager : Manager<GameManager>
             case "Hard":
                 playerStat.Speed = HardSpeed;
                 break;
+            default:
+                break;
         }
     }
 
