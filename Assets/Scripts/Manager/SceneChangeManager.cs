@@ -14,8 +14,8 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightControl)) 
-        { 
-            
+        {
+            SceneChanger(4);
         }
     }
 
