@@ -39,7 +39,7 @@ public class StopBtnController : MonoBehaviour
         // 클릭 효과음
         SoundManager.Instance.PlaySFX(2);
         Time.timeScale = 1f;
-        SceneChangeManager.Instance.SceneChanger(level.levelSet);
+        SceneChangeManager.Instance.SceneChanger(SceneChangeManager.Instance.level);
     }
 
     //캐릭터 선택창으로 이동
