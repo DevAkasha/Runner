@@ -1,32 +1,20 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class GameOverUI : MonoBehaviour
+public class BossClearUI : MonoBehaviour
 {
     [SerializeField] private GameUIManager gameUI;
 
     private void Start()
     {
-        if(gameUI == null)
+        if (gameUI == null)
             gameUI = FindObjectOfType<GameUIManager>(true);
         SetActive(false);
     }
 
-    //해당 씬 재시작
-    public void RetryBtnOn()
-    {
-        // 클릭 효과음
-        SoundManager.Instance.PlaySFX(2);
-        Time.timeScale = 1f;
-        SceneChangeManager.Instance.SceneChanger(SceneChangeManager.Instance.level);
-    }
-
     //캐릭터 선택창으로 이동
-    public void GiveUpBtn()
+    public void SelectionStage()
     {
         // 클릭 효과음
         SoundManager.Instance.PlaySFX(2);

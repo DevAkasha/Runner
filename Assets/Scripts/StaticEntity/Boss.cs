@@ -1,5 +1,6 @@
 
 using System.Collections;
+using Unity.Properties;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -17,6 +18,7 @@ public class Boss : MonoBehaviour
     public GameObject SkillBProjectilePrefab;
     public GameObject SkillAProjectilePrefab;
     public BoxCollider2D attackCollider;
+    public BossClearUI gameClearUI;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -32,6 +34,8 @@ public class Boss : MonoBehaviour
         currentHealth = maxHealth;
         playerTransform = FindAnyObjectByType<PlayerAction>().transform;
         bossAI = GetComponent<BossAI>();
+
+        gameClearUI = FindObjectOfType<BossClearUI>(true);
     }
 
     // 근접 공격 행동
@@ -147,7 +151,16 @@ public class Boss : MonoBehaviour
         animator.SetTrigger("IsDie");
         Debug.Log("Boss가 사망함!");
         // 이후 게임 오브젝트 삭제 또는 사망 연출
+        // 게임 클리어 UI 보여주기
+        ShowClearUI();
+
         Destroy(gameObject, 3f);
+    }
+
+    private void ShowClearUI()
+    {
+        gameClearUI.SetActive(true);
+        SoundManager.Instance.PlaySFX(8);
     }
 
 }
