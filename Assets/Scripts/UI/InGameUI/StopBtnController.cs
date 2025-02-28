@@ -6,12 +6,14 @@ public class StopBtnController : MonoBehaviour
 {
     public GameObject StopBtn;
     public GameObject StopBoard;
+    private GameUIManager level;
 
     //기본 세팅
     void Awake()
     {
         StopBoard.SetActive(false);
         StopBtn.SetActive(true);
+        level = FindObjectOfType<GameUIManager>();
     }
     //버튼 누르면 일시정지 보드 켜기
     public void StopBtnOn()
@@ -37,7 +39,7 @@ public class StopBtnController : MonoBehaviour
         // 클릭 효과음
         SoundManager.Instance.PlaySFX(2);
         Time.timeScale = 1f;
-        SceneChangeManager.Instance.SceneChanger(SceneChangeManager.Instance.level);
+        SceneChangeManager.Instance.SceneChanger(level.levelSet);
     }
 
     //캐릭터 선택창으로 이동

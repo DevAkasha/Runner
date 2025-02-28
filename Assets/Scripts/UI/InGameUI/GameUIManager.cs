@@ -7,6 +7,9 @@ public class GameUIManager : Manager<GameUIManager>
 {
     protected override bool isPersistent => false;
 
+    //난이도 세팅
+    public int levelSet;
+
     public GameObject ScoreBoard;
     public GameObject StopBoard;
     private TextMeshProUGUI ScoreBoardTxt;

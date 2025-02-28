@@ -15,8 +15,7 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     {
         if (Input.GetKeyDown(KeyCode.RightControl)) 
         {
-            startLevel = 4;
-            FirstSceneChange(startLevel);
+            SceneChanger(4);
         }
     }
 
