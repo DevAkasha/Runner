@@ -107,16 +107,16 @@ public class GameManager : Manager<GameManager>
     {
         switch (sceneName)
         {
-            case "Easy":
-                playerStat.Speed = EasySpeed;
-                break;
+
             case "Normal":
                 playerStat.Speed = NormalSpeed;
                 break;
             case "Hard":
                 playerStat.Speed = HardSpeed;
                 break;
-            default:
+            case "Easy":
+            case "TutorialScene":
+                playerStat.Speed = EasySpeed;
                 break;
         }
     }

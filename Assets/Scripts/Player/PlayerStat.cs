@@ -11,7 +11,6 @@ public class PlayerStat : MonoBehaviour
     public float MaxHP { get { return maxHP; } set { } }
     [SerializeField] private float maxHP;           // 최대 체력
     [SerializeField] private float decreaseAmount;   // 체력 감소량
-    [SerializeField] private float speed;           // 스피드
     public float Speed { get; set; }
     [SerializeField] private int extraJumpCount;      // 추가 점프 가능 수
     public int ExtraJumpCount { get => extraJumpCount; }
@@ -21,7 +20,6 @@ public class PlayerStat : MonoBehaviour
     private void Start()
     {
         HP = maxHP;
-        //Speed = speed;
 
         gameOverUI = FindObjectOfType<GameOverUI>(true);
     }
