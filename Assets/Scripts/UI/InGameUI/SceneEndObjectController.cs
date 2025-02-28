@@ -12,6 +12,8 @@ public class SceneEndObjectController : MonoBehaviour
     public TextMeshProUGUI ClearBestScorenumTxt;
     public TextMeshProUGUI ClearNowScorenumTxt;
 
+    [SerializeField] private bool isHardGoal = false;
+
     //기본 세팅
     private void Awake()
     {
@@ -20,6 +22,12 @@ public class SceneEndObjectController : MonoBehaviour
     //충돌했을 때 일시정지&보드켜기
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isHardGoal)
+        {
+            NextStageBtnOn();
+            return;
+        }
+
         SoundManager.Instance.PlaySFX(8);
         //최고 점수 갱신하기
         GameManager.Instance.UpdateBestScore();
