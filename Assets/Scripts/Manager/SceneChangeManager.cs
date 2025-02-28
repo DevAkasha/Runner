@@ -11,6 +11,15 @@ public class SceneChangeManager : Manager<SceneChangeManager>
     public int startLevel;
     public int level;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightControl)) 
+        {
+            SceneChanger(4);
+        }
+    }
+
+
     //이전 선택한 값과 입력받은 값 동일할 경우 해당 씬에 이동
     public void FirstSceneChange(int selectlevel) 
     {
@@ -46,7 +55,8 @@ public class SceneChangeManager : Manager<SceneChangeManager>
         switch (level)
         {
             case 4:
-                Debug.Log("아직 보스전이 없습니다.");
+                SceneManager.LoadScene("BossScene");
+
                 break;
             case 3:
                 SceneManager.LoadScene("Hard");
@@ -62,6 +72,7 @@ public class SceneChangeManager : Manager<SceneChangeManager>
                 break;
             case -1:
                 SceneManager.LoadScene("TutorialScene");
+                SoundManager.Instance.PlayBgm(2);
                 break;
             case 0:
                 SceneManager.LoadScene("SelectionScene");
