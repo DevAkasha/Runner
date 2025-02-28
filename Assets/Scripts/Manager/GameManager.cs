@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public enum Character { Victor , Nathan , Elena }
 
@@ -9,7 +10,7 @@ public class GameManager : Manager<GameManager>
 {
     //DontDestroyOnLoad setting
     protected override bool isPersistent => true;
-    public int charactrIndex = 0; // 1,
+  
     public int score;
     public int feverMultiplier = 1;
 
@@ -22,6 +23,10 @@ public class GameManager : Manager<GameManager>
     int gemTypeCount;
     public bool[] hasGemStone;
     public int characterIndex = 1;
+
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode slideKey = KeyCode.LeftShift;
+    public KeyCode attackKey = KeyCode.C;
 
     [SerializeField] private GameObject[] chracterPrefabArray;
 
@@ -88,9 +93,13 @@ public class GameManager : Manager<GameManager>
         Instantiate<GameObject>(chracterPrefabArray[characterIndex],new Vector3(-5.1f,-1.5f,0f), Quaternion.identity);
     }
 
+    public void InitScore()
+    {
+        Score = 0;
+    }
+
     public void GameOver()
     {
-        //GameOverView SetActive
-        //InitFields
+       GameUIManager.Instance.OpenGameOverBoard();
     }
 }

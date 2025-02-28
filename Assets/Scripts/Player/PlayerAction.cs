@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Security;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -21,7 +22,7 @@ public class PlayerAction : MonoBehaviour
     private PlayerAfterImage playerAfterImage;
 
 
-    public bool IsFeverMods = false;                //피버모드인지 아닌지
+    public bool isFeverMods = false;                //피버모드인지 아닌지
     public bool isInvincible = false;               //무적인지 아닌지
     public bool makeGhost = false;
     [SerializeField] private float jumpHeight;      // 점프 높이
@@ -37,6 +38,7 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] private bool isHit = false;
     [SerializeField] private bool isFreeze = false;
+    [SerializeField] private bool isDie = false;    // 플레이어가 죽었는지 확인
 
     // 초기 Collider 설정 값
     private Vector2 colliderOffset;
@@ -44,6 +46,9 @@ public class PlayerAction : MonoBehaviour
 
     public InvincibilityEffect invincibilityEffect;
 
+    public KeyCode jumpKey;
+    public KeyCode slideKey;
+    public KeyCode attackKey;
 
 
 
@@ -61,8 +66,18 @@ public class PlayerAction : MonoBehaviour
         colliderSize = collider.size;
 
         extraJumpCount = playerStat.ExtraJumpCount;
+
+        isDie = false;
+
+        InitKey();
     }
 
+    void InitKey()
+    {        
+        jumpKey = GameManager.Instance.jumpKey;
+        slideKey = GameManager.Instance.slideKey;
+        attackKey = GameManager.Instance.attackKey;
+    }
 
     void Update()
     {
@@ -119,7 +134,7 @@ public class PlayerAction : MonoBehaviour
     private void Jump()
     {
         // 바닥에 닿아있고 스페이스키를 눌렀을 때 점프
-        if (isGround && Input.GetKeyDown(KeyCode.Space))
+        if (isGround && Input.GetKeyDown(jumpKey))
         {
             rigid.velocity = new Vector2(rigid.velocity.x, 0);
             rigid.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
@@ -127,7 +142,7 @@ public class PlayerAction : MonoBehaviour
             SoundManager.Instance.PlaySFX(1);
         }
         // 바닥에 닿아있지 않다면 더블 점프 체크 변수를 확인하고 점프
-        else if (!isGround && Input.GetKeyDown(KeyCode.Space))
+        else if (!isGround && Input.GetKeyDown(jumpKey))
         {
             if (extraJumpCount <= 0) return;
 
@@ -142,7 +157,7 @@ public class PlayerAction : MonoBehaviour
     {
         bool temp = isSlide;
         // 땅에 있고 Shitf키를 누르면 슬라이드
-        if (isGround && Input.GetKey(KeyCode.LeftShift))
+        if (isGround && Input.GetKey(slideKey))
         {
             isSlide = true;
 
@@ -164,10 +179,11 @@ public class PlayerAction : MonoBehaviour
 
     private void Attack()
     {
-        if (!isSlide && !isHit && Input.GetKeyDown(KeyCode.C))
+        if (!isSlide && !isHit && Input.GetKeyDown(attackKey))
         {
             SoundManager.Instance.PlaySFX(10);
             if (playerAttack.isCoolTime) return;
+            //클래스명.인스턴스.메서드(playerAttack.cooltime);
             animator.SetTrigger("IsAttack");
             playerAttack.ActiveAttack();
         }
@@ -178,18 +194,23 @@ public class PlayerAction : MonoBehaviour
     }
     public void Die()
     {
+        if (isDie) return;
+
+        isDie = true;
         SoundManager.Instance.PlaySFX(9);
         isFreeze = true;
         rigid.velocity = new Vector2(0f, rigid.velocity.y);
         animator.SetBool("IsDie", true);
+        GameManager.Instance.GameOver();
     }
 
     // 피격 당했을 때
     public void Damage(int amount)
     {
-        SoundManager.Instance.PlaySFX(11);
-        if (isHit)
+        if (isHit || isDie)
             return;
+
+        SoundManager.Instance.PlaySFX(11);
 
         playerStat.HP -= amount;
 
@@ -236,10 +257,10 @@ public class PlayerAction : MonoBehaviour
         GameManager.Instance.feverMultiplier = 2;
         StartCoroutine(BecomeInvincible(duration));
         StartCoroutine(IncreaseSpeed(2f, duration));
-        IsFeverMods = true;
+        isFeverMods = true;
         yield return new WaitForSeconds(duration);
         GameManager.Instance.feverMultiplier = 1;
-        IsFeverMods = false;
+        isFeverMods = false;
     }
 
     private void OnDrawGizmos()

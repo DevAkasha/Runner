@@ -63,7 +63,6 @@ public class CharactorBoard : MonoBehaviour
         CharactorInfo.SetActive(true);
         OBJCloseCharactorBtn.SetActive(true);
         //맞는 캐릭터 정보 켜기
-
         switch (character)
         {
             case Character.Victor:
@@ -72,15 +71,12 @@ public class CharactorBoard : MonoBehaviour
                 VictorMarker.SetActive(true);
                 GameManager.Instance.characterIndex = (int)Character.Victor;
                 break;
-
-
             case Character.Nathan:
-animator.SetTrigger("IsNathan");
+                animator.SetTrigger("IsNathan");
                 NathanInfo.SetActive(true);
                 NathanMarker.SetActive(true);
                 GameManager.Instance.characterIndex = (int)Character.Nathan;
                 break;
-
             case Character.Elena:
                 animator.SetTrigger("IsElena");
                 ElenaInfo.SetActive(true);

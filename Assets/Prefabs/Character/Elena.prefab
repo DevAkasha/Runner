@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 2572743916016022520}
   - component: {fileID: 2760664800259200309}
   - component: {fileID: 8066378480722644402}
+  - component: {fileID: 5408089706666337090}
   m_Layer: 0
   m_Name: Elena
   m_TagString: Player
@@ -312,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac23369cc047c14699bfc8a11d95e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsFeverMods: 0
+  isFeverMods: 0
   isInvincible: 0
   makeGhost: 0
   jumpHeight: 7.5
@@ -325,7 +326,11 @@ MonoBehaviour:
   extraJumpCount: 0
   isHit: 0
   isFreeze: 0
-  invincibilityEffect: {fileID: 7466185017206753461}
+  isDie: 0
+  invincibilityEffect: {fileID: 8142145348549507301}
+  jumpKey: 0
+  slideKey: 0
+  attackKey: 0
 --- !u!114 &8066378480722644402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,8 +346,40 @@ MonoBehaviour:
   hp: 100
   maxHP: 100
   decreaseAmount: 0.5
-  speed: 4
+  speed: 8
   extraJumpCount: 2
+--- !u!114 &5408089706666337090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403468355856469255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7015b6107ef54458c600e7d8a6ea92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFeverMods: 0
+  isInvincible: 0
+  makeGhost: 0
+  jumpHeight: 0
+  rayLength: 0
+  isGround: 0
+  isGroundChage: 0
+  isWall: 0
+  isSlide: 0
+  isSlideChage: 0
+  extraJumpCount: 0
+  isHit: 0
+  isFreeze: 0
+  isDie: 0
+  invincibilityEffect: {fileID: 8142145348549507301}
+  jumpKey: 0
+  slideKey: 0
+  attackKey: 0
+  ghostDelay: 0.03
+  ghost: {fileID: 55445694774670597, guid: e30525c29d8f21642ae97f9af3a650d4, type: 3}
 --- !u!1001 &7706909349784713268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -354,10 +391,6 @@ PrefabInstance:
     - target: {fileID: 409328089443359355, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
       propertyPath: m_Name
       value: Invincibility_Effect
-      objectReference: {fileID: 0}
-    - target: {fileID: 409328089443359355, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4401841475859630125, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -402,28 +435,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 409328089443359355, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7466185017206753461}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
 --- !u!4 &6332635813175373849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4401841475859630125, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
   m_PrefabInstance: {fileID: 7706909349784713268}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8023805413488173647 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 409328089443359355, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
+--- !u!114 &8142145348549507301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1876531230701879505, guid: 49edc9c858aaee349a515fb0721c5a8f, type: 3}
   m_PrefabInstance: {fileID: 7706909349784713268}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7466185017206753461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8023805413488173647}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56ddf6239565dfe49a4372e21c4f6839, type: 3}

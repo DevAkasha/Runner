@@ -29,13 +29,4 @@ public class Door : TriggerObstacle
         isOpen = true;
         animator.SetTrigger("IsOpen");
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Player"))
-        {
-            // 종료 UI 나타나야함
-            Debug.Log("RunEnd");
-        }
-    }
 }
