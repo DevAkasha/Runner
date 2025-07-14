@@ -1,9 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Security;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerAction : MonoBehaviour
 {
@@ -94,7 +90,7 @@ public class PlayerAction : MonoBehaviour
         Attack();
 
     }
-
+   
 
     private void CheckGround()
     {
