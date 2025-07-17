@@ -654,7 +654,7 @@ MonoBehaviour:
   lastScore: 0
   bestScore: 0
   hasGemStone: 
-  characterIndex: 1
+  characterIndex: 2
   jumpKey: 32
   slideKey: 304
   attackKey: 99

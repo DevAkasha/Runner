@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UIElements;
 using System;
 using UnityEngine.SceneManagement;
@@ -23,7 +23,7 @@ public class GameManager : Manager<GameManager>
 
     int gemTypeCount;
     public bool[] hasGemStone;
-    public int characterIndex = 1;
+    public int characterIndex = 2;
 
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode slideKey = KeyCode.LeftShift;
@@ -79,7 +79,7 @@ public class GameManager : Manager<GameManager>
     public void SetHasGemStone(int index,PlayerAction player)
     {
         hasGemStone[index] = true;
-        //¸ðµç Àë½ºÅæÀÌ trueÀÌ¸é ÇÃ·¹ÀÌ¾î ÇÇ¹ö¸ðµå ¹ßµ¿!
+        //ëª¨ë“  ìž¼ìŠ¤í†¤ì´ trueì´ë©´ í”Œë ˆì´ì–´ í”¼ë²„ëª¨ë“œ ë°œë™!
         if(Array.TrueForAll(hasGemStone, x => x))
         {
             player.StartCoroutine(player.SetFever(feverTime));
